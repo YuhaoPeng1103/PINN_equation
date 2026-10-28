@@ -1,0 +1,5 @@
+Verified spectral counting turns Temple and Kahan bounds into a certificate.
+Directed rounding makes the 1D and separable 2D eigenvalue counts theorems.
+Degenerate levels are certified as subspaces with measured multiplicity.
+A variational bound extends the guarantee to the continuous operator.
+143 tests and drivers regenerate every table and figure of the paper.

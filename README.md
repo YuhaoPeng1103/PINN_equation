@@ -4,7 +4,7 @@
 Schrödinger equation: a self-verifying a posteriori protocol and its
 implementation* — Chunyang Chen and Yuhao Peng (equal contribution), School
 of Mathematics and Physics, China University of Geosciences (Wuhan).
-Compiled manuscript: [`paper/main.pdf`](paper/main.pdf) (54 pages).
+Compiled manuscript: [`paper/main.pdf`](paper/main.pdf) (55 pages).
 
 Given an approximate eigenfunction of the finite-difference Schrödinger
 operator, the package returns a two-sided enclosure of the discrete
@@ -214,7 +214,7 @@ runs/           运行证据
 | [docs/engineering-log.md](docs/engineering-log.md) | 踩过的坑与修复方式 |
 | [HANDOFF.md](HANDOFF.md) | ★★ **交接文档：换设备继续做只需读这一个文件** |
 | [docs/results.md](docs/results.md) | ★ 三个实验的实测结果与解读 |
-| [paper/main.pdf](paper/main.pdf) | ★★ 论文稿（CPC **正刊**稿，54 页、24 refs、143 项测试）：`cd paper && latexmk -pdf main.tex` |
+| [paper/main.pdf](paper/main.pdf) | ★★ 论文稿（CPC **正刊**稿，55 页、24 refs、143 项测试）：`cd paper && latexmk -pdf main.tex` |
 
 ## 论文稿
 

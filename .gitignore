@@ -32,4 +32,7 @@ paper/.p*.png
 Guide for authors*
 *_files/
 
+# 投稿用压缩包（内容与仓库重复，由 scripts/make_submission_archive.py 生成）
+paper/submission/*.zip
+
 

@@ -1,7 +1,7 @@
 % !TeX program = pdflatex
 % Computer Physics Communications -- regular article draft.
 % Build:  latexmk -pdf main.tex      (or: pdflatex main; pdflatex main)
-\documentclass[preprint,12pt,authoryear]{elsarticle}
+\documentclass[preprint,12pt,number]{elsarticle}
 
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
@@ -34,7 +34,7 @@
 % CPC program-summary block (elsarticle defines no environment for it).
 \newenvironment{programsummary}
   {\par\medskip\noindent\rule{\linewidth}{0.5pt}\par\vspace{2pt}
-   \noindent\textbf{Program summary}\par\nopagebreak\vspace{2pt}\small}
+   \noindent\textbf{Program summary}\par\nopagebreak\vspace{2pt}\footnotesize}
   {\par\nopagebreak[4]\vspace{2pt}\noindent\rule{\linewidth}{0.5pt}\par\medskip}
 
 \journal{Computer Physics Communications}
@@ -56,58 +56,26 @@ China University of Geosciences (Wuhan)}, city={Wuhan}, postcode={430074},
 country={China}}
 
 \begin{abstract}
-Neural-network solvers for the stationary Schr\"odinger equation are usually
-evaluated by comparing with a reference solution that, in genuinely new
-problems, is not available. We present a computable \emph{a posteriori}
-certificate for neural eigenpairs of the discretized Schr\"odinger operator:
-given an approximate eigenfunction it returns a two-sided enclosure of the
-corresponding eigenvalue and an upper bound on the angle to the true
-eigenfunction, using only quantities computed from the approximation itself.
-The hypotheses of the classical Temple and Davis--Kahan bounds---that an
-interval contains exactly one eigenvalue---are \emph{verified} rather than
-assumed, by counting eigenvalues below a shift with Sturm sequences in one
-dimension and with the Sylvester inertia of a sparse LU factorization in two;
-the one-dimensional count, and the two-dimensional one for separable
-potentials, are re-derived in directed-rounding interval arithmetic, so that
-they are theorems rather than well-guarded floating-point estimates.
-At a degenerate level no single eigenfunction exists to be certified, so we
-extend the construction from states to invariant subspaces: the multiplicity
-is \emph{measured} by counting, each eigenvalue of the cluster is bracketed to
-within the residual of its Ritz pair, and a principal-angle bound certifies the subspace
-that a set of network outputs spans, at no extra hypothesis on their mutual
-separation. We describe the implementation, the floating-point safeguards
-that make the counting trustworthy, and a protocol that uses the certificate
-to detect degeneracy, to select a leakage-free residual for training, and to
-choose the truncation order of a spectral filter without knowledge of the
-exact solution; a transport lemma carries the certified angle bound back to
-the raw network output. Experiments on three one-dimensional and three
-two-dimensional potentials, three seeds each, accept $18/18$ enclosures in the
-main sweep and $39/39$ over the main sweep plus the twenty-one runs of the
-leakage audit, each containing an independently computed discrete eigenvalue;
-in two dimensions the reference is a dense LAPACK solve, not the ARPACK values
-that propose the intervals. They also give
-a quantitative separation of network error from discretization error, correct
-refusal of a structurally degenerate state whose residual is
-$4\times10^{-12}$ by the single-state certificate, and its certification as a
-two-dimensional invariant subspace by the cluster certificate, which separates
-the pairs of independently trained networks that span that subspace from
-those that collapsed, and prices the ambiguous case as a much weaker bound; a
-controlled splitting of the level shows that
-the boundary between the two certificates is the counting resolution, not
-degeneracy itself---a state is refused at $0.95$ times the resolution and
-accepted at $1.01$ times it. Because every such statement concerns the
-discretization, we add a variational bound for the continuous operator: the
-interpolant of a sampled eigenfunction is a conforming trial function, so its
-Rayleigh quotient bounds the continuous eigenvalue from above for every
-potential, while a matching lower bound is available for the infinite well
-and the box and, we show, fails for the finite well, whose certified discrete energy can lie
-\emph{above} the continuous one. The individual bounds are classical; the
-contribution is the protocol that makes their hypotheses computable, the
-subspace extension that removes the only structural obstacle to using them,
-the directed-rounding count that makes the one- and separable two-dimensional
-counts theorems, the variational bound that carries one side of the guarantee
-to the continuous operator, and an audit of what neural eigenpairs can and
-cannot be certified.
+Neural solvers of the stationary Schr\"odinger equation are evaluated against
+a reference solution that new problems lack. We present a computable
+\emph{a posteriori} certificate for neural eigenpairs of the discretized
+operator: from an approximate eigenfunction it returns a two-sided eigenvalue
+enclosure, a bound on the angle to the true eigenfunction, and a verified
+state index, using only the approximation itself. The hypotheses of the
+Temple and Davis--Kahan bounds are \emph{verified} rather than assumed, by
+counting the spectrum below a shift with Sturm sequences in one dimension and
+with the Sylvester inertia of a sparse LU factorization in two; the
+one-dimensional count, and the two-dimensional one for separable potentials,
+are re-derived in directed rounding, hence theorems about the stored matrix.
+A degenerate level has no single eigenfunction to certify, so we extend the
+construction to invariant subspaces: the multiplicity is \emph{measured},
+cluster eigenvalues are bracketed, and a principal-angle bound certifies the
+subspace spanned by several network outputs. On six potentials, all $39$
+enclosures contain an independently computed discrete eigenvalue; a
+degenerate state with residual $4\times10^{-12}$ is refused individually and
+certified as a two-dimensional subspace; independently trained pairs that
+span it are separated from collapsed ones. A variational bound on the
+interpolant carries one side of the guarantee to the continuous operator.
 \end{abstract}
 
 \begin{keyword}
@@ -118,39 +86,47 @@ verification
 
 \end{frontmatter}
 
-\newpage
 \begin{programsummary}
 \noindent\textbf{Program title:} \texttt{nn-schrodinger-certify}\\
-\textbf{CPC Library link to program files:} (to be assigned)\\
+\textbf{CPC Library link to program files:} (to be added by Technical Editor)\\
 \textbf{Developer's repository link:}\\
 \url{https://github.com/YuhaoPeng1103/PINN_equation}\\
-\textbf{Licensing provisions:} MIT\\
+\textbf{Licensing provisions:} MIT license (MIT)\\
 \textbf{Programming language:} Python 3.11 (NumPy, SciPy; PyTorch for
 training)\\
-\textbf{Nature of problem:} Neural solvers of the stationary Schr\"odinger
-equation are evaluated against a reference that a new problem does not have; a
-small residual does not bound the eigenfunction error, and at a degenerate
-level no single eigenfunction is defined.
-\textbf{Solution method:} Given an approximate eigenfunction, or an
+\textbf{Supplementary material:} none\\
+\textbf{Nature of problem (approx.\ 50--250 words):} Neural solvers of the
+stationary Schr\"odinger equation are evaluated against a reference solution
+that a new problem does not have. A small residual does not bound the
+eigenfunction error, and at a degenerate level no single eigenfunction is
+defined, so the usual comparison is ill-posed as well as unavailable: what is
+wanted is a statement computable from the approximation alone.\\
+\textbf{Solution method (approx.\ 50--250 words):} Given an approximate eigenfunction, or an
 $m$-dimensional trial subspace, on a finite-difference grid, the code returns a
 two-sided enclosure of the discrete eigenvalue, a bound on the angle to the
 exact eigenfunction or invariant subspace, and a verified state index. The
 hypotheses of the Kato--Temple and Davis--Kahan bounds are decided by counting
 the spectrum with Sturm sequences in one dimension and with the Sylvester
 inertia of a no-pivot sparse LU in two, guarded against silent pivoting and
-against a resolution floor below which the interval is refused; the
+against a resolution floor; the
 one-dimensional count, and the two-dimensional one for separable potentials,
 are re-derived in directed-rounding interval arithmetic and refuse when a
 pivot or a summed pair is unresolved. A variational bound evaluated on the
 P1/Q1 interpolant of a sampled eigenfunction bounds the continuous eigenvalue
 from above without a reference solution, and a certificate-selected Dirichlet
 sine filter and a transport inequality extend the bound to the raw network
-output.
-\textbf{Additional comments:} Includes the drivers that regenerate every table
-and figure of the article and a 143-test suite locking the numerical
-safeguards. A count costs $0.03$\,s at $81\times81$ and $0.4$\,ms at
-$N=2001$, or $5$\,ms in one dimension with directed rounding; a full certificate costs $0.07$\,s at $N=2001$ and $0.2$\,s at
-$81\times81$.
+output.\\
+\textbf{Additional comments including restrictions and unusual features
+(approx.\ 50--250 words):} Includes the drivers that regenerate every table
+and figure of the article and a 143-test suite. A count costs $0.03$\,s at
+$81\times81$ and $0.4$\,ms at $N=2001$, or $5$\,ms in one dimension with
+directed rounding; a full certificate costs $0.07$\,s at $N=2001$ and
+$0.2$\,s at $81\times81$. Restriction: the operator must be assemblable, so
+the high-dimensional regime is out of reach; the anharmonic potential is
+counted in guarded floating point because the general two-dimensional
+interval count is measured but not used; the resolution floor is a declared
+margin, not a theorem.\\
+\textbf{References:} none
 \end{programsummary}
 
 \input{sections/01_intro}
@@ -163,21 +139,47 @@ $81\times81$.
 \input{sections/06_discussion}
 \input{sections/07_conclusion}
 
+\section*{CRediT authorship contribution statement}
+\textbf{Chunyang Chen:} Conceptualization, Methodology, Software, Validation,
+Formal analysis, Investigation, Writing -- original draft. \textbf{Yuhao
+Peng:} Conceptualization, Methodology, Software, Validation, Formal analysis,
+Investigation, Writing -- review and editing, Supervision. Both authors
+contributed equally to this work and approved the final manuscript.
+
 \section*{Code availability}
 The implementation, the experiment drivers and the scripts that regenerate
 every table and figure of this paper are part of the repository accompanying
 this article, \url{https://github.com/YuhaoPeng1103/PINN_equation} (MIT
 licence). A frozen archive will be deposited in the CPC Program Library.
 
+\section*{Data availability}
+All data supporting this study are contained in the repository cited above:
+the measured artefacts behind every table and figure are stored under
+\texttt{runs/} as JSON, CSV and NumPy archives, and the drivers that
+regenerate them are in \texttt{scripts/} and \texttt{paper/}. No other data
+were generated or analysed.
+
 \section*{Declaration of competing interest}
 The authors declare that they have no known competing financial interests or
 personal relationships that could have appeared to influence the work
 reported in this paper.
 
+\section*{Funding}
+This research did not receive any specific grant from funding agencies in the
+public, commercial, or not-for-profit sectors.
+
+\section*{Declaration of generative AI and AI-assisted technologies in the
+manuscript preparation process}
+During the preparation of this work the authors used Claude (Anthropic) in
+order to assist with drafting and editing the manuscript text and with the
+implementation and testing of the software. After using this tool, the
+authors reviewed and edited the content as needed and take full
+responsibility for the content of the published article.
+
 \appendix
 \input{sections/08_appendix}
 
-\bibliographystyle{elsarticle-harv}
+\bibliographystyle{elsarticle-num}
 \bibliography{refs}
 
 \end{document}

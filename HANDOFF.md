@@ -17,7 +17,7 @@
 ## 0. 三十秒摘要
 
 这是一个**用 PINN 求解定态薛定谔方程（1D/2D）并用后验证书认证结果**的项目。
-成稿论文在 `paper/main.pdf`（54 页）：主张不是“更准的求解器”，而是
+成稿论文在 `paper/main.pdf`（55 页）：主张不是“更准的求解器”，而是
 **一套把神经网络本征对变成可审计陈述的协议**，以及这套协议在什么条件下失效。
 定位见 §7。
 
@@ -432,7 +432,7 @@ python tests/minipytest.py -k losses  # 只跑匹配的
 > leakage 的"四个变体"改为三个能量变体、子空间独立对界 5.6–6.3e-3、证书 0.074 s、
 > 投影残差 ≤2e-16；并新增 `scripts/lapack_reference_widths.py`，把 §6.9 引用的
 > 经典求解器证书宽度落到 `runs/reference1d/lapack_certificates.json`。
-> 论文现 54 页。见工程记录 34。
+> 论文现 55 页。见工程记录 34。
 > **作者块已填（2026-10-28）**：Chunyang Chen、Yuhao Peng，共同第一作者，单位
 > School of Mathematics and Physics, China University of Geosciences (Wuhan)，
 > 彭宇豪为通讯作者（pngyuo@cug.edu.cn），`\fntext` 注明同等贡献。
@@ -440,6 +440,13 @@ python tests/minipytest.py -k losses  # 只跑匹配的
 > （public，main 分支，初次提交 799 个文件 / 22 MB，`runs/` 证据与 `paper/main.pdf`
 > 都在其中）。program summary 的 `Developer's repository link` 与 Code availability
 > 已填该 URL 并重新编译。CPC Library 链接由 CPC 分配，保留 `(to be assigned)`。
+> **CPC 合规改造（2026-10-29，见工程记录 39）**：摘要压到 209 词（上限 250）；
+> 参考文献改数字制 `[n]`（`elsarticle-num`）；Program Summary 换成 CPiP 模板字段
+> （含 `Supplementary material`、三段 50–250 词、`References:`）；新增 CRediT、
+> Funding（无基金标准句）、Data availability、生成式 AI 声明四个段落；
+> `paper/highlights.docx|txt` 5 条（≤85 字符）；文章类型定为 **CPiP**。
+> 投稿包：`paper/submission/README-SUBMISSION.md` + `nn-schrodinger-certify.zip`
+> （`python scripts/make_submission_archive.py`，863 文件 / 14.6 MB，不入库）。
 > **投稿前仍需**：(1) 参考文献 18 条 DOI 已于 2026-10-28 全部对 Crossref 解析通过
 > （其中 `mishra2023` 原记 drab096、`rump1999` 原记 …7186-3_5，均已改正；
 > `tancik2020` 无 DOI，按 NeurIPS 33, 7462–7473 著录）；(4) 若改投 MLST，需补连续算子层面
@@ -630,7 +637,7 @@ width=128、depth=4。正交残差也改用与投影基一致的固定网格（�
 
 ### 定位建议（更新）
 
-- **论文已成形**：`paper/main.pdf`，54 页，零 overfull、零未定义引用，
+- **论文已成形**：`paper/main.pdf`，55 页，零 overfull、零未定义引用，
   143 项测试全绿。目标期刊：CPC 正刊（定位为“评测协议 + 软件”，
   符合 CPC 的 software-and-validation 体裁）。
 - **仓库**：<https://github.com/YuhaoPeng1103/PINN_equation>，已 `git init` 并推送

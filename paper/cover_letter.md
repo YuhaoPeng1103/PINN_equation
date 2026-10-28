@@ -2,7 +2,8 @@
 
 To the Editors of *Computer Physics Communications*,
 
-We submit for consideration as a regular article the manuscript
+We submit for consideration as a Computer Programs in Physics (CPiP) article
+the manuscript
 **"Certifying neural eigenpairs and degenerate eigenspaces of the Schr\"odinger
 equation: a self-verifying a posteriori protocol and its implementation"**
 by Chunyang Chen and Yuhao Peng (equal contribution), School of Mathematics
@@ -74,7 +75,10 @@ both dimensions.
 The submission includes a 143-test suite, the drivers that regenerate every
 table and figure of the article, and an appendix recording three reproducible
 training failures---each with its saved run---that make a network look fine
-while it cannot be certified. We state the limitations explicitly: every
+while it cannot be certified. The package is released under the MIT licence,
+which is on the journal's list of approved licences, and its Program Summary
+follows the CPiP template; the source archive, a README describing the
+directory structure, and a test run are uploaded with the manuscript. We state the limitations explicitly: every
 two-sided enclosure refers to the discretized operator, and the bridge to the
 continuous operator is one-sided; the interval count covers one dimension and
 separable two-dimensional potentials, while the general two-dimensional count

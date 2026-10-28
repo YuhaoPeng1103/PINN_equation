@@ -58,7 +58,24 @@ been observed to exhaust memory on the reference machine.
 
 ## Before submission
 
-- [ ] author list, affiliation, e-mail in `main.tex` (marked `TODO`)
-- [ ] CPC Library link and developer's repository link in the Program summary
-- [ ] repository URL in the Code availability statement
-- [ ] `cover_letter.md` (draft) — add referees and signatures
+Everything on the old checklist is done; what remains is entered in the
+submission system, not in the files:
+
+- [x] author list, affiliation, e-mail in `main.tex`
+- [x] repository link in the Program summary and in Code availability
+- [x] abstract ≤ 250 words (209), keywords ≤ 7 (7), highlights ≤ 85 chars (5 bullets)
+- [x] numbered references (`[n]`, order of appearance) per the Guide for Authors
+- [x] CRediT, Funding, Data availability and generative-AI declarations
+- [x] `cover_letter.md` — no suggested referees
+- [ ] completing the declarations tool in the submission system
+- [ ] choosing open access / licence option after acceptance
+
+The upload list and the fields to fill in the system are in
+[`submission/README-SUBMISSION.md`](submission/README-SUBMISSION.md); the
+software archive is built with `python scripts/make_submission_archive.py`
+(git-ignored, since it duplicates the tree).
+
+Note: the bibliography is now numeric, so `main.bbl` must be regenerated after
+any edit to `refs.bib` — run `pdflatex; bibtex main; pdflatex; pdflatex`, and
+check that `main.bbl` is not empty (a zero-byte `.bbl` only shows up as one
+natbib warning).

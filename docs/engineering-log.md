@@ -975,3 +975,44 @@ shift 上拒绝，于是每轮只推进一格，宽度卡在 2e-3 不动。改�
   实测差 1.4 倍。凡是句子里有倍数，先算再写。
 - 严格性是一个**链**：区间求和 + 浮点单元积分 ≠ 严格。审稿人只要顺着代码看
   一层就能发现；主动在正文里点明缺口，比被问出来好得多。
+
+## 39. 按 CPC Guide for Authors 做投稿合规改造（2026-10-29）
+
+**背景**：作者要"直接投稿"，于是把存下来的 CPC Guide for Authors 抽成文本逐条比对
+（`~/.claude` 之外的临时文件，不入库）。发现稿件在内容上没问题，但**格式硬性项**
+有多处不符；这些如果留到投稿系统里，编辑部会在技术审查阶段退回。
+
+**逐条改动**：
+1. **摘要 556 词 → 209 词**。Guide 上限 250 词。改法不是删信息，而是把
+   "我们做了什么"压成主句，把实现细节（传输引理、截断阶选取、0.95/1.01 分辨率
+   扫描）留给正文。顺带解决了摘要跨页、关键词被挤到第 2 页的排版问题。
+2. **参考文献改数字制**。原稿是 authoryear + `elsarticle-harv`，Guide 明确要求
+   正文用 `[n]` 且按出现顺序编号。改为 `\documentclass[...,number]` +
+   `elsarticle-num`。唯一的 `\citet{cances2020}` 在数字制下会报
+   "Author undefined"，改成 `Canc\`es et al.~\cite{cances2020}`。
+   踩坑：删掉 `main.aux` 后 latexmk 会在 `\citation` 写入之前跑 bibtex，
+   `.bbl` 变成 0 字节；手工 `pdflatex → bibtex → pdflatex ×2` 才恢复。
+3. **Program Summary 换成 CPiP 模板字段**：`CPC Library link ... (to be added by
+   Technical Editor)`、`Licensing provisions: MIT license (MIT)`、
+   `Supplementary material`、三段各自标注 "(approx. 50--250 words)"、
+   末尾 `References:`。原来 `Nature of problem` 只有 39 词，低于 50 词下限，
+   扩写到 61 词。
+4. **新增声明段**：CRediT（两作者同等贡献）、Funding（Guide 规定的"无基金"标准句）、
+   Data availability、以及 Guide 要求的
+   "Declaration of generative AI and AI-assisted technologies…"。
+5. **Highlights**：单独文件 `paper/highlights.docx` + `.txt`，5 条，最长 78 字符
+   （上限 85）。
+6. **文章类型定为 CPiP**（带 Program Summary、代码归档、MIT 许可），
+   cover letter 相应改写。
+7. **投稿包**：`scripts/make_submission_archive.py` 生成
+   `paper/submission/nn-schrodinger-certify.zip`（863 文件 / 14.6 MB），
+   `paper/submission/README-SUBMISSION.md` 列出上传清单与系统内要填的项。
+
+**教训**：
+- 期刊的 "Guide for Authors" 是**可执行的规格**，不是背景资料。摘要词数、关键词
+  个数、highlight 字符数、参考文献制式、声明段落，都是能一条条勾的硬指标；
+  写完就自查，比被编辑部退回来便宜。
+- 排版问题和合规问题是同一个问题的两面：摘要从 556 词压到 209 词之后，
+  首页与 Program Summary 的跨页问题一起消失了。
+- 每次动 `main.aux`/`main.bbl` 之后都要确认 `.bbl` 非空；0 字节的 `.bbl`
+  在 PDF 里只表现为一条 natbib 警告，很容易被当成无害。
