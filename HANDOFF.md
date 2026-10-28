@@ -436,9 +436,11 @@ python tests/minipytest.py -k losses  # 只跑匹配的
 > **作者块已填（2026-10-28）**：Chunyang Chen、Yuhao Peng，共同第一作者，单位
 > School of Mathematics and Physics, China University of Geosciences (Wuhan)，
 > 彭宇豪为通讯作者（pngyuo@cug.edu.cn），`\fntext` 注明同等贡献。
-> **投稿前仍需**：(1) 仓库链接（program summary 的 `Developer's repository link`
-> 与 Code availability，需要真实 URL）；CPC Library 链接由 CPC 分配，保留
-> `(to be assigned)` 即可；(2) 参考文献 18 条 DOI 已于 2026-10-28 全部对 Crossref 解析通过
+> **仓库已公开（2026-10-29）**：`https://github.com/YuhaoPeng1103/PINN_equation`
+> （public，main 分支，初次提交 799 个文件 / 22 MB，`runs/` 证据与 `paper/main.pdf`
+> 都在其中）。program summary 的 `Developer's repository link` 与 Code availability
+> 已填该 URL 并重新编译。CPC Library 链接由 CPC 分配，保留 `(to be assigned)`。
+> **投稿前仍需**：(1) 参考文献 18 条 DOI 已于 2026-10-28 全部对 Crossref 解析通过
 > （其中 `mishra2023` 原记 drab096、`rump1999` 原记 …7186-3_5，均已改正；
 > `tancik2020` 无 DOI，按 NeurIPS 33, 7462–7473 著录）；(4) 若改投 MLST，需补连续算子层面
 > 的 $O(h^2)$ 显式界与系统基线对比，当前稿件明确声明不做。
@@ -631,9 +633,12 @@ width=128、depth=4。正交残差也改用与投影基一致的固定网格（�
 - **论文已成形**：`paper/main.pdf`，54 页，零 overfull、零未定义引用，
   143 项测试全绿。目标期刊：CPC 正刊（定位为“评测协议 + 软件”，
   符合 CPC 的 software-and-validation 体裁）。
-- **投稿前仍需人决定的**：公开仓库 URL（program summary 与 Code availability
-  各一处）、LICENSE 持有人、cover letter 的推荐审稿人、是否 `git init`。
-  作者块已填好（Chen & Peng，共同第一作者，Peng 通讯）。
+- **仓库**：<https://github.com/YuhaoPeng1103/PINN_equation>，已 `git init` 并推送
+  （MIT，LICENSE 持有人 Chunyang Chen and Yuhao Peng）。作者块已填好
+  （Chen & Peng，共同第一作者，Peng 通讯，pngyuo@cug.edu.cn）。
+- **投稿前仍需人决定的**：cover letter 的签名与投稿系统里填写的推荐审稿人
+  （作者已表示不推荐，信里写的是 "We do not suggest referees"）；
+  是否给仓库打 Zenodo DOI 冻结版本（推荐，但非必需）。
 - **如果还要加强**：多跑种子把包含率的 Wilson 区间收窄（见 §6 的统计功效段，
   需要约 70 次无失败运行才能声称 ≥0.95）。
 
