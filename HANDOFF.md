@@ -444,7 +444,8 @@ python tests/minipytest.py -k losses  # 只跑匹配的
 > 参考文献改数字制 `[n]`（`elsarticle-num`）；Program Summary 换成 CPiP 模板字段
 > （含 `Supplementary material`、三段 50–250 词、`References:`）；新增 CRediT、
 > Funding（无基金标准句）、Data availability、生成式 AI 声明四个段落；
-> `paper/highlights.docx|txt` 5 条（≤85 字符）；文章类型定为 **CPiP**。
+> `paper/highlights.docx|txt` 5 条（≤85 字符）；`paper/declaration-of-interests.docx`
+> （Elsevier 声明表，"nothing to declare" 已勾选）；文章类型定为 **CPiP**。
 > 投稿包：`paper/submission/README-SUBMISSION.md` + `nn-schrodinger-certify.zip`
 > （`python scripts/make_submission_archive.py`，863 文件 / 14.6 MB，不入库）。
 > **投稿前仍需**：(1) 参考文献 18 条 DOI 已于 2026-10-28 全部对 Crossref 解析通过

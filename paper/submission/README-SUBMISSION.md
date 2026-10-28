@@ -10,6 +10,7 @@ Target: *Computer Physics Communications*.
 | `paper/main.tex`, `paper/sections/*.tex`, `paper/tables/*.tex`, `paper/figures/`, `paper/refs.bib` | Editable LaTeX source (a PDF alone is not accepted as source) |
 | `paper/main.pdf` | Compiled manuscript, 55 pages, for the reviewers |
 | `paper/highlights.docx` (and `.txt`) | 5 highlights, each ≤ 85 characters |
+| `paper/declaration-of-interests.docx` | Elsevier "Declaration of interests" document ("nothing to declare" box ticked) |
 | `paper/cover_letter.md` | Cover letter (export to PDF or paste into the system) |
 | `paper/submission/nn-schrodinger-certify.zip` | Program archive: source, 143-test suite, drivers, `runs/` evidence, README, MIT licence |
 
@@ -24,8 +25,10 @@ Rebuild the archive after any change with
 - Abstract: 209 words (limit 250).
 - Keywords: 7 (limit 7).
 - Funding: none — the standard sentence is in the manuscript under *Funding*.
-- Competing interests: nothing to declare (the declarations tool must be
-  completed separately and the resulting .docx uploaded).
+- Competing interests: nothing to declare. The declarations tool in the
+  submission system must still be completed; `declaration-of-interests.docx`
+  is the same statement in the form the system asks you to attach, and the
+  manuscript carries the section "Declaration of competing interest" as well.
 - Data availability: statement is in the manuscript; a link to
   <https://github.com/YuhaoPeng1103/PINN_equation> can be added to the
   data-linking step.

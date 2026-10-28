@@ -67,6 +67,7 @@ submission system, not in the files:
 - [x] numbered references (`[n]`, order of appearance) per the Guide for Authors
 - [x] CRediT, Funding, Data availability and generative-AI declarations
 - [x] `cover_letter.md` — no suggested referees
+- [x] `declaration-of-interests.docx` — "nothing to declare" statement
 - [ ] completing the declarations tool in the submission system
 - [ ] choosing open access / licence option after acceptance
 
