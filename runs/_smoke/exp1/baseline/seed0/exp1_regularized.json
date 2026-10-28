@@ -1,0 +1,44 @@
+{
+  "environment": {
+    "python": "3.11.9",
+    "platform": "Windows-10-10.0.26300-SP0",
+    "numpy": "2.4.6",
+    "torch": "2.12.0+cpu",
+    "cuda": false
+  },
+  "seed": 0,
+  "epochs": 20,
+  "width": 32,
+  "depth": 2,
+  "final_loss": 0.24691047010136472,
+  "energies": {
+    "0.50": {
+      "max_abs_err": 0.8770904729675922,
+      "is_interpolated": false
+    },
+    "1.50": {
+      "max_abs_err": 1.0691005009993475,
+      "is_interpolated": false
+    },
+    "2.50": {
+      "max_abs_err": 1.0025857718910076,
+      "is_interpolated": false
+    },
+    "3.50": {
+      "max_abs_err": 1.0795546154308129,
+      "is_interpolated": false
+    },
+    "1.00": {
+      "max_abs_err": 0.6986160570354067,
+      "is_interpolated": true
+    },
+    "2.00": {
+      "max_abs_err": 1.8525641971717628,
+      "is_interpolated": true
+    },
+    "3.00": {
+      "max_abs_err": 0.788455410540178,
+      "is_interpolated": true
+    }
+  }
+}

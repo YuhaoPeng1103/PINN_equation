@@ -1,0 +1,175 @@
+{
+  "potential": "finite_well",
+  "state": 0,
+  "seed": 0,
+  "epochs": 10000,
+  "width": 64,
+  "depth": 3,
+  "learned_energy": true,
+  "residual_energy": "learned",
+  "use_energy": true,
+  "weights": {
+    "residual": 1.0,
+    "normalization": 100.0,
+    "boundary": 100.0,
+    "energy": 10.0
+  },
+  "learned_energy_value": -9.790246821702489,
+  "metrics": {
+    "energy_model": -48.96722664983494,
+    "energy_ref": -48.97920066044197,
+    "energy_abs_err": 0.011974010607026742,
+    "energy_rel_err": 0.00024447133570102434,
+    "overlap": 0.9999581352604301,
+    "inf_norm": 0.004975550234503413,
+    "residual_rms": 0.3191477689473433
+  },
+  "certificate": {
+    "energy": -48.9662280236645,
+    "residual_norm": 2.743013005504,
+    "weinstein_lower": -51.70924102921746,
+    "weinstein_upper": -46.22321501811154,
+    "interval_lower": -49.97376212635664,
+    "interval_upper": -45.90317629337642,
+    "temple_lower": null,
+    "temple_upper": null,
+    "spectral_gap": 1.0075341026431746,
+    "eigenfunction_angle_bound": 1.5707963267948966,
+    "valid": false,
+    "reason": "Temple 二次界不可用（残差相对谱隙太大）: Temple 条件 r² < (upper−η)(η−lower) 不成立: r²=7.52412, 阈值=3.08613",
+    "state_index": 0,
+    "width": null
+  },
+  "history": {
+    "epoch": [
+      1,
+      1000,
+      2000,
+      3000,
+      4000,
+      5000,
+      6000,
+      7000,
+      8000,
+      9000,
+      10000
+    ],
+    "loss": [
+      305.74198718767786,
+      -396.04845263249115,
+      -398.09480099466015,
+      -399.7228957611609,
+      -402.2406847384064,
+      -404.1712443964279,
+      -406.7656615032819,
+      -408.8369558181353,
+      -411.60802022138245,
+      -413.7941399489299,
+      -416.6828191890117
+    ],
+    "val_loss": [
+      95.75375178149804,
+      93.65238959743147,
+      92.59289095677215,
+      91.61163833743042,
+      90.97228153958115,
+      89.69970098546406,
+      88.56573700273147,
+      87.48538000903261,
+      86.40001909551776,
+      85.3703872078699,
+      84.1336337296405,
+      82.96587247101765,
+      81.77890887865729,
+      80.7732692629064,
+      79.3905092866924,
+      78.11065193434436,
+      76.85640841832124,
+      75.71668850569472,
+      74.27840064332744,
+      73.00014484675755
+    ],
+    "energy": [],
+    "seconds": [
+      0.00722210000094492,
+      3.6886996000030194,
+      7.38548940000328,
+      11.07965410000179,
+      14.778877000004286,
+      18.519514600004186,
+      22.186106300003303,
+      25.87562859999889,
+      29.56645930000377,
+      33.285675200000696,
+      36.970913900004234
+    ],
+    "weights": [
+      {
+        "residual": 1.0,
+        "normalization": 100.0,
+        "boundary": 100.0,
+        "energy": 10.0
+      },
+      {
+        "residual": 1.0,
+        "normalization": 100.0,
+        "boundary": 100.0,
+        "energy": 10.0
+      },
+      {
+        "residual": 1.0,
+        "normalization": 100.0,
+        "boundary": 100.0,
+        "energy": 10.0
+      },
+      {
+        "residual": 1.0,
+        "normalization": 100.0,
+        "boundary": 100.0,
+        "energy": 10.0
+      },
+      {
+        "residual": 1.0,
+        "normalization": 100.0,
+        "boundary": 100.0,
+        "energy": 10.0
+      },
+      {
+        "residual": 1.0,
+        "normalization": 100.0,
+        "boundary": 100.0,
+        "energy": 10.0
+      },
+      {
+        "residual": 1.0,
+        "normalization": 100.0,
+        "boundary": 100.0,
+        "energy": 10.0
+      },
+      {
+        "residual": 1.0,
+        "normalization": 100.0,
+        "boundary": 100.0,
+        "energy": 10.0
+      },
+      {
+        "residual": 1.0,
+        "normalization": 100.0,
+        "boundary": 100.0,
+        "energy": 10.0
+      },
+      {
+        "residual": 1.0,
+        "normalization": 100.0,
+        "boundary": 100.0,
+        "energy": 10.0
+      },
+      {
+        "residual": 1.0,
+        "normalization": 100.0,
+        "boundary": 100.0,
+        "energy": 10.0
+      }
+    ]
+  }
+}

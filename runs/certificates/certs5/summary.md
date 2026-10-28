@@ -1,0 +1,20 @@
+| run | potential | target | cert_state | E_cert | E_disc_ref | Δsturm | width | angle_bound | contains | residual | overlap | E_err | width/E_err |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| runs/seeds/certs5/finite_well_0/seed0 | finite_well | 0 | 0 | -48.96 | -48.97 | 2.7e-13 | — | 1.571 | ✗ | 3.148 | 0.9999 | 0.01355 | — |
+| runs/seeds/certs5/finite_well_0/seed1 | finite_well | 0 | 0 | -48.97 | -48.97 | 2.7e-13 | 3.947 | 1.571 | ✓ | 1.729 | 1 | 0.01068 | 369.5 |
+| runs/seeds/certs5/finite_well_0/seed2 | finite_well | 0 | 0 | -48.96 | -48.97 | 2.7e-13 | — | 1.571 | ✗ | 3.658 | 1 | 0.01309 | — |
+| runs/seeds/certs5/finite_well_1/seed0 | finite_well | 1 | 0 | -48.85 | -48.97 | 2.7e-13 | 1.374 | 1.225 | ✓ | 1.057 | 0.1165 | 2.925 | 0.4697 |
+| runs/seeds/certs5/finite_well_1/seed1 | finite_well | 1 | 0 | -48.68 | -48.97 | 2.7e-13 | 3.082 | 1.571 | ✓ | 1.651 | 0.08466 | 2.752 | 1.12 |
+| runs/seeds/certs5/finite_well_1/seed2 | finite_well | 1 | 0 | -48.95 | -48.97 | 2.7e-13 | 1.091 | 1.108 | ✓ | 0.9138 | 0.06036 | 3.028 | 0.3605 |
+| runs/seeds/certs5/harmonic_0/seed0 | harmonic | 0 | 0 | 0.5 | 0.5 | 5.936e-13 | 0.05051 | 0.1596 | ✓ | 0.1589 | 1 | 9.139e-07 | 5.527e+04 |
+| runs/seeds/certs5/harmonic_0/seed1 | harmonic | 0 | 0 | 0.5001 | 0.5 | 5.936e-13 | 1.827 | 1.273 | ✓ | 0.9558 | 1 | 5.068e-05 | 3.605e+04 |
+| runs/seeds/certs5/harmonic_0/seed2 | harmonic | 0 | 0 | 0.5003 | 0.5 | 5.936e-13 | — | 1.571 | ✗ | 1.19 | 1 | 0.0001859 | — |
+| runs/seeds/certs5/harmonic_1/seed0 | harmonic | 1 | 1 | 1.91 | 1.5 | 1.221e-13 | — | 1.571 | ✗ | 1.114 | 0.0233 | 0.4097 | — |
+| runs/seeds/certs5/harmonic_1/seed1 | harmonic | 1 | 1 | 1.849 | 1.5 | 1.221e-13 | — | 1.571 | ✗ | 2.204 | 0.02438 | 0.3486 | — |
+| runs/seeds/certs5/harmonic_1/seed2 | harmonic | 1 | 1 | 1.701 | 1.5 | 1.221e-13 | — | 1.571 | ✗ | 1.481 | 0.009009 | 0.2014 | — |
+| runs/seeds/certs5/infinite_well_0/seed0 | infinite_well | 0 | 0 | 4.935 | 4.935 | 1.303e-10 | — | 1.571 | ✗ | 7.651 | 1 | 0.0001457 | — |
+| runs/seeds/certs5/infinite_well_0/seed1 | infinite_well | 0 | 0 | 4.935 | 4.935 | 1.303e-10 | 0.2968 | 0.5554 | ✓ | 0.5273 | 1 | 7.2e-05 | 4122 |
+| runs/seeds/certs5/infinite_well_0/seed2 | infinite_well | 0 | 0 | 4.935 | 4.935 | 1.303e-10 | 0.03923 | 0.1929 | ✓ | 0.1917 | 1 | 1.952e-05 | 2010 |
+| runs/seeds/certs5/infinite_well_1/seed0 | infinite_well | 1 | 1 | 19.74 | 19.74 | 1.975e-10 | 0.00242 | 0.01011 | ✓ | 0.1497 | 1 | 2.639e-05 | 91.73 |
+| runs/seeds/certs5/infinite_well_1/seed1 | infinite_well | 1 | 1 | 19.74 | 19.74 | 1.975e-10 | 0.05059 | 0.04623 | ✓ | 0.6842 | 1 | 0.0002602 | 194.4 |
+| runs/seeds/certs5/infinite_well_1/seed2 | infinite_well | 1 | 1 | 19.74 | 19.74 | 1.975e-10 | 0.01109 | 0.02164 | ✓ | 0.3203 | 1 | 0.0001468 | 75.57 |

@@ -1,0 +1,14 @@
+finite_well  N     error        sign   offset/h   hole   err(closed)
+              1000 +1.246e-02  above    0.0625  False  +1.246e-02
+              1001 -6.253e-04  below    0.5000  False  -6.253e-04
+              1002 -1.343e-02  below    0.0625  False  -1.343e-02
+              1003 +3.078e-03  above    0.3750  False  +3.078e-03
+              1004 -9.778e-03  below    0.1875  False  -9.778e-03
+              1005 +6.787e-03  above    0.2500  False  +6.787e-03
+              1006 -6.117e-03  below    0.3125  False  -6.117e-03
+              1007 +1.050e-02  above    0.1250  False  +1.050e-02
+              1008 -2.450e-03  below    0.4375  False  -2.450e-03
+              1009 +1.422e-02  above    0.0000  True   -1.513e-02
+              1010 +1.221e-03  above    0.4375  False  +1.221e-03
+              1011 -1.151e-02  below    0.1250  False  -1.151e-02
+              4001 +3.673e-03  above    0.0000  True   -3.731e-03

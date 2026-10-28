@@ -1,0 +1,45 @@
+[
+  {
+    "path": "runs\\_cert_smoke\\exp5_fixed2\\wavefunction.npz",
+    "n_points": 2001,
+    "dx": 0.006000000000000227,
+    "certificate": {
+      "energy": 0.5000196965753902,
+      "residual_norm": 0.36071995492368697,
+      "weinstein_lower": 0.13929974165070327,
+      "weinstein_upper": 0.8607396515000773,
+      "interval_lower": -0.5000011250031093,
+      "interval_upper": 1.4999943749771771,
+      "temple_lower": 0.36989751579266317,
+      "temple_upper": 0.6301358732323507,
+      "spectral_gap": 0.9999746784007869,
+      "eigenfunction_angle_bound": 0.36904949737900133,
+      "valid": true,
+      "reason": "Temple 区间已由 Sturm 计数验证为单态区间；区间由 isolating_interval 自动构造",
+      "state_index": 0
+    },
+    "continuous_rayleigh": 0.5000139753288202,
+    "discrete_ref": 0.4999988749974843,
+    "discrete_ref_method": "scipy_eigh_tridiagonal_rayleigh",
+    "discrete_ref_sturm": 0.49999887499689066,
+    "sturm_vs_independent_gap": 5.936362512670712e-13,
+    "contains_discrete_ref": true,
+    "state_matches_target": true,
+    "meta_file": "exp5_certificate_training.json",
+    "potential": "harmonic",
+    "target_state": 0,
+    "seed": 0,
+    "residual_energy": "reference",
+    "orthogonalize": null,
+    "learned_energy": false,
+    "metrics": {
+      "energy_model": 0.5000139741273151,
+      "energy_ref": 0.5,
+      "energy_abs_err": 1.397412731507508e-05,
+      "energy_rel_err": 2.794825463015016e-05,
+      "overlap": 0.9999979709414553,
+      "inf_norm": 0.0014140695341208487,
+      "residual_rms": 0.10402008170820001
+    }
+  }
+]

@@ -1,0 +1,124 @@
+\section{Implementation notes}
+\label{app:impl}
+
+\subsection{Training failures that shaped the implementation}
+\label{app:failures}
+
+Three failures were reproducible and are worth recording, because each one
+produces a network that looks superficially fine but cannot be certified. The
+runs behind them are kept in \url{runs/appendix_fourier2d/} and
+\url{runs/appendix_failures/}; the Fourier and hard-mask runs are outputs of
+\texttt{scripts/exp6\_certificate\_training\_2d.py}, the soft-boundary and
+unnormalized runs of \url{scripts/appendix_failures.py}.
+
+\paragraph{Random Fourier features in two dimensions} The one-dimensional
+runs use random Fourier features \citep{tancik2020} and profit from them. In
+two dimensions the same configuration (scale $2.5$) stalls: at $6000$ epochs,
+on the harmonic potential whose discrete eigenvalue is $1.0004$, it reaches
+$E=1.5624$ and overlap $0.877$ (the $1500$-epoch snapshot is $E=1.5636$ and
+$0.877$) against $E=1.0004$ and overlap $0.99997$ for the plain MLP, and the
+single-state certificate refuses the output with a residual of $1.17$
+(\texttt{runs/appendix\_fourier2d/}). Each feature
+$\sin/\cos(\omega_1x+\omega_2y)$ must cover a direction in the plane, and the
+sample efficiency of a fixed random direction set degrades with dimension. The
+2D driver therefore disables Fourier features by default. This is an empirical
+configuration choice, not a claim about Fourier features in general.
+
+\paragraph{The zero function in an unnormalized loss} If the loss is the
+residual of $\psi$ itself rather than of the unit vector $\psi/\norm{\psi}$,
+the zero function is a global minimum and not merely a stationary point: the
+Rayleigh quotient is scale invariant, so the residual is exactly linear in
+$\psi$ and $L(c\psi)=c^2L(\psi)$, whence $L(0)=0\le L(\psi)$. No term then
+fixes the scale: the amplitude stays wherever the initialization put it, and
+any tolerance can be met by shrinking rather than by improving the shape. In a
+$3000$-epoch run at $N=41$ the field ended at
+$\norm{\psi}^2=6.0\times10^{-5}$, a maximum amplitude of $1.5\times10^{-2}$ (rms
+$7.5\times10^{-3}$ over the grid), with
+a shape that is already accurate (overlap $1.0000$ after normalization, energy
+error $1.1\times10^{-5}$). Measured on the field as returned, without
+normalization, the residual norm is $2.9\times10^{-4}$ while the $L^2$
+distance from the discrete ground state is $0.99$---a residual three thousand
+times smaller than the error it is supposed to measure
+(\texttt{scripts/residual\_vs\_error.py}). Every diagnostic
+computed on the normalized field therefore looks excellent while the field
+itself carries a scale that the loss does not determine, and the training loss
+then measures the amplitude rather than the error.
+Fixing the scale by an explicit term---the penalty $(\norm{\psi}_h^2-1)^2$ in
+one dimension, division by the norm in two (equation~\eqref{eq:loss})---removes
+the scale direction and excludes the zero solution; the denominator is clamped
+at $10^{-30}$ to keep the gradient finite during the first steps.
+
+\paragraph{Soft boundary penalties in two dimensions} A boundary penalty with
+weight $100$ does not enforce a Dirichlet condition to anything like machine
+precision, because the constrained nodes are an $O(1/N)$ fraction of the grid
+while the five-point Laplacian amplifies their error by $h^{-2}$. After
+$3000$ epochs at $N=41$ on the box potential the penalty leaves the residual
+at $5.72$ and the energy error at $5.0\times10^{-2}$ ($E=9.9144$ against the
+discrete $9.8645$), with boundary nodes carrying values up to $0.22$. The
+certificate still returns \texttt{valid}---its hypotheses hold for whatever
+field it is given---but the enclosure is $4.68$ wide against a true error of
+$5.0\times10^{-2}$, more than five orders of magnitude looser than on a
+hard-constrained field. Multiplying the network output by the mask
+$M=(x-a)(b-x)(y-a)(y-b)$ enforces the boundary condition exactly and is a
+statement of the problem, not of the solution; with everything else unchanged
+the same configuration reaches residual $1.2\times10^{-2}$, energy error
+$1.2\times10^{-6}$, enclosure width $2.0\times10^{-5}$ and angle bound
+$9.0\times10^{-4}$ (\texttt{runs/appendix\_failures/}). The mask costs
+expressivity near the boundary, which is irrelevant for an eigenfunction that
+vanishes there.
+
+\subsection{Interval construction}
+\label{app:algorithm}
+
+\begin{center}
+\fbox{\parbox{0.93\linewidth}{\small
+\textbf{Algorithm 1} Verified or refused certificate for $(\psi,\text{grid},k^\ast)$.
+\begin{enumerate}
+\item[1.] $\eta\leftarrow\eta(\psi)$, $r\leftarrow\Hh\psi-\eta\psi$,
+  $\rho\leftarrow\norm{r}_h$. If $\rho=0$ return the exact certificate.
+\item[2.] $k\leftarrow N(\eta)$ (verified count). Obtain an approximate
+  spectrum from ARPACK for states $k-1,k,k+1$ only.
+\item[3.] For \texttt{state} in $\{k-1,k\}$: build
+  $a=\hat\lambda_{\text{state}-1}+0.1(\hat\lambda_{\text{state}}-\hat\lambda_{\text{state}-1})$
+  and $b=\hat\lambda_{\text{state}+1}-0.1(\hat\lambda_{\text{state}+1}-\hat\lambda_{\text{state}})$;
+  require $a<\eta<b$ and $N(b)-N(a)=1$; require
+  $\min(\eta-a,b-\eta)>10^{-9}s$; keep the candidate with the larger gap.
+\item[4.] If no candidate verifies, run the count-only bisection fallback and
+  verify its interval in the same way; if that fails, return
+  \texttt{valid=False} with the reason.
+\item[5.] Compute $\gamma=\min(\eta-a,b-\eta)$. If
+  $\rho^2<(b-\eta)(\eta-a)$ return the Temple enclosure \eqref{eq:temple};
+  otherwise return the Weinstein interval and mark the Temple bound
+  unavailable. In both cases return $\arcsin(\min(1,\rho/\gamma))$.
+\end{enumerate}}}
+\end{center}
+
+\subsection{Reproducibility details}
+\label{app:repro}
+
+All runs were performed on a laptop CPU (Windows 11, Python 3.11,
+NumPy~2.4 \citep{harris2020}, SciPy~1.17 \citep{virtanen2020}, PyTorch~2.12,
+the thread count fixed per run in the sweep manifest---four for a
+one-dimensional run, two for a two-dimensional one). The JSON manifests record
+the wall-clock time of each job. The reference spectra used for validation are
+computed by eigenvalue solvers independent of the certificate, applied to the
+same assembled operator: in one dimension
+by LAPACK's symmetric tridiagonal solver \citep{virtanen2020}, with the
+eigenvalue taken as the Rayleigh quotient of the returned vector so that the
+absolute accuracy is not limited by $\varepsilon\norm{\Hh}$ ($7\times10^{-12}$
+to $2\times10^{-9}$ on the three one-dimensional grids); in
+two dimensions by a dense LAPACK decomposition of the full
+$6241\times6241$ matrix (\texttt{scripts/dense\_reference\_2d.py}), which
+agrees with the ARPACK values to all ten printed digits. ARPACK is used only
+to propose interval endpoints, never to accept them.
+
+The test suite contains 143 tests and runs with \texttt{pytest} or with an
+included minimal runner when \texttt{pytest} is unavailable. The tests that
+matter for the correctness of the certificate are the ones that compare the
+counts with dense diagonalization (both dimensions), the ones that assert
+containment for exact eigenvectors, the ones that assert \emph{refusal} of a
+degenerate state by the single-state certificate, and
+(\texttt{test\_certify\_subspace.py}) the ones that certify the same
+degenerate pair as a two-dimensional subspace, check that the certified angle
+bound dominates the true principal angle, and check that the certificate is
+invariant under a change of basis of the trial subspace.

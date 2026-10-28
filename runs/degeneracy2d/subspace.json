@@ -1,0 +1,439 @@
+{
+  "n_grid": 81,
+  "exact_spectrum": [
+    9.868336118746091,
+    24.663232167353698,
+    24.66323216735386,
+    39.45812821596152
+  ],
+  "degenerate_split": 1.6342482922482304e-13,
+  "count_reference": {
+    "lambda_first": 24.663232155590777,
+    "lambda_third": 39.45812821596246
+  },
+  "neural_overlaps": {
+    "seed0_seed1": 0.9999971453410588,
+    "seed0_seed2": 0.999959213670645,
+    "seed0_seed3": 0.009799040843396722,
+    "seed1_seed2": 0.9999778427031952,
+    "seed1_seed3": 0.012174897277392637,
+    "seed2_seed3": 0.018826388169690088
+  },
+  "rows": [
+    {
+      "case": "exact_pair",
+      "n_states": 2,
+      "verified_multiplicity": 2,
+      "first_index": 1,
+      "ritz_values": [
+        24.663232167354167,
+        24.663232167354185
+      ],
+      "residual_norms": [
+        4.200955868649952e-12,
+        4.400301169893895e-12
+      ],
+      "frobenius_residual": 6.0836404065422906e-12,
+      "interval": [
+        17.265784143049913,
+        32.06068019165777
+      ],
+      "margin": 7.397448024278919,
+      "angle_bound": 8.223971816463429e-13,
+      "true_angle": 2.3231862642624104e-16,
+      "valid": true,
+      "reason": "区间由二维 Sylvester 惯性验证恰含 2 个本征值；每个 ρ_i < δ_i；主子角界 sin Θ ≤ ρ_F/δ"
+    },
+    {
+      "case": "exact_rotated",
+      "n_states": 2,
+      "verified_multiplicity": 2,
+      "first_index": 1,
+      "ritz_values": [
+        24.663232167354142,
+        24.663232167354156
+      ],
+      "residual_norms": [
+        4.482186257208906e-12,
+        4.4189756441731186e-12
+      ],
+      "frobenius_residual": 6.294230643065729e-12,
+      "interval": [
+        17.265784143049913,
+        32.06068019165777
+      ],
+      "margin": 7.3974480242789475,
+      "angle_bound": 8.508651392220154e-13,
+      "true_angle": 3.0036615322293046e-16,
+      "valid": true,
+      "reason": "区间由二维 Sylvester 惯性验证恰含 2 个本征值；每个 ρ_i < δ_i；主子角界 sin Θ ≤ ρ_F/δ"
+    },
+    {
+      "case": "exact_single",
+      "n_states": 1,
+      "verified_multiplicity": null,
+      "first_index": null,
+      "ritz_values": [
+        24.66323216735416
+      ],
+      "residual_norms": [
+        4.389140875396031e-12
+      ],
+      "frobenius_residual": 4.389140875396031e-12,
+      "interval": null,
+      "margin": null,
+      "angle_bound": null,
+      "true_angle": null,
+      "valid": false,
+      "reason": "验证出的簇边距 δ=-2.802e-11 低于计数的分辨率下限 1.280e-05（簇与相邻谱无法用双精度惯性/Sturm 计数分离），拒绝认证"
+    },
+    {
+      "case": "exact_skipping",
+      "n_states": 2,
+      "verified_multiplicity": null,
+      "first_index": null,
+      "ritz_values": [
+        9.868336118746432,
+        39.45812821596191
+      ],
+      "residual_norms": [
+        3.4241708616099804e-12,
+        4.551863995713039e-12
+      ],
+      "frobenius_residual": 5.695999642289974e-12,
+      "interval": null,
+      "margin": null,
+      "angle_bound": null,
+      "true_angle": null,
+      "valid": false,
+      "reason": "Ritz 值 [9.86834, 39.4581] 超出了近似谱给出的 m=2 簇窗口 (24.6632, 44.3771)：给出的向量跨越了多于 2 个能级（例如漏掉了中间的本征值，或把不同簇的态混在了一起）"
+    },
+    {
+      "case": "exact_single_state_temple",
+      "n_states": 1,
+      "valid": false,
+      "reason": "无法构造单态区间: 验证出的谱隙 7.074e-09 低于双精度惯性计数的分辨率 1.280e-05（本征值简并或近简并），拒绝认证",
+      "temple_width": null,
+      "angle_bound": null
+    },
+    {
+      "case": "neural_seed0_temple",
+      "n_states": 1,
+      "valid": false,
+      "reason": "无法构造单态区间: 验证出的谱隙 3.757e-06 低于双精度惯性计数的分辨率 1.280e-05（本征值简并或近简并），拒绝认证",
+      "temple_width": null,
+      "energy": 24.663235917648795,
+      "residual": 0.026809676300296497,
+      "in_subspace": 0.9999999633078311
+    },
+    {
+      "case": "neural_seed1_temple",
+      "n_states": 1,
+      "valid": false,
+      "reason": "无法构造单态区间: 验证出的谱隙 3.930e-06 低于双精度惯性计数的分辨率 1.280e-05（本征值简并或近简并），拒绝认证",
+      "temple_width": null,
+      "energy": 24.66323609115683,
+      "residual": 0.03197432125127374,
+      "in_subspace": 0.9999999735679209
+    },
+    {
+      "case": "neural_seed2_temple",
+      "n_states": 1,
+      "valid": false,
+      "reason": "无法构造单态区间: 验证出的谱隙 4.138e-06 低于双精度惯性计数的分辨率 1.280e-05（本征值简并或近简并），拒绝认证",
+      "temple_width": null,
+      "energy": 24.663236303810667,
+      "residual": 0.03447152552108449,
+      "in_subspace": 0.9999999760154271
+    },
+    {
+      "case": "neural_seed3_temple",
+      "n_states": 1,
+      "valid": false,
+      "reason": "无法构造单态区间: 验证出的谱隙 3.756e-06 低于双精度惯性计数的分辨率 1.280e-05（本征值简并或近简并），拒绝认证",
+      "temple_width": null,
+      "energy": 24.663235923583475,
+      "residual": 0.03160843209018976,
+      "in_subspace": 0.999999976372283
+    },
+    {
+      "case": "neural_pair_seed0_1",
+      "n_states": 2,
+      "verified_multiplicity": null,
+      "first_index": null,
+      "ritz_values": [
+        24.66323412913676,
+        25.976357973294533
+      ],
+      "residual_norms": [
+        0.022085677319927353,
+        16.25229139815268
+      ],
+      "frobenius_residual": 16.252306404557174,
+      "interval": [
+        17.265784143049913,
+        32.06068019165777
+      ],
+      "margin": 6.084322218338571,
+      "angle_bound": null,
+      "true_angle": null,
+      "valid": false,
+      "reason": "Ritz 残差相对簇边距太大：ρ[1] ≥ δ_i，无法断言 θ_i 的最近本征值落在簇内（命题 1 的假设不成立）；请改进子空间或放宽 m",
+      "in_subspace": [
+        0.9999999633078311,
+        0.9999999735679209
+      ]
+    },
+    {
+      "case": "neural_pair_seed0_2",
+      "n_states": 2,
+      "verified_multiplicity": 2,
+      "first_index": 1,
+      "ritz_values": [
+        24.663234366853114,
+        24.748484282223256
+      ],
+      "residual_norms": [
+        0.02259407444068154,
+        4.598223734060407
+      ],
+      "frobenius_residual": 4.598279243442724,
+      "interval": [
+        17.265784143049913,
+        32.06068019165777
+      ],
+      "margin": 7.312195909409848,
+      "angle_bound": 0.6800741286445598,
+      "true_angle": 0.027819232670204284,
+      "valid": true,
+      "reason": "区间由二维 Sylvester 惯性验证恰含 2 个本征值；每个 ρ_i < δ_i；主子角界 sin Θ ≤ ρ_F/δ",
+      "in_subspace": [
+        0.9999999633078311,
+        0.9999999760154271
+      ]
+    },
+    {
+      "case": "neural_pair_seed0_3",
+      "n_states": 2,
+      "verified_multiplicity": 2,
+      "first_index": 1,
+      "ritz_values": [
+        24.663234775288974,
+        24.66323708861156
+      ],
+      "residual_norms": [
+        0.026427172430225146,
+        0.03197853017257017
+      ],
+      "frobenius_residual": 0.041485200188197666,
+      "interval": [
+        17.265784143049913,
+        32.06068019165777
+      ],
+      "margin": 7.397443103021544,
+      "angle_bound": 0.0056080752587545635,
+      "true_angle": 0.00029812653036850303,
+      "valid": true,
+      "reason": "区间由二维 Sylvester 惯性验证恰含 2 个本征值；每个 ρ_i < δ_i；主子角界 sin Θ ≤ ρ_F/δ",
+      "in_subspace": [
+        0.9999999633078311,
+        0.999999976372283
+      ]
+    },
+    {
+      "case": "neural_pair_seed1_2",
+      "n_states": 2,
+      "verified_multiplicity": null,
+      "first_index": null,
+      "ritz_values": [
+        24.663233781048273,
+        24.881244520334498
+      ],
+      "residual_norms": [
+        0.02181303405724899,
+        7.52580746302705
+      ],
+      "frobenius_residual": 7.525839074748315,
+      "interval": [
+        17.265784143049913,
+        32.06068019165777
+      ],
+      "margin": 7.179435671298606,
+      "angle_bound": null,
+      "true_angle": null,
+      "valid": false,
+      "reason": "Ritz 残差相对簇边距太大：ρ[1] ≥ δ_i，无法断言 θ_i 的最近本征值落在簇内（命题 1 的假设不成立）；请改进子空间或放宽 m",
+      "in_subspace": [
+        0.9999999735679209,
+        0.9999999760154271
+      ]
+    },
+    {
+      "case": "neural_pair_seed1_3",
+      "n_states": 2,
+      "verified_multiplicity": 2,
+      "first_index": 1,
+      "ritz_values": [
+        24.663235160480127,
+        24.66323683398777
+      ],
+      "residual_norms": [
+        0.030473273154159056,
+        0.03302836571024086
+      ],
+      "frobenius_residual": 0.04493877299412398,
+      "interval": [
+        17.265784143049913,
+        32.06068019165777
+      ],
+      "margin": 7.397443357645333,
+      "angle_bound": 0.006074943359897288,
+      "true_angle": 0.00023726899395533626,
+      "valid": true,
+      "reason": "区间由二维 Sylvester 惯性验证恰含 2 个本征值；每个 ρ_i < δ_i；主子角界 sin Θ ≤ ρ_F/δ",
+      "in_subspace": [
+        0.9999999735679209,
+        0.999999976372283
+      ]
+    },
+    {
+      "case": "neural_pair_seed2_3",
+      "n_states": 2,
+      "verified_multiplicity": 2,
+      "first_index": 1,
+      "ritz_values": [
+        24.663235848208576,
+        24.66323637239376
+      ],
+      "residual_norms": [
+        0.03116561055372241,
+        0.034831326021594444
+      ],
+      "frobenius_residual": 0.04673881206886734,
+      "interval": [
+        17.265784143049913,
+        32.06068019165777
+      ],
+      "margin": 7.397443819239342,
+      "angle_bound": 0.0063182802311838124,
+      "true_angle": 0.0002529320312612454,
+      "valid": true,
+      "reason": "区间由二维 Sylvester 惯性验证恰含 2 个本征值；每个 ρ_i < δ_i；主子角界 sin Θ ≤ ρ_F/δ",
+      "in_subspace": [
+        0.9999999760154271,
+        0.999999976372283
+      ]
+    },
+    {
+      "case": "neural_mixed_seed0_1",
+      "n_states": 2,
+      "verified_multiplicity": null,
+      "first_index": null,
+      "ritz_values": [
+        24.663234129138317,
+        25.97635797958946
+      ],
+      "residual_norms": [
+        0.02208567732039264,
+        16.25229140012196
+      ],
+      "frobenius_residual": 16.252306406526444,
+      "interval": [
+        17.265784143049913,
+        32.06068019165777
+      ],
+      "margin": 6.084322212043645,
+      "angle_bound": null,
+      "true_angle": null,
+      "valid": false,
+      "reason": "Ritz 残差相对簇边距太大：ρ[1] ≥ δ_i，无法断言 θ_i 的最近本征值落在簇内（命题 1 的假设不成立）；请改进子空间或放宽 m"
+    },
+    {
+      "case": "neural_mixed_seed0_3",
+      "n_states": 2,
+      "verified_multiplicity": 2,
+      "first_index": 1,
+      "ritz_values": [
+        24.663234775288952,
+        24.663237088611524
+      ],
+      "residual_norms": [
+        0.02642717247013853,
+        0.03197853013958775
+      ],
+      "frobenius_residual": 0.041485200188199275,
+      "interval": [
+        17.265784143049913,
+        32.06068019165777
+      ],
+      "margin": 7.39744310302158,
+      "angle_bound": 0.005608075258754754,
+      "true_angle": 0.0002981265303685028,
+      "valid": true,
+      "reason": "区间由二维 Sylvester 惯性验证恰含 2 个本征值；每个 ρ_i < δ_i；主子角界 sin Θ ≤ ρ_F/δ"
+    },
+    {
+      "case": "neural_partner_temple",
+      "n_states": 1,
+      "valid": false,
+      "reason": "无法构造单态区间: 验证出的谱隙 3.574e-06 低于双精度惯性计数的分辨率 1.280e-05（本征值简并或近简并），拒绝认证",
+      "temple_width": null,
+      "energy": 24.663235735866678,
+      "residual": 0.027499611304954392,
+      "in_subspace": 0.9999999720837253,
+      "overlap_with_seed": 1.1102230246251568e-18
+    },
+    {
+      "case": "neural_pair_seed_deflated",
+      "n_states": 2,
+      "verified_multiplicity": 2,
+      "first_index": 1,
+      "ritz_values": [
+        24.663235226426412,
+        24.663236427089068
+      ],
+      "residual_norms": [
+        0.025422634076758037,
+        0.028786751139112415
+      ],
+      "frobenius_residual": 0.03840556423939022,
+      "interval": [
+        17.265784143049913,
+        32.06068019165777
+      ],
+      "margin": 7.397443764544036,
+      "angle_bound": 0.005191757855172338,
+      "true_angle": 0.00027999404802330825,
+      "valid": true,
+      "reason": "区间由二维 Sylvester 惯性验证恰含 2 个本征值；每个 ρ_i < δ_i；主子角界 sin Θ ≤ ρ_F/δ",
+      "in_subspace": [
+        0.9999999633078311,
+        0.9999999720837253
+      ]
+    },
+    {
+      "case": "neural_mixed_seed_deflated",
+      "n_states": 2,
+      "verified_multiplicity": 2,
+      "first_index": 1,
+      "ritz_values": [
+        24.663235226426377,
+        24.66323642708905
+      ],
+      "residual_norms": [
+        0.025422634084415745,
+        0.02878675113234983
+      ],
+      "frobenius_residual": 0.03840556423939038,
+      "interval": [
+        17.265784143049913,
+        32.06068019165777
+      ],
+      "margin": 7.397443764544054,
+      "angle_bound": 0.005191757855172348,
+      "true_angle": 0.0002799940480233067,
+      "valid": true,
+      "reason": "区间由二维 Sylvester 惯性验证恰含 2 个本征值；每个 ρ_i < δ_i；主子角界 sin Θ ≤ ρ_F/δ"
+    }
+  ]
+}

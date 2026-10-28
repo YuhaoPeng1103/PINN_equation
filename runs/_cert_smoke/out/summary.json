@@ -1,0 +1,54 @@
+[
+  {
+    "path": "runs\\_cert_smoke\\state0\\wavefunction.npz",
+    "n_points": 2001,
+    "dx": 0.006000000000000227,
+    "certificate": {
+      "energy": 0.49999887500338097,
+      "residual_norm": 1.778842768187349e-05,
+      "weinstein_lower": 0.49998108657469914,
+      "weinstein_upper": 0.5000166634320629,
+      "interval_lower": -0.5000011250031093,
+      "interval_upper": 1.4999943749771771,
+      "temple_lower": 0.49999887468595283,
+      "temple_upper": 0.49999887532081055,
+      "spectral_gap": 0.9999954999727961,
+      "eigenfunction_angle_bound": 1.7788507731580334e-05,
+      "valid": true,
+      "reason": "Temple 区间已由 Sturm 计数验证为单态区间；区间由 isolating_interval 自动构造",
+      "state_index": 0
+    },
+    "continuous_rayleigh": 0.49999550005399873,
+    "discrete_ref": 0.49999887499367623,
+    "discrete_ref_method": "scipy_eigh_tridiagonal",
+    "discrete_ref_sturm": 0.49999887499689066,
+    "sturm_vs_independent_gap": 3.2144287231972157e-12,
+    "contains_discrete_ref": true
+  },
+  {
+    "path": "runs\\_cert_smoke\\state1\\wavefunction.npz",
+    "n_points": 2001,
+    "dx": 0.006000000000000227,
+    "certificate": {
+      "energy": 1.4999943750251943,
+      "residual_norm": 0.00014802732036028207,
+      "weinstein_lower": 1.4998463477033341,
+      "weinstein_upper": 1.5001424023470544,
+      "interval_lower": 0.49999887499689066,
+      "interval_upper": 2.499985374912285,
+      "temple_lower": 1.499994353111508,
+      "temple_upper": 1.499994396938979,
+      "spectral_gap": 0.9999909998855906,
+      "eigenfunction_angle_bound": 0.0001480286531757042,
+      "valid": true,
+      "reason": "Temple 区间已由 Sturm 计数验证为单态区间；区间由 isolating_interval 自动构造",
+      "state_index": 1
+    },
+    "continuous_rayleigh": 1.4999775003779408,
+    "discrete_ref": 1.4999943749809526,
+    "discrete_ref_method": "scipy_eigh_tridiagonal",
+    "discrete_ref_sturm": 1.4999943749771774,
+    "sturm_vs_independent_gap": 3.775202372935382e-12,
+    "contains_discrete_ref": true
+  }
+]

@@ -1,0 +1,299 @@
+\section{Certified counting and the continuous operator}
+\label{sec:certified}
+
+Sections~\ref{sec:cert}--\ref{sec:subspace} certify quantities computed from
+$\Hh$ in double precision, and Section~\ref{sec:fp} names two limitations: the
+count $N(\sigma)$ is a combinatorial object read off a floating-point
+factorization, and every statement refers to $\Hh$ rather than to
+$\mathcal H$. This section attacks both with two constructions that turn out
+to be cheap: a directed-rounding count, which removes the first limitation in
+one dimension and in two whenever the potential is separable, and a
+variational bound on the continuous eigenvalue, which removes half of the
+second---the upper side---for every potential and needs no reference solution
+and no interpolation constant.
+
+\subsection{Directed rounding}
+
+An interval $[a,b]$ represents every real in it; an operation returns
+$\{x\circ y : x\in[a,b],\,y\in[c,d]\}$ rounded outward. The implementation is
+a few dozen lines: each endpoint is moved one ulp outward with
+\texttt{nextafter}, which is enough because IEEE\,754 arithmetic is correctly
+rounded, so the exact result of a single operation lies within half an ulp of
+the computed one. This is not higher-precision arithmetic---the precision is
+still double---but every rounding is forced to the side that preserves the
+statement.
+
+What the resulting count certifies must be stated carefully, because it is
+easy to overclaim. The certified matrix is the one the implementation actually
+stores: diagonal entries $h^{-2}+V_i$, off-diagonals $-\tfrac12h^{-2}$, each
+taken as an exact real number. A certified count is therefore a theorem about
+\emph{that} symmetric tridiagonal matrix. Any difference between it and the
+matrix a reader would write down from \eqref{eq:Hh} is a modelling question
+(rounding of $h^{-2}$, of the potential samples), not a counting question.
+
+\subsection{One dimension: pivots rather than determinants}
+
+For a symmetric tridiagonal $T=\Hh-\sigma I$ with diagonal $a_k$ and
+off-diagonal $b_k$, the number of eigenvalues below $\sigma$ is the number of
+negative pivots in the $LDL^\top$ factorization, i.e.\ of the recurrence
+\begin{equation}
+  q_1 = a_1-\sigma,\qquad q_k = (a_k-\sigma) - \frac{b_{k-1}^2}{q_{k-1}} ,
+  \label{eq:pivot}
+\end{equation}
+by Sylvester's law of inertia. The determinant recurrence
+$d_k=(a_k-\sigma)d_{k-1}-b_{k-1}^2d_{k-2}$ computes the same sign pattern in
+exact arithmetic, and we tried it first: it is unusable. In intervals the
+relative width of $d_k$ exceeds $1$---so the interval contains zero and the
+sign is undecidable---after $35$ to $45$ steps, on every one of the $363$
+scan shifts at $N=2001$ (\texttt{runs/directed\_count/stats.json}). The
+determinant cancels catastrophically because it alternates in sign and nearly
+does so at the scale of the spectrum's bulk. Equation~\eqref{eq:pivot} avoids
+this: when the pivot is resolved, the quotient $b^2/q_{k-1}$ is a small
+correction to $a_k-\sigma$, and the interval stays narrow to the end of the
+recurrence. The cost is one division per node, which must be refused when the
+pivot interval straddles zero.
+
+That refusal is the whole point. A count that cannot be decided is reported as
+uncertified with the index of the offending pivot, and the caller must handle
+it; it is never rounded to an integer. On three potentials at $N=2001$, over
+$121$ shifts spanning the low spectrum, $361$ of $363$ shifts were certified
+and every certified value equals both the floating-point count and the dense
+eigen-decomposition (\texttt{runs/directed\_count/stats.json}). Both refusals
+are at the scan's last shift, which in each scan coincides exactly with an
+eigenvalue in double precision---precisely the case a rigorous implementation
+must refuse---and the refusal names the offending pivot (index $999$). A
+median count costs $5$\,ms, against
+$0.4$\,ms for the floating-point version (\texttt{runs/\_bench/count\_timing.json})---a
+factor of thirteen.
+
+Two further uses follow. Bisecting on the certified count produces a
+\emph{certified bracket} for a discrete eigenvalue; when the bisection
+reaches the resolution of the recurrence it stops and returns the last
+verified bracket instead of failing. This is what the driver
+\texttt{scripts/continuous\_bound.py} reports in the $\lambda_h$ column of
+Table~\ref{tab:continuous} for the one-dimensional rows and, through the
+Kronecker route described below, for the two separable two-dimensional
+potentials as well; only the anharmonic potential's
+$\lambda_h$ is a sparse-factorization eigenvalue rather than a certified
+bracket.
+
+\subsection{Two dimensions: a Kronecker sum, and why not elimination}
+
+The obvious two-dimensional analogue is a banded $LDL^\top$ in intervals. It
+does not work, and the failure is quantitative rather than a matter of
+implementation: the elimination divides by pivots and the interval width is
+amplified at each step, so pivots straddle zero long before the factorization
+ends. At $361$ unknowns, $6$ of $10$ shifts could not be counted; the relative
+pivot width reached $0.93$ immediately before one of the refusals, and the
+earliest refusal came at step $174$ of the elimination, where the width was
+$0.44$ (\texttt{runs/directed\_count/stats.json}). Symmetric pivoting does
+not repair this, because the difficulty is overestimation, not a zero pivot.
+
+For a separable potential, however, no elimination is needed at all. If
+$V(x,y)=V_x(x)+V_y(y)$ then
+\begin{equation}
+  \Hh = A_x\otimes I + I\otimes A_y
+  \label{eq:kron}
+\end{equation}
+exactly, with $A_x,A_y$ the one-dimensional operators on the two grids, so
+$\spec(\Hh)=\{\mu_i+\nu_j\}$ and
+\begin{equation}
+  N(\sigma) = \#\{(i,j): \mu_i+\nu_j < \sigma\}.
+\end{equation}
+Each one-dimensional eigenvalue is bracketed by the certified count of the
+previous subsection, and the two-dimensional count is a comparison of sums. A pair whose sum interval straddles $\sigma$ makes the count refuse. That
+is not a property of degenerate levels as such---any $\sigma$ inside the
+certified bracket of a pair refuses---but in the cluster protocol the scan
+places $\sigma$ on a level, and for the box, whose spectrum has
+multiplicities, the midpoint of a degenerate pair is the eigenvalue
+itself. On the harmonic and box potentials at $81\times81$, all
+$25$ shifts of a scan were certified with zero disagreements against the
+floating-point inertia count, at $18$\,ms per count. The non-separable
+anharmonic potential is refused outright, with a reason, rather than
+silently falling back to floating point. Bisecting on this count yields
+certified brackets for the two-dimensional eigenvalues themselves---widths
+of $1.4$--$6.0\times10^{-11}$ for the harmonic oscillator and
+$3.7\times10^{-10}$--$2.5\times10^{-9}$ for the box between $41$ and $101$
+points per side---which is where the two-dimensional $\lambda_h$ of
+Table~\ref{tab:continuous} comes from.
+
+\subsection{A variational bound for the continuous operator}
+\label{sec:variational}
+
+Every statement so far concerns $\Hh$. The gap to $\mathcal H$ was left as an
+open item because the standard routes---an eigenvalue-perturbation estimate
+with an explicit $O(h^2)$ constant, or a homotopy/Newton enclosure of the
+elliptic problem---need regularity or pointwise bounds that a trained network
+does not supply.
+
+One direction needs none of that. By the min--max principle,
+\begin{equation}
+  \lambda_1(\mathcal H) = \min_{u\in H^1_0}\ \frac{\tfrac12\int u'^2 + \int V u^2}{\int u^2}
+  \;\le\; R(u)
+  \qquad\text{for every } u\in H^1_0 ,
+  \label{eq:minmax}
+\end{equation}
+so \emph{any} conforming trial function yields an upper bound on the
+continuous ground-state energy. The P1 (bilinear, in 2D) interpolant of a
+sampled function is continuous and vanishes at the boundary, hence is in
+$H^1_0$: the network's own eigenfunction, once interpolated, is a legitimate
+trial function. No reference solution, no grid operator and no interpolation
+constant enters. This is the precise sense in which the certificate now
+reaches the continuous operator.
+
+The arithmetic of \eqref{eq:minmax} must be distinguished from its
+mathematics. In exact arithmetic the stiffness term is exact on our grids:
+piecewise constant in one dimension, and a polynomial of degree two in each
+variable in two dimensions, which the Gauss rule integrates exactly. The
+potential term is integrated by Gauss quadrature on each element, which is
+exact when $V u^2$ is a polynomial of low degree there---true for the
+harmonic oscillator, the box, and, with the breakpoints supplied as element
+boundaries, the finite well. Rather than trust the hypothesis, the code
+evaluates the potential integral under two Gauss rules of different order and
+refuses the bound whenever the two intervals fail to intersect; a kinked
+potential whose kink lies inside an element is caught by that check. What the
+code does \emph{not} do is evaluate the element integrals in interval
+arithmetic: the accumulations are outward-rounded, with a padding that grows
+with the number of terms, but the element-level arithmetic and the evaluation
+of $V$ at the Gauss nodes are ordinary double precision. For the potentials
+here that rounding is a few ulp, orders of magnitude below the padding the
+summation already carries and eleven orders below the bracket it is compared
+with; it is nevertheless a gap, and a user who needs it closed must supply an
+interval evaluation of $V$. The one-sided statement---$\lambda_1(\mathcal H)
+\le R(\psi_h)$---is then a theorem about the computed quotient up to that
+rounding, and exactly a theorem about the quotient in exact arithmetic.
+
+Table~\ref{tab:continuous} applies \eqref{eq:minmax} to the coarse and fine
+ends of each of the six problems. Two columns matter. The bracket
+$R(\psi_h)-\lambda_h$ contracts by the ratio that $O(h^2)$ predicts when the
+grid is refined: $6.2$--$6.3$ for the three two-dimensional potentials between
+$41$ and $101$ points per side (prediction $6.25$) and $56$--$64$ for the
+harmonic oscillator and the infinite well between $501$ and $4001$ (prediction $64$;
+the finite well has no such ratio, because its bracket changes sign, as
+discussed below). At the
+coarse grid the reference value lies between the two columns in all five
+cases where it is known; at the fine grid in four of five, the exception
+being the finite well, discussed below. For the
+two-dimensional anharmonic potential, where no reference exists, the bracket
+is a \emph{one-sided} statement: the true ground-state energy is at most the
+tabulated $R(\psi_h)$.
+
+\begin{table}[t]
+\centering
+\input{tables/tab_continuous}
+\caption{Discrete eigenvalue $\lambda_h$ (the midpoint of a directed-rounding
+bracket wherever the potential is separable---all one-dimensional rows, and
+the harmonic and box in two dimensions; a sparse-factorization eigenvalue
+for the anharmonic potential) and the
+variational upper bound $R(\psi_h)$ of \eqref{eq:minmax} on the P1/Q1
+interpolant of the discrete eigenvector. The final column asks whether the
+reference value $\lambda^\star$ lies in $[\lambda_h,R(\psi_h)]$; ``--'' means
+no reference is known. The finite well's failure at $N=4001$ is real---it
+fails already at $N=2001$---and is discussed in the text.}
+\label{tab:continuous}
+\end{table}
+
+\subsection{The two sides are not symmetric}
+
+The upper bound is unconditional; the lower side is not, and one of our own
+potentials shows why. The finite well has a discontinuous $V$, so the local
+truncation error of the three-point stencil is $O(h)$---not $O(h^2)$---near the
+jump, and its \emph{sign depends on where the jump falls relative to the
+grid}. Across the twelve grids $N=1000,\dots,1011$ on the same well, the
+discrete ground energy lies above the continuous value on six and below on
+six, with errors up to $1.4\times10^{-2}$ and no monotone decay
+(\texttt{runs/continuous\_bound/alignment.json}). Figure~\ref{fig:alignment}
+shows the twelve signs.
+
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+  width=0.78\linewidth, height=0.40\linewidth,
+  xlabel={grid points $N$}, ylabel={$\lambda_h-\lambda^\star$},
+  ymin=-0.017, ymax=0.017,
+  xtick={1000,1002,1004,1006,1008,1010},
+  tick label style={font=\footnotesize},
+  label style={font=\small},
+  grid=major, grid style={dotted,gray!45},
+  axis line style={gray!70},
+]
+\addplot+[ycomb, mark=*, mark size=1.1pt, thick, blue!55!black]
+  table[col sep=comma, x=N, y=error]
+  {figures/data/finite_well_alignment.csv};
+\draw[black!55, dashed, line width=0.4pt]
+  (axis cs:999.5,0) -- (axis cs:1011.5,0);
+\end{axis}
+\end{tikzpicture}
+\caption{The finite well on twelve consecutive grids: the same potential,
+only the grid moved. The discrete ground energy alternates above and below
+the continuous value, with no trend in $N$, so the sign of the
+discretization error is a property of the alignment of the jump with the
+grid rather than of the grid size. Plotted from
+\texttt{runs/continuous\_bound/alignment.json}; the $N=4001$ point discussed
+in the text lies outside the window.}
+\label{fig:alignment}
+\end{figure}
+
+The mechanism is visible on a single grid. At $N=4001$ the jump falls exactly
+on a node, and the value that node receives---inside the well or outside---is
+the whole error: keeping the grid and sampling that one point as $-50$ instead
+of $0$ moves $\lambda_h$ by $7.4\times10^{-3}$, from $+3.67\times10^{-3}$ to
+$-3.73\times10^{-3}$, straddling the true value. The convention used in the
+table (the node outside, so the well is one grid point narrower) is what puts
+$\lambda_h$ above $\lambda^\star$, and is why the finite-well bracket of
+Table~\ref{tab:continuous} does not contain it at the finer grid. Neither
+convention is more accurate; the discrete energy of a discontinuous potential
+at an aligned grid is not a variationally consistent estimate of the
+continuous one, and no amount of rounding control changes that.
+
+The lesson is not that the count is wrong---it is certified, and it is a
+certified statement about the stored matrix---but that a certified discrete
+calculation does not by itself certify a continuous quantity when the method
+is not variationally consistent. The same grid on a smooth potential behaves:
+for the harmonic oscillator the discrete value is below the continuous one at
+every grid we tried.
+
+For the infinite well the lower side can also be made rigorous, and by an elementary
+inequality rather than a numerical observation. On $[0,1]$ with $h=1/(n+1)$,
+the eigenvalues of $\Hh=-\tfrac12\Delta_h$ are
+\begin{equation}
+  \lambda_j^{(h)} = \frac{2}{h^2}\sin^2\frac{j\pi h}{2},
+  \qquad
+  \lambda_j = \frac{j^2\pi^2}{2},
+  \label{eq:sine}
+\end{equation}
+and $\sin\theta\le\theta$ gives $\lambda_j^{(h)}\le\lambda_j$ for every $j$ and
+every $h$. In two dimensions the same argument applies along each axis, and
+since the ordering of sums is preserved, $\lambda^{(h)}_j\le\lambda_j$ holds
+for the entire spectrum of the two-dimensional box. There both ends are
+provable: the sine inequality puts the discrete eigenvalue below
+$\lambda^\star$, \eqref{eq:minmax} puts $\lambda^\star$ below $R(\psi_h)$, and
+the certified bracket locates the discrete eigenvalue to
+$2.5\times10^{-9}$---five orders of magnitude inside the margin
+$8\times10^{-4}$ between the two bounds at the finer grid, so the tabulated
+midpoint can be replaced by the bracket's lower endpoint without changing the
+conclusion. For the other potentials
+we do not have a lower bound, and we do not claim one: the honest summary is
+that \eqref{eq:minmax} makes the continuous eigenvalue certifiable from above
+for every potential---for the harmonic oscillator the discrete value is below
+the continuous one at every grid we tried (\texttt{bound.json})---and from
+below only where a comparison principle is available.
+
+\subsection{What this changes}
+
+The protocol of Section~\ref{sec:protocol} is unchanged, and so is the cluster
+construction: what limits a certificate at a degenerate level is the
+resolution at which two shifts can be separated, and wherever the count is
+certified, directed rounding replaces ``double precision with guards'' by
+``provable or refused'' at that same resolution. The experiments of Section~\ref{sec:results} still count in
+floating point with the guards of Section~\ref{sec:counting}, at $0.4$\,ms
+rather than $5$\,ms per count: the two agree on every shift at which the
+certified count does not refuse, and the certified function takes the same
+arguments when the guarantee rather than the speed is wanted. What does change
+is the answer to the question a referee
+should ask of any certified eigenvalue of a \emph{discretized} problem: how
+far is this from the equation you actually wanted to solve? The upper bound
+answers it with a number, for every trial function the practitioner already
+has---including the trained one---and it is the only one of the two sides that
+holds without a comparison principle.

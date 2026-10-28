@@ -1,0 +1,418 @@
+{
+  "potential": "finite_well",
+  "reference": -48.98104795947302,
+  "grids": [
+    1000,
+    1001,
+    1002,
+    1003,
+    1004,
+    1005,
+    1006,
+    1007,
+    1008,
+    1009,
+    1010,
+    1011,
+    4001
+  ],
+  "rows": [
+    {
+      "N": 1000,
+      "h": 0.016016016016015655,
+      "discrete": -48.968592679416105,
+      "reference": -48.98104795947302,
+      "error": 0.012455280056911988,
+      "sign": "above",
+      "jumps": [
+        {
+          "jump": -1.0,
+          "cells": 437.06250000000983,
+          "offset_h": 0.06250000000983391,
+          "nearest_node": -1.0010010010011587,
+          "v_at_node": 0.0,
+          "v_inside": -50.0
+        },
+        {
+          "jump": 1.0,
+          "cells": 561.9375000000126,
+          "offset_h": -0.06249999998738076,
+          "nearest_node": 1.0010010010007981,
+          "v_at_node": 0.0,
+          "v_inside": -50.0
+        }
+      ],
+      "hole_at_jump": false,
+      "discrete_closed": -48.968592679416105,
+      "error_closed": 0.012455280056911988,
+      "convention_shift": 0.0
+    },
+    {
+      "N": 1001,
+      "h": 0.016000000000000014,
+      "discrete": -48.9816732118787,
+      "reference": -48.98104795947302,
+      "error": -0.0006252524056833408,
+      "sign": "below",
+      "jumps": [
+        {
+          "jump": -1.0,
+          "cells": 437.4999999999996,
+          "offset_h": 0.4999999999996021,
+          "nearest_node": -1.0079999999999938,
+          "v_at_node": 0.0,
+          "v_inside": -50.0
+        },
+        {
+          "jump": 1.0,
+          "cells": 562.4999999999995,
+          "offset_h": 0.49999999999954525,
+          "nearest_node": 0.992000000000008,
+          "v_at_node": -50.0,
+          "v_inside": -50.0
+        }
+      ],
+      "hole_at_jump": false,
+      "discrete_closed": -48.9816732118787,
+      "error_closed": -0.0006252524056833408,
+      "convention_shift": 0.0
+    },
+    {
+      "N": 1002,
+      "h": 0.01598401598401633,
+      "discrete": -48.99448123603436,
+      "reference": -48.98104795947302,
+      "error": -0.013433276561343632,
+      "sign": "below",
+      "jumps": [
+        {
+          "jump": -1.0,
+          "cells": 437.9374999999905,
+          "offset_h": -0.06250000000949285,
+          "nearest_node": -0.999000999000847,
+          "v_at_node": -50.0,
+          "v_inside": -50.0
+        },
+        {
+          "jump": 1.0,
+          "cells": 563.0624999999878,
+          "offset_h": 0.06249999998783551,
+          "nearest_node": 0.9990009990011934,
+          "v_at_node": -50.0,
+          "v_inside": -50.0
+        }
+      ],
+      "hole_at_jump": false,
+      "discrete_closed": -48.99448123603436,
+      "error_closed": -0.013433276561343632,
+      "convention_shift": 0.0
+    },
+    {
+      "N": 1003,
+      "h": 0.01596806387225591,
+      "discrete": -48.97796969034985,
+      "reference": -48.98104795947302,
+      "error": 0.0030782691231650006,
+      "sign": "above",
+      "jumps": [
+        {
+          "jump": -1.0,
+          "cells": 438.3749999999884,
+          "offset_h": 0.37499999998840394,
+          "nearest_node": -1.005988023951911,
+          "v_at_node": 0.0,
+          "v_inside": -50.0
+        },
+        {
+          "jump": 1.0,
+          "cells": 563.6249999999851,
+          "offset_h": -0.375000000014893,
+          "nearest_node": 1.0059880239523338,
+          "v_at_node": 0.0,
+          "v_inside": -50.0
+        }
+      ],
+      "hole_at_jump": false,
+      "discrete_closed": -48.97796969034985,
+      "error_closed": 0.0030782691231650006,
+      "convention_shift": 0.0
+    },
+    {
+      "N": 1004,
+      "h": 0.015952143569291977,
+      "discrete": -48.99082558452038,
+      "reference": -48.98104795947302,
+      "error": -0.009777625047362903,
+      "sign": "below",
+      "jumps": [
+        {
+          "jump": -1.0,
+          "cells": 438.81250000000404,
+          "offset_h": -0.18749999999596412,
+          "nearest_node": -0.9970089730808223,
+          "v_at_node": -50.0,
+          "v_inside": -50.0
+        },
+        {
+          "jump": 1.0,
+          "cells": 564.1875000000052,
+          "offset_h": 0.1875000000052296,
+          "nearest_node": 0.9970089730806748,
+          "v_at_node": -50.0,
+          "v_inside": -50.0
+        }
+      ],
+      "hole_at_jump": false,
+      "discrete_closed": -48.99082558452038,
+      "error_closed": -0.009777625047362903,
+      "convention_shift": 0.0
+    },
+    {
+      "N": 1005,
+      "h": 0.015936254980079667,
+      "discrete": -48.974260821884386,
+      "reference": -48.98104795947302,
+      "error": 0.0067871375886312535,
+      "sign": "above",
+      "jumps": [
+        {
+          "jump": -1.0,
+          "cells": 439.2500000000004,
+          "offset_h": 0.2500000000003979,
+          "nearest_node": -1.0039840637450261,
+          "v_at_node": 0.0,
+          "v_inside": -50.0
+        },
+        {
+          "jump": 1.0,
+          "cells": 564.7500000000005,
+          "offset_h": -0.24999999999954525,
+          "nearest_node": 1.003984063745012,
+          "v_at_node": 0.0,
+          "v_inside": -50.0
+        }
+      ],
+      "hole_at_jump": false,
+      "discrete_closed": -48.974260821884386,
+      "error_closed": 0.0067871375886312535,
+      "convention_shift": 0.0
+    },
+    {
+      "N": 1006,
+      "h": 0.01592039800994982,
+      "discrete": -48.987164647288324,
+      "reference": -48.98104795947302,
+      "error": -0.006116687815307387,
+      "sign": "below",
+      "jumps": [
+        {
+          "jump": -1.0,
+          "cells": 439.6875000000118,
+          "offset_h": -0.31249999998817657,
+          "nearest_node": -0.9950248756220788,
+          "v_at_node": -50.0,
+          "v_inside": -50.0
+        },
+        {
+          "jump": 1.0,
+          "cells": 565.3125000000152,
+          "offset_h": 0.31250000001523404,
+          "nearest_node": 0.9950248756216489,
+          "v_at_node": -50.0,
+          "v_inside": -50.0
+        }
+      ],
+      "hole_at_jump": false,
+      "discrete_closed": -48.987164647288324,
+      "error_closed": -0.006116687815307387,
+      "convention_shift": 0.0
+    },
+    {
+      "N": 1007,
+      "h": 0.01590457256461253,
+      "discrete": -48.97054661327854,
+      "reference": -48.98104795947302,
+      "error": 0.010501346194473626,
+      "sign": "above",
+      "jumps": [
+        {
+          "jump": -1.0,
+          "cells": 440.1249999999944,
+          "offset_h": 0.1249999999943725,
+          "nearest_node": -1.0019880715704872,
+          "v_at_node": 0.0,
+          "v_inside": -50.0
+        },
+        {
+          "jump": 1.0,
+          "cells": 565.8749999999927,
+          "offset_h": -0.12500000000727596,
+          "nearest_node": 1.0019880715706915,
+          "v_at_node": 0.0,
+          "v_inside": -50.0
+        }
+      ],
+      "hole_at_jump": false,
+      "discrete_closed": -48.97054661327854,
+      "error_closed": 0.010501346194473626,
+      "convention_shift": 0.0
+    },
+    {
+      "N": 1008,
+      "h": 0.01588877855014914,
+      "discrete": -48.98349843099754,
+      "reference": -48.98104795947302,
+      "error": -0.0024504715245257103,
+      "sign": "below",
+      "jumps": [
+        {
+          "jump": -1.0,
+          "cells": 440.56249999999494,
+          "offset_h": -0.43750000000505906,
+          "nearest_node": -0.9930486593842289,
+          "v_at_node": -50.0,
+          "v_inside": -50.0
+        },
+        {
+          "jump": 1.0,
+          "cells": 566.4374999999934,
+          "offset_h": 0.43749999999340616,
+          "nearest_node": 0.9930486593844137,
+          "v_at_node": -50.0,
+          "v_inside": -50.0
+        }
+      ],
+      "hole_at_jump": false,
+      "discrete_closed": -48.98349843099754,
+      "error_closed": -0.0024504715245257103,
+      "convention_shift": 0.0
+    },
+    {
+      "N": 1009,
+      "h": 0.015873015873015817,
+      "discrete": -48.966827071323095,
+      "reference": -48.98104795947302,
+      "error": 0.014220888149921507,
+      "sign": "above",
+      "jumps": [
+        {
+          "jump": -1.0,
+          "cells": 441.0000000000016,
+          "offset_h": 1.5916157281026244e-12,
+          "nearest_node": -1.0000000000000249,
+          "v_at_node": 0.0,
+          "v_inside": -50.0
+        },
+        {
+          "jump": 1.0,
+          "cells": 567.000000000002,
+          "offset_h": 2.0463630789890885e-12,
+          "nearest_node": 0.999999999999968,
+          "v_at_node": -50.0,
+          "v_inside": -50.0
+        }
+      ],
+      "hole_at_jump": true,
+      "discrete_closed": -48.996182526113785,
+      "error_closed": -0.015134566640767844,
+      "convention_shift": -0.02935545479068935
+    },
+    {
+      "N": 1010,
+      "h": 0.015857284440039976,
+      "discrete": -48.97982694230251,
+      "reference": -48.98104795947302,
+      "error": 0.001221017170507821,
+      "sign": "above",
+      "jumps": [
+        {
+          "jump": -1.0,
+          "cells": 441.43749999999073,
+          "offset_h": 0.4374999999907345,
+          "nearest_node": -1.0069375619423706,
+          "v_at_node": 0.0,
+          "v_inside": -50.0
+        },
+        {
+          "jump": 1.0,
+          "cells": 567.5624999999881,
+          "offset_h": -0.4375000000119371,
+          "nearest_node": 1.0069375619427063,
+          "v_at_node": 0.0,
+          "v_inside": -50.0
+        }
+      ],
+      "hole_at_jump": false,
+      "discrete_closed": -48.97982694230251,
+      "error_closed": 0.001221017170507821,
+      "convention_shift": 0.0
+    },
+    {
+      "N": 1011,
+      "h": 0.015841584158415856,
+      "discrete": -48.99255812451854,
+      "reference": -48.98104795947302,
+      "error": -0.011510165045521603,
+      "sign": "below",
+      "jumps": [
+        {
+          "jump": -1.0,
+          "cells": 441.8749999999996,
+          "offset_h": -0.1250000000003979,
+          "nearest_node": -0.9980198019801918,
+          "v_at_node": -50.0,
+          "v_inside": -50.0
+        },
+        {
+          "jump": 1.0,
+          "cells": 568.1249999999995,
+          "offset_h": 0.12499999999954525,
+          "nearest_node": 0.998019801980206,
+          "v_at_node": -50.0,
+          "v_inside": -50.0
+        }
+      ],
+      "hole_at_jump": false,
+      "discrete_closed": -48.99255812451854,
+      "error_closed": -0.011510165045521603,
+      "convention_shift": 0.0
+    },
+    {
+      "N": 4001,
+      "h": 0.0039999999999995595,
+      "discrete": -48.97737542282871,
+      "reference": -48.98104795947302,
+      "error": 0.003672536644309332,
+      "sign": "above",
+      "jumps": [
+        {
+          "jump": -1.0,
+          "cells": 1750.0000000001928,
+          "offset_h": 1.9281287677586079e-10,
+          "nearest_node": -1.000000000000771,
+          "v_at_node": 0.0,
+          "v_inside": -50.0
+        },
+        {
+          "jump": 1.0,
+          "cells": 2250.000000000248,
+          "offset_h": 2.4783730623312294e-10,
+          "nearest_node": 0.9999999999990088,
+          "v_at_node": -50.0,
+          "v_inside": -50.0
+        }
+      ],
+      "hole_at_jump": true,
+      "discrete_closed": -48.984778635298916,
+      "error_closed": -0.0037306758258992545,
+      "convention_shift": -0.007403212470208587
+    }
+  ],
+  "window": [
+    1000,
+    1011
+  ],
+  "above_in_window": 6,
+  "below_in_window": 6,
+  "max_abs_error": 0.014220888149921507
+}

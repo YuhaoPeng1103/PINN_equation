@@ -1,0 +1,11 @@
+任务总数 9，待运行 9，并发 2
+[1/9] OK harmonic2d/seed0 109s
+[2/9] OK harmonic2d/seed1 109s
+[3/9] OK harmonic2d/seed2 108s
+[4/9] OK well2d/seed0 108s
+[5/9] OK well2d/seed1 108s
+[6/9] OK well2d/seed2 108s
+[7/9] OK anharmonic2d/seed0 108s
+[8/9] OK anharmonic2d/seed1 108s
+[9/9] OK anharmonic2d/seed2 99s
+写出 D:\Neural_Network_Based_Schrödinger_Equation\runs\seeds2d\manifest_2d.json；失败 0

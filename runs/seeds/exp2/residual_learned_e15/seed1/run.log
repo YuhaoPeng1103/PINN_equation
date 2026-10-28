@@ -1,0 +1,1 @@
+[worker] exp2 state=0 seed=1 -> energy_model=5.4012e+00, energy_ref=5.0000e-01, energy_abs_err=4.9012e+00, energy_rel_err=9.8023e+00, overlap=4.8122e-03, inf_norm=9.1263e-01, residual_rms=2.6628e-01

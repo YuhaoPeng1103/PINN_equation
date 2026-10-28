@@ -1,0 +1,175 @@
+{
+  "potential": "infinite_well",
+  "state": 0,
+  "seed": 1,
+  "epochs": 3000,
+  "width": 64,
+  "depth": 3,
+  "learned_energy": false,
+  "residual_energy": "reference",
+  "use_energy": true,
+  "weights": {
+    "residual": 1.0,
+    "normalization": 100.0,
+    "boundary": 100.0,
+    "energy": 10.0
+  },
+  "learned_energy_value": null,
+  "metrics": {
+    "energy_model": 4.934790834899893,
+    "energy_ref": 4.934802200544679,
+    "energy_abs_err": 1.1365644786209828e-05,
+    "energy_rel_err": 2.3031611651942897e-06,
+    "overlap": 0.999999999893224,
+    "inf_norm": 3.326709096701519e-05,
+    "residual_rms": 0.0963048544677474
+  },
+  "certificate": {
+    "energy": 4.934801778772597,
+    "residual_norm": 0.09891289684236475,
+    "weinstein_lower": 4.835888881925297,
+    "weinstein_upper": 5.033714675619897,
+    "interval_lower": 3.9348011857364327,
+    "interval_upper": 19.73919256753288,
+    "temple_lower": 4.93414090988752,
+    "temple_upper": 4.944585534137159,
+    "spectral_gap": 1.0000005930312295,
+    "eigenfunction_angle_bound": 0.09907484219488584,
+    "valid": true,
+    "reason": "Temple 区间已由 Sturm 计数验证为单态区间；区间由 isolating_interval 自动构造",
+    "state_index": 0,
+    "width": 0.010444624249639212
+  },
+  "history": {
+    "epoch": [
+      1,
+      300,
+      600,
+      900,
+      1200,
+      1500,
+      1800,
+      2100,
+      2400,
+      2700,
+      3000
+    ],
+    "loss": [
+      14286.852157045925,
+      131.98430771287207,
+      54.456436635660566,
+      49.5258932622568,
+      49.431155753819716,
+      49.39547232890214,
+      49.37905468077827,
+      49.3700291941021,
+      49.364119855272,
+      49.35990440321133,
+      49.35686649611737
+    ],
+    "val_loss": [
+      95.98380982504341,
+      82.51787752351724,
+      63.33744020223679,
+      4.833967660898134,
+      0.3019232523532699,
+      0.1771017530182839,
+      0.11721799703592384,
+      0.08287201029498645,
+      0.06140627953044655,
+      0.04733530512129142,
+      0.03776319906585195,
+      0.030975760371426176,
+      0.02592377920177819,
+      0.021975425731420917,
+      0.018763154631765474,
+      0.016079195302277475,
+      0.01380582551388705,
+      0.011872168843924698,
+      0.01022977696084256,
+      0.00884019842552023
+    ],
+    "energy": [],
+    "seconds": [
+      0.006463999998231884,
+      0.8368914000020595,
+      1.7091035999983433,
+      2.506601100001717,
+      3.357692899997346,
+      4.341229500001646,
+      5.142066499996872,
+      5.966787799996382,
+      6.764391800003068,
+      7.68992199999775,
+      8.446713099998306
+    ],
+    "weights": [
+      {
+        "residual": 1.0,
+        "normalization": 100.0,
+        "boundary": 100.0,
+        "energy": 10.0
+      },
+      {
+        "residual": 1.0,
+        "normalization": 100.0,
+        "boundary": 100.0,
+        "energy": 10.0
+      },
+      {
+        "residual": 1.0,
+        "normalization": 100.0,
+        "boundary": 100.0,
+        "energy": 10.0
+      },
+      {
+        "residual": 1.0,
+        "normalization": 100.0,
+        "boundary": 100.0,
+        "energy": 10.0
+      },
+      {
+        "residual": 1.0,
+        "normalization": 100.0,
+        "boundary": 100.0,
+        "energy": 10.0
+      },
+      {
+        "residual": 1.0,
+        "normalization": 100.0,
+        "boundary": 100.0,
+        "energy": 10.0
+      },
+      {
+        "residual": 1.0,
+        "normalization": 100.0,
+        "boundary": 100.0,
+        "energy": 10.0
+      },
+      {
+        "residual": 1.0,
+        "normalization": 100.0,
+        "boundary": 100.0,
+        "energy": 10.0
+      },
+      {
+        "residual": 1.0,
+        "normalization": 100.0,
+        "boundary": 100.0,
+        "energy": 10.0
+      },
+      {
+        "residual": 1.0,
+        "normalization": 100.0,
+        "boundary": 100.0,
+        "energy": 10.0
+      },
+      {
+        "residual": 1.0,
+        "normalization": 100.0,
+        "boundary": 100.0,
+        "energy": 10.0
+      }
+    ]
+  }
+}

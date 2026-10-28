@@ -1,0 +1,170 @@
+D:\Neural_Network_Based_Schr\xf6dinger_Equation\tests\test_losses.py:48: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\torch\csrc\autograd\generated\python_variable_methods.cpp:839.)
+  r = float(losses.residual(model, x, 0.5, lambda t: 0.5 * t**2))
+D:\Neural_Network_Based_Schr\xf6dinger_Equation\tests\test_physics_spectrum.py:48: RuntimeWarning: invalid value encountered in divide
+  ratio = psi(x) / raw
+未找到 pytest，使用内置 minipytest 运行器
+
+[test_certified_count.py]
+  PASS test_certified_count::test_interval_arithmetic_brackets_the_exact_value
+  PASS test_certified_count::test_count_matches_dense_spectrum_across_shifts
+  PASS test_certified_count::test_count_is_monotone_in_the_shift
+  PASS test_certified_count::test_count_refuses_exactly_at_an_eigenvalue
+  PASS test_certified_count::test_brackets_contain_the_dense_eigenvalues
+  PASS test_certified_count::test_separable_count_matches_dense_2d_spectrum
+  PASS test_certified_count::test_separable_count_refuses_a_non_separable_potential
+  PASS test_certified_count::test_separable_count_refuses_a_degenerate_shift
+  PASS test_certified_count::test_count_certificate_serialises
+  PASS test_certified_count::test_separable_bracket_contains_the_dense_eigenvalue_and_is_narrow
+  PASS test_certified_count::test_separable_bracket_refuses_for_a_non_separable_potential
+[test_certify.py]
+  PASS test_certify::test_rayleigh_and_residual_on_exact_ground_state
+  PASS test_certify::test_temple_certificate_contains_discrete_ground_energy_and_is_tight
+  PASS test_certify::test_temple_certificate_for_first_excited_state
+  PASS test_certify::test_infinite_well_exact_discrete_state_gets_tight_certificate
+  PASS test_certify::test_sturm_count_matches_dense_diagonalization
+  PASS test_certify::test_discrete_eigenvalue_matches_dense_diagonalization
+  PASS test_certify::test_isolating_interval_is_verified_and_automatic
+  PASS test_certify::test_non_isolating_interval_is_rejected
+  PASS test_certify::test_temple_arithmetic_matches_formula
+  PASS test_certify::test_temple_bounds_uses_correct_denominators
+  PASS test_certify::test_temple_condition_is_enforced
+  PASS test_certify::test_mixture_gets_a_wider_but_still_valid_certificate
+  PASS test_certify::test_angle_bound_formula
+  PASS test_certify::test_invalid_interval_is_reported_not_hidden
+  PASS test_certify::test_without_interval_only_weinstein
+  PASS test_certify::test_heuristic_interval_leaves_room_for_neighbors
+  PASS test_certify::test_zero_wavefunction_is_rejected
+  PASS test_certify::test_nonuniform_grid_is_rejected
+  PASS test_certify::test_sturm_count_survives_shift_exactly_on_diagonal
+[test_certify2d.py]
+  PASS test_certify2d::test_inertia_count_matches_dense_eigenvalues
+  PASS test_certify2d::test_approximate_spectrum_matches_dense
+  PASS test_certify2d::test_rayleigh_and_residual_on_exact_eigenvector
+  PASS test_certify2d::test_exact_eigenvector_certificate_is_valid_and_contains_reference
+  PASS test_certify2d::test_degenerate_excited_state_is_refused
+  PASS test_certify2d::test_discrete_eigenvalue_2d_matches_dense
+  PASS test_certify2d::test_grid_validation_rejects_bad_input
+  PASS test_certify2d::test_dst1_2d_is_involution
+  PASS test_certify2d::test_filter_with_full_cutoff_keeps_interior
+  PASS test_certify2d::test_guided_filter_recovers_exact_well_mode
+  PASS test_certify2d::test_transported_angle_bound_covers_true_angle_2d
+[test_certify_subspace.py]
+  PASS test_certify_subspace::test_1d_cluster_contains_exact_eigenvalues
+  PASS test_certify_subspace::test_1d_cluster_contains_shifted_block
+  PASS test_certify_subspace::test_1d_rank_deficient_is_refused
+  PASS test_certify_subspace::test_2d_degenerate_pair_is_certified
+  PASS test_certify_subspace::test_2d_single_member_of_degenerate_pair_is_refused
+  PASS test_certify_subspace::test_2d_basis_independence
+  PASS test_certify_subspace::test_2d_mismatched_multiplicity_is_refused
+  PASS test_certify_subspace::test_explicit_interval_is_verified_not_trusted
+  PASS test_certify_subspace::test_certificate_serialises
+  PASS test_certify_subspace::test_2d_perturbed_subspace_still_certified
+  PASS test_certify_subspace::test_2d_coarse_subspace_is_refused_not_faked
+[test_continuous_bound.py]
+  PASS test_continuous_bound::test_sine_trial_function_reproduces_the_box_energy
+  PASS test_continuous_bound::test_bound_dominates_the_true_energy_and_converges_at_second_order
+  PASS test_continuous_bound::test_quadrature_check_rejects_a_kinked_potential
+  PASS test_continuous_bound::test_kinked_potential_is_accepted_when_the_kink_is_a_breakpoint
+  PASS test_continuous_bound::test_two_dimensional_quadrature_check_rejects_a_non_polynomial
+  PASS test_continuous_bound::test_two_dimensional_quadrature_accepts_the_quartic_anharmonic
+  PASS test_continuous_bound::test_two_dimensional_q1_bound_matches_the_tensor_product_on_a_rectangle
+  PASS test_continuous_bound::test_two_dimensional_bound_dominates_pi_squared
+  PASS test_continuous_bound::test_box_lower_bound_is_below_the_continuum_and_increases
+[test_data_targets.py]
+  PASS test_data_targets::test_grid_defaults
+  PASS test_data_targets::test_target_values_within_h
+  PASS test_data_targets::test_unknown_target
+  PASS test_data_targets::test_similarity_identity_and_orthogonality
+[test_eigen.py]
+  PASS test_eigen::test_dense_random_matches_numpy
+  PASS test_eigen::test_tridiagonal_identity
+  PASS test_eigen::test_tridiagonal_wrapper_builds_from_diagonals
+  PASS test_eigen::test_tridiagonal_larger
+  PASS test_eigen::test_diagonal_matrix
+  PASS test_eigen::test_largest_off_diagonal
+  PASS test_eigen::test_harmonic_hamiltonian_spectrum
+[test_evaluate.py]
+  PASS test_evaluate::test_perfect_solution_scores_perfectly
+  PASS test_evaluate::test_orthogonal_noise_is_caught
+  PASS test_evaluate::test_rayleigh_energy_matches_for_exact_state
+  PASS test_evaluate::test_residual_rms_of_exact_state_small
+  PASS test_evaluate::test_format_table
+[test_filtering.py]
+  PASS test_filtering::test_dst1_is_involution_and_matches_matrix
+  PASS test_filtering::test_filter_keeps_low_modes_and_zeroes_high_modes
+  PASS test_filtering::test_filter_rejects_bad_cutoff_and_shape
+  PASS test_filtering::test_guided_filter_recovers_a_state_hidden_by_high_frequency_noise
+  PASS test_filtering::test_guided_filter_scan_is_reported
+  PASS test_filtering::test_transported_angle_bound_covers_raw_output
+[test_inputs.py]
+  PASS test_inputs::test_uniform_collocation
+  PASS test_inputs::test_energy_blocks_one_per_energy
+  PASS test_inputs::test_well_aware_collocation_covers_edges
+  PASS test_inputs::test_hhl_input_map_is_affine
+  PASS test_inputs::test_hhl_pairs_shape
+  PASS test_inputs::test_dirichlet_points
+[test_losses.py]
+  PASS test_losses::test_normalization_and_boundary_zero_for_exact_state
+  PASS test_losses::test_residual_vanishes_for_exact_solution
+  PASS test_losses::test_energy_expectation_matches_reference
+  PASS test_losses::test_compute_weighting_and_skips
+  PASS test_losses::test_total_loss_requires_a_term
+  PASS test_losses::test_orthogonality
+  PASS test_losses::test_grad_balance_norm_shape
+  PASS test_losses::test_energy_projected_preserves_derivative
+  PASS test_losses::test_energy_projected_rejects_lower_state
+  PASS test_losses::test_discrete_terms_energy_has_a_lower_bound_with_nonzero_endpoints
+[test_networks.py]
+  PASS test_networks::test_mlp_shape_and_dtype
+  PASS test_networks::test_mlp_is_differentiable_twice
+  PASS test_networks::test_fourier_features_shape
+  PASS test_networks::test_hhl_network_io
+  PASS test_networks::test_spectral_solver_harmonic
+  PASS test_networks::test_spectral_solver_well
+[test_numerov.py]
+  PASS test_numerov::test_harmonic_exact_odd_states
+  PASS test_numerov::test_harmonic_all_states_close
+  PASS test_numerov::test_even_states_are_second_order_accurate
+  PASS test_numerov::test_infinite_well_against_analytic
+  PASS test_numerov::test_finite_well_monotone
+  PASS test_numerov::test_wavefunctions_orthonormal_and_shape
+  PASS test_numerov::test_energy_window_too_small
+[test_physics_spectrum.py]
+  PASS test_physics_spectrum::test_harmonic_energies
+  PASS test_physics_spectrum::test_harmonic_wavefunction_matches_analytic
+  PASS test_physics_spectrum::test_harmonic_orthogonality
+  PASS test_physics_spectrum::test_infinite_well_energies_and_boundaries
+  PASS test_physics_spectrum::test_infinite_well_zero_at_nodes
+  PASS test_physics_spectrum::test_finite_well_binding_energies_ordering
+  PASS test_physics_spectrum::test_finite_well_norm_and_tails
+  PASS test_physics_spectrum::test_hydrogen_energies
+  PASS test_physics_spectrum::test_hydrogen_1s_normalization
+  PASS test_physics_spectrum::test_fix_sign_convention
+  PASS test_physics_spectrum::test_hhl_normalization
+  PASS test_physics_spectrum::test_get_reference_dispatch
+[test_potentials.py]
+  PASS test_potentials::test_harmonic_potential
+  PASS test_potentials::test_infinite_well_potential_jumps
+  PASS test_potentials::test_finite_well_potential
+  PASS test_potentials::test_poschl_teller_symmetric
+  PASS test_potentials::test_unknown_potential
+[test_seed_aggregation.py]
+  PASS test_seed_aggregation::test_stats_uses_sample_std
+  PASS test_seed_aggregation::test_exp2_summary_discovers_each_seed
+  PASS test_seed_aggregation::test_learned_energy_reports_per_seed_state
+  PASS test_seed_aggregation::test_exp3_summary_filename_includes_k
+  PASS test_seed_aggregation::test_exp1_summary_separates_train_and_interpolation
+[test_train.py]
+  PASS test_train::test_trainer_reduces_loss
+  PASS test_train::test_evaluate_on_grid_shape
+  PASS test_train::test_trainer_detects_non_finite
+  PASS test_train::test_grad_balance_produces_weights
+  PASS test_train::test_grad_balance_off_uses_plain_sum
+  PASS test_train::test_term_weights_are_applied
+[test_verify.py]
+  PASS test_verify::test_harmonic_ground_state_cross_check
+  PASS test_verify::test_finite_well_cross_check
+  PASS test_verify::test_convergence_reduces_error
+
+143 passed, 0 failed, 0 skipped

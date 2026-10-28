@@ -1,0 +1,223 @@
+\section{Certified clusters: subspaces, not individual states}
+\label{sec:subspace}
+
+The certificate of Section~\ref{sec:cert} answers the question ``which
+eigenvalue is this state?''. At a degenerate level that question has no
+answer: the problem does not define a single eigenvector, and a network that
+solves it exactly returns an arbitrary element of a two-dimensional space
+that depends on its seed. The honest object to certify is therefore the
+\emph{invariant subspace}, and the honest statement is about the cluster of
+eigenvalues it spans. This section gives that statement; it is what turns the
+refusal of Section~\ref{sec:degeneracy} into a positive result.
+
+Guaranteed two-sided bounds for eigenvalue clusters, multiplicity included,
+already exist for conforming discretizations \citep{cances2020}. The setting
+here differs in one respect that changes what has to be computed: a network
+output is not a Galerkin projection, so no discretization parameter controls
+its error and no saturation hypothesis relates it to an enriched space. Both
+the cluster interval and the multiplicity must therefore be obtained from the
+count, and the vector-side statement is a principal-angle bound that assumes
+nothing about how the trial subspace was produced.
+
+\subsection{The trial subspace and its residual}
+\label{sec:sub}
+
+Let $\psi_1,\dots,\psi_m\in\R^{|I|}$ be $m$ approximations---$m$ network
+outputs, $m$ snapshots of one training run, or $m$ vectors from any other
+source---and let $X=[x_1,\dots,x_m]$ be an orthonormal basis of their span,
+$\langle x_i,x_j\rangle_h=\delta_{ij}$, obtained by symmetric
+orthogonalization $X=\Psi G^{-1/2}$, $G_{ij}=\langle\psi_i,\psi_j\rangle_h$.
+This choice matters: $G^{-1/2}$ is invariant under rotations of the input
+basis, so the certificate depends on $\operatorname{span}\{\psi_j\}$ and not
+on how the columns were ordered or mixed. If $G$ is singular the $m$ vectors
+do not span an $m$-dimensional space and the certificate refuses before
+computing anything else.
+
+The compression of $\Hh$ to the trial subspace and its residual are
+\begin{equation}
+  M = X^{\mathsf T}\!\Hh X\in\R^{m\times m},\qquad
+  R = \Hh X - X M ,
+  \qquad \rho_F=\norm{R}_F ,
+  \label{eq:rr}
+\end{equation}
+and the Rayleigh--Ritz pairs $(\theta_i,y_i)$, $My_i=\theta_iy_i$ with
+$\theta_1\le\cdots\le\theta_m$, give the Ritz vectors $x_i\leftarrow X y_i$
+(we reuse the symbol, since $\{Xy_i\}$ is again an orthonormal basis of the
+same subspace) and the residual
+\begin{equation}
+  r_i=\Hh x_i-\theta_i x_i = R y_i ,\qquad
+  \rho_i=\norm{r_i}_h,\qquad \sum_i \rho_i^2=\rho_F^2 .
+  \label{eq:ritzres}
+\end{equation}
+Everything in \eqref{eq:rr}--\eqref{eq:ritzres} is computed from the
+approximations alone.
+
+\subsection{Two propositions}
+\label{sec:props}
+
+Write $N(\sigma)=\#\{i:\lambda_i<\sigma\}$ for the verified count of
+Section~\ref{sec:counting}, and suppose an interval $(a,b)$ has been
+\emph{verified} to contain exactly $m$ eigenvalues,
+\begin{equation}
+  N(b)-N(a)=m ,
+  \label{eq:cluster}
+\end{equation}
+counting multiplicity. Let $V\subset\R^{|I|}$ be the corresponding invariant
+subspace, $\dim V=m$, and let $P_V$ be the orthogonal projector onto it in
+$\langle\cdot,\cdot\rangle_h$. Define the cluster margin
+\begin{equation}
+  \delta_i=\min(\theta_i-a,\,b-\theta_i),\qquad \delta=\min_i\delta_i .
+  \label{eq:margin}
+\end{equation}
+
+\begin{lemma}[Cluster localization]\label{lem:cluster}
+  Assume \eqref{eq:cluster}, $\theta_i\in(a,b)$ for all $i$, and
+  $\rho_i<\delta_i$. Then
+  \[
+    \operatorname{dist}\big(\theta_i,\ \spec(\Hh)\cap(a,b)\big)\le\rho_i
+    \qquad\text{for every }i .
+  \]
+\end{lemma}
+\begin{proof}
+  The pair $(x_i,\theta_i)$ is an approximate eigenpair in the sense of
+  Definition~\ref{def:pair} with $\norm{x_i}_h=1$ and residual $r_i$, so
+  Lemma~\ref{lem:weinstein} gives
+  $\operatorname{dist}(\theta_i,\spec(\Hh))\le\rho_i$. Every eigenvalue of
+  $\Hh$ outside $(a,b)$ is at distance at least $\delta_i$ from $\theta_i$,
+  and $\rho_i<\delta_i$; hence the eigenvalue realizing the distance lies
+  inside $(a,b)$.
+\end{proof}
+
+Lemma~\ref{lem:cluster} is the statement the single-state certificate cannot
+make: it is valid no matter how close the $\theta_i$ are to each other,
+because it never asks the interval to separate them. What it does not give is
+an identification: when $\rho_i\ge\delta_i/2$ the intervals
+$[\theta_i-\rho_i,\theta_i+\rho_i]$ may cover the same eigenvalue twice, and
+the certificate makes no claim about which cluster eigenvalue belongs to
+which Ritz value. At a degenerate level no such claim exists.
+
+The angle between the trial subspace and $V$ obeys a Davis--Kahan inequality
+in which the role of the spectral gap is played by the margin
+\eqref{eq:margin}.
+
+\begin{theorem}[Principal angle]\label{thm:angle}
+  Under the hypotheses of Lemma~\ref{lem:cluster},
+  \[
+    \sin\Theta\big(\operatorname{span}X,\,V\big)\ \le\ \frac{\rho_F}{\delta},
+  \]
+  where $\Theta$ is the largest principal angle between the two subspaces.
+\end{theorem}
+\begin{proof}
+  Let $\{\varphi_j\}$ be an orthonormal eigenbasis of $\Hh$ with
+  $\Hh\varphi_j=\lambda_j\varphi_j$, and expand
+  $x_i=\sum_j c_{ij}\varphi_j$. Since $\Hh x_i-\theta_i x_i
+  =\sum_j(\lambda_j-\theta_i)c_{ij}\varphi_j$,
+  \[
+    \rho_i^2=\sum_j(\lambda_j-\theta_i)^2c_{ij}^2
+    \ \ge\ \delta_i^2\!\!\sum_{j:\,\lambda_j\notin(a,b)}\!\! c_{ij}^2
+    \ =\ \delta_i^2\,\big\lVert P_V^{\perp}x_i\big\rVert_h^2 ,
+  \]
+  because an eigenvalue outside $(a,b)$ differs from $\theta_i\in(a,b)$ by at
+  least $\delta_i$. The Ritz vectors form an orthonormal basis of
+  $\operatorname{span}X$, so
+  \[
+    \big\lVert P_V^{\perp}X\big\rVert_F^2
+    =\sum_i\big\lVert P_V^{\perp}x_i\big\rVert_h^2
+    \le\sum_i\frac{\rho_i^2}{\delta_i^2}
+    \le\frac{\rho_F^2}{\delta^2},
+  \]
+  and the sine of the largest principal angle is the spectral norm of
+  $P_V^{\perp}$ restricted to $\operatorname{span}X$, which is bounded by the
+  Frobenius norm.
+\end{proof}
+
+Theorem~\ref{thm:angle} is the quantitative statement that a set of network
+outputs spans the right subspace. For a single state ($m=1$) it reduces to
+the Davis--Kahan bound \eqref{eq:dk} with $\delta$ in place of $\gamma$, which
+is the same inequality shifted by $\eta$; the cluster version is not a
+sharper theorem, it is the same theorem applied to the object that remains
+well defined when the eigenvalue is degenerate.
+
+\subsection{The cluster certificate}
+\label{sec:cluster-alg}
+
+The certificate is assembled exactly as in Section~\ref{sec:isolating}, with
+$m$ in place of $1$:
+
+\begin{enumerate}
+\item \emph{Rank.} Form $G$ and refuse if it is numerically singular.
+\item \emph{Rayleigh--Ritz.} Compute $M$, $\theta_i$, $\rho_i$, $\rho_F$
+  from \eqref{eq:rr}--\eqref{eq:ritzres}.
+\item \emph{Interval.} Propose $a$ and $b$ at the midpoints of the spectral
+  gaps on either side of the block of $m$ approximate eigenvalues that
+  matches $\{\theta_i\}$ (ARPACK is used to propose, never to decide), then
+  \emph{verify} \eqref{eq:cluster}. If the proposal fails, bracket the two
+  counting transitions by bisection and verify again; if that fails too, the
+  refusal reason distinguishes a multiplicity mismatch from a subspace that
+  spans more than one cluster.
+\item \emph{Accept} if $\delta$ exceeds the resolution floor \eqref{eq:floor}
+  and $\rho_i<\delta_i$ for every $i$; then report the interval $(a,b)$, the
+  per-value enclosures $[\theta_i-\rho_i,\theta_i+\rho_i]$, and the angle
+  bound of Theorem~\ref{thm:angle}. Otherwise refuse, with the reason.
+\end{enumerate}
+
+The cost is two verified counts---one sparse factorization each---one
+$m\times m$ symmetric diagonalization, and $m$ applications of $\Hh$; it does
+not grow with the number of requested eigenvalues beyond the $m$ matrix--vector
+products, and it is negligible next to training.
+
+Three properties are worth stating explicitly. First, $m$ is \emph{measured},
+not asserted: the count decides whether the trial subspace has the dimension
+the invariant subspace has, and a subspace that missed a state is refused
+rather than certified with a smaller dimension. Second, Lemma~\ref{lem:cluster}
+brackets each of the $m$ eigenvalues to within $\rho_i$ of a Ritz value, and the
+multiplicity itself is verified only down to the counting resolution
+\eqref{eq:floor}; both hold independently of how accurate the network is: a
+poor subspace yields a poor angle bound but never a wrong multiplicity. Third, the interval may
+contain a block of adjacent distinct eigenvalues; degeneracy is the case that
+motivates the construction, not a special case of it.
+
+The refusal reasons are meant to be actionable, and that suggests a
+procedural use of the certificate. A multiplicity mismatch says that the trial
+subspace missed a state of the cluster or covered more than one cluster, and
+tells the user how many vectors to supply or how to split them;
+$\rho_i\ge\delta_i$ says that the subspace is not an accurate enough
+approximation and that more training is required; a span whose second
+direction is the difference of nearly identical outputs says that the runs
+collapsed and that a further direction must be forced, which is done by
+deflating the accepted outputs as well and retraining. The loop
+\emph{train, certify, deflate, retrain} is what produced the accepted neural
+pair of Section~\ref{sec:deg-results}, and its termination argument is the one
+familiar from deflated eigensolvers: each accepted direction is projected out
+of the residual that the next run minimises.
+
+\begin{remark}[What a cluster certificate does not say]
+\label{rem:cluster-not}
+It does not say that $\theta_i$ approximates $\lambda_i$ in the matching
+order, and it does not give an $O(\rho^2)$ enclosure: for $m=1$ the
+Kato--Temple bound of Theorem~\ref{thm:temple} is sharper and should be
+preferred whenever its hypothesis holds. It also does not resolve eigenvalues
+that the counting cannot separate, exactly as in \eqref{eq:floor}; what it
+does is to make the resolution floor the \emph{only} obstacle, removing the
+structural one.
+\end{remark}
+
+\begin{remark}[Do independent runs span a degenerate level?]\label{rem:two}
+It is tempting to certify a degenerate level by training $m$ networks and
+certifying their span, and the answer depends on the data rather than on the
+construction. In our experiments three of four independent runs collapsed onto
+the same symmetry-broken representative (pairwise overlap $>0.9999$) while the
+fourth found the orthogonal partner. The certificate accepted every pair
+containing the fourth run, with bounds of $5.6$--$6.3\times10^{-3}$; it refused
+the two remaining pairs of near-identical outputs, $(0,1)$ and $(1,2)$, whose
+second directions are differences of norm $2.4\times10^{-3}$ and
+$6.7\times10^{-3}$---for both, the Ritz residual of that direction ($16.3$ and
+$7.5$) exceeds the margin ($6.1$ and $7.2$), so the span contains no invariant
+subspace of dimension two; and it accepted the pair $(0,2)$, which omits the
+fourth run, only with a bound two orders of magnitude looser ($0.68$), which
+is the honest signal that its second direction was mostly noise. The certified
+object is the subspace, not the individual vector, and the certificate sorts
+sets of outputs by how much of a second direction they actually contain. When the answer is negative the
+second direction can be forced by deflating the first output as well, as in
+Section~\ref{sec:deg-results}.
+\end{remark}

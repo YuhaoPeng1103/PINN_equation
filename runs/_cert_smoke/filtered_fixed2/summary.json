@@ -1,0 +1,289 @@
+[
+  {
+    "path": "runs\\_cert_smoke\\exp5_fixed2\\wavefunction.npz",
+    "filtered_path": "runs\\_cert_smoke\\filtered_fixed2\\runs___cert_smoke__exp5_fixed2.npz",
+    "cutoff": 15,
+    "reason": "取证书宽度最小的截断阶数",
+    "l2_change": 8.766341414159637e-05,
+    "rel_l2_change": 8.766621741397567e-05,
+    "raw_certificate": {
+      "energy": 0.5000196965753902,
+      "residual_norm": 0.36071995492368697,
+      "weinstein_lower": 0.13929974165070327,
+      "weinstein_upper": 0.8607396515000773,
+      "interval_lower": -0.5000011250031093,
+      "interval_upper": 1.4999943749771771,
+      "temple_lower": 0.36989751579266317,
+      "temple_upper": 0.6301358732323507,
+      "spectral_gap": 0.9999746784007869,
+      "eigenfunction_angle_bound": 0.36904949737900133,
+      "valid": true,
+      "reason": "Temple 区间已由 Sturm 计数验证为单态区间；区间由 isolating_interval 自动构造",
+      "state_index": 0
+    },
+    "raw_width": 0.2602383574396875,
+    "filtered_certificate": {
+      "energy": 0.5000079307717242,
+      "residual_norm": 0.005109820345579007,
+      "weinstein_lower": 0.49489811042514525,
+      "weinstein_upper": 0.5051177511183033,
+      "interval_lower": -0.5000011250031093,
+      "interval_upper": 1.4999943749771771,
+      "temple_lower": 0.49998182015281,
+      "temple_upper": 0.5000340408002417,
+      "spectral_gap": 0.9999864442044529,
+      "eigenfunction_angle_bound": 0.005109911851823173,
+      "valid": true,
+      "reason": "Temple 区间已由 Sturm 计数验证为单态区间；区间由 isolating_interval 自动构造",
+      "state_index": 0
+    },
+    "filtered_width": 5.2220647431711065e-05,
+    "filtered_angle": 0.005109911851823173,
+    "discrete_ref": 0.4999988749974843,
+    "target_state": 0,
+    "state_matches_target": true,
+    "filtered_contains_ref": true,
+    "scan": [
+      {
+        "cutoff": 1,
+        "energy": 2.386706841553987,
+        "residual_norm": 2.789634804652452,
+        "width": null,
+        "valid": false,
+        "state_index": 2,
+        "same_state": false,
+        "reason": "Temple 二次界不可用（残差相对谱隙太大）: Temple 条件 r² < (upper−η)(η−lower) 不成立: r²=7.78206, 阈值=0.987146"
+      },
+      {
+        "cutoff": 2,
+        "energy": 2.3867069551721425,
+        "residual_norm": 2.789634886061993,
+        "width": null,
+        "valid": false,
+        "state_index": 2,
+        "same_state": false,
+        "reason": "Temple 二次界不可用（残差相对谱隙太大）: Temple 条件 r² < (upper−η)(η−lower) 不成立: r²=7.78206, 阈值=0.987146"
+      },
+      {
+        "cutoff": 3,
+        "energy": 1.0376257140575418,
+        "residual_norm": 1.9528821142859978,
+        "width": null,
+        "valid": false,
+        "state_index": 1,
+        "same_state": false,
+        "reason": "Temple 二次界不可用（残差相对谱隙太大）: Temple 条件 r² < (upper−η)(η−lower) 不成立: r²=3.81375, 阈值=0.786204"
+      },
+      {
+        "cutoff": 4,
+        "energy": 1.0376257965920113,
+        "residual_norm": 1.9528822190467567,
+        "width": null,
+        "valid": false,
+        "state_index": 1,
+        "same_state": false,
+        "reason": "Temple 二次界不可用（残差相对谱隙太大）: Temple 条件 r² < (upper−η)(η−lower) 不成立: r²=3.81375, 阈值=0.786204"
+      },
+      {
+        "cutoff": 5,
+        "energy": 0.6171964112526398,
+        "residual_norm": 0.9959893996078516,
+        "width": null,
+        "valid": false,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 二次界不可用（残差相对谱隙太大）: Temple 条件 r² < (upper−η)(η−lower) 不成立: r²=0.991995, 阈值=0.98626"
+      },
+      {
+        "cutoff": 6,
+        "energy": 0.6171964080460763,
+        "residual_norm": 0.9959891747441014,
+        "width": null,
+        "valid": false,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 二次界不可用（残差相对谱隙太大）: Temple 条件 r² < (upper−η)(η−lower) 不成立: r²=0.991994, 阈值=0.98626"
+      },
+      {
+        "cutoff": 8,
+        "energy": 0.5158566032527527,
+        "residual_norm": 0.3910673107962119,
+        "width": 0.30594492875510054,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由 Sturm 计数验证为单态区间；区间由 isolating_interval 自动构造"
+      },
+      {
+        "cutoff": 10,
+        "energy": 0.5012741250567194,
+        "residual_norm": 0.11875356116386566,
+        "width": 0.028204926072285808,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由 Sturm 计数验证为单态区间；区间由 isolating_interval 自动构造"
+      },
+      {
+        "cutoff": 12,
+        "energy": 0.5000646818852484,
+        "residual_norm": 0.027059082152261188,
+        "width": 0.001464391157522893,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由 Sturm 计数验证为单态区间；区间由 isolating_interval 自动构造"
+      },
+      {
+        "cutoff": 15,
+        "energy": 0.5000079307717242,
+        "residual_norm": 0.005109820345579007,
+        "width": 5.2220647431711065e-05,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由 Sturm 计数验证为单态区间；区间由 isolating_interval 自动构造"
+      },
+      {
+        "cutoff": 18,
+        "energy": 0.5000079323191446,
+        "residual_norm": 0.005110828585208677,
+        "width": 5.224125720476591e-05,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由 Sturm 计数验证为单态区间；区间由 isolating_interval 自动构造"
+      },
+      {
+        "cutoff": 20,
+        "energy": 0.5000079361983794,
+        "residual_norm": 0.005119586089478564,
+        "width": 5.242044340836305e-05,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由 Sturm 计数验证为单态区间；区间由 isolating_interval 自动构造"
+      },
+      {
+        "cutoff": 25,
+        "energy": 0.500008038090381,
+        "residual_norm": 0.005365299485401904,
+        "width": 5.757300868336479e-05,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由 Sturm 计数验证为单态区间；区间由 isolating_interval 自动构造"
+      },
+      {
+        "cutoff": 30,
+        "energy": 0.5000080644379156,
+        "residual_norm": 0.005438452181993259,
+        "width": 5.915365937564365e-05,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由 Sturm 计数验证为单态区间；区间由 isolating_interval 自动构造"
+      },
+      {
+        "cutoff": 40,
+        "energy": 0.5000080903424522,
+        "residual_norm": 0.005565274709453497,
+        "width": 6.19447065676737e-05,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由 Sturm 计数验证为单态区间；区间由 isolating_interval 自动构造"
+      },
+      {
+        "cutoff": 50,
+        "energy": 0.5000081004864111,
+        "residual_norm": 0.005626524310724322,
+        "width": 6.331569610762422e-05,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由 Sturm 计数验证为单态区间；区间由 isolating_interval 自动构造"
+      },
+      {
+        "cutoff": 60,
+        "energy": 0.5000081099398717,
+        "residual_norm": 0.0057194659661615535,
+        "width": 6.542473109100166e-05,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由 Sturm 计数验证为单态区间；区间由 isolating_interval 自动构造"
+      },
+      {
+        "cutoff": 80,
+        "energy": 0.5000081581568501,
+        "residual_norm": 0.006499344820233792,
+        "width": 8.448315828374353e-05,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由 Sturm 计数验证为单态区间；区间由 isolating_interval 自动构造"
+      },
+      {
+        "cutoff": 100,
+        "energy": 0.5000081968036948,
+        "residual_norm": 0.007224709923607311,
+        "width": 0.0001043931038600121,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由 Sturm 计数验证为单态区间；区间由 isolating_interval 自动构造"
+      },
+      {
+        "cutoff": 150,
+        "energy": 0.500008207447574,
+        "residual_norm": 0.007637574769130168,
+        "width": 0.00011666536122195703,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由 Sturm 计数验证为单态区间；区间由 isolating_interval 自动构造"
+      },
+      {
+        "cutoff": 200,
+        "energy": 0.5000082177290954,
+        "residual_norm": 0.008227664389136842,
+        "width": 0.0001353892292457748,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由 Sturm 计数验证为单态区间；区间由 isolating_interval 自动构造"
+      },
+      {
+        "cutoff": 300,
+        "energy": 0.5000082330867891,
+        "residual_norm": 0.010091478079180965,
+        "width": 0.00020367631994627766,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由 Sturm 计数验证为单态区间；区间由 isolating_interval 自动构造"
+      },
+      {
+        "cutoff": 400,
+        "energy": 0.5000082665987731,
+        "residual_norm": 0.01565824685833469,
+        "width": 0.0004903624947399932,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由 Sturm 计数验证为单态区间；区间由 isolating_interval 自动构造"
+      },
+      {
+        "cutoff": 600,
+        "energy": 0.5000150649646803,
+        "residual_norm": 0.2616008887610723,
+        "width": 0.13687035800936098,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由 Sturm 计数验证为单态区间；区间由 isolating_interval 自动构造"
+      }
+    ]
+  }
+]

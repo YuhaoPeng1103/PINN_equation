@@ -1,0 +1,13 @@
+﻿{
+  "python": "3.11.9",
+  "platform": "Windows-10-10.0.26300-SP0",
+  "numpy": "2.4.6",
+  "torch": "2.12.0+cpu",
+  "cuda": false,
+  "device": "cpu",
+  "notes": [
+    "实验在 D:\\Python-3.11 环境下运行（该环境装有 torch）",
+    "默认沙箱的 Python 3.12 未装 torch，仅用于纯 numpy 的 physics 层",
+    "pytest 不可用，测试使用 tests/minipytest.py"
+  ]
+}

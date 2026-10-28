@@ -1,0 +1,7 @@
+    energy_model = 4.038332e+00
+      energy_ref = 5.000000e-01
+  energy_abs_err = 3.538332e+00
+  energy_rel_err = 7.076663e+00
+         overlap = 5.458405e-01
+        inf_norm = 5.830168e-01
+    residual_rms = 1.004006e+00

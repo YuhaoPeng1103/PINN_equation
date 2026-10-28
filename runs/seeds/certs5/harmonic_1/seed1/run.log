@@ -1,0 +1,1 @@
+[worker] exp5 harmonic state=1 seed=1 -> energy_model=1.8486e+00, energy_ref=1.5000e+00, energy_abs_err=3.4863e-01, energy_rel_err=2.3242e-01, overlap=2.4380e-02, inf_norm=1.0393e+00, residual_rms=5.9863e-01

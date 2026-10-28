@@ -1,0 +1,170 @@
+\section{The protocol}
+\label{sec:protocol}
+
+A certificate is only as meaningful as the object it is applied to. This
+section describes the three decisions that turn the machinery of
+Section~\ref{sec:cert} into a procedure that produces an honest number for a
+trained network. Figure~\ref{fig:pipeline} shows the pipeline; each subsection
+below justifies one arrow.
+
+\begin{figure}[tb]
+\centering
+\begin{tikzpicture}[font=\small,
+  box/.style={draw, rounded corners=2pt, align=center, inner sep=3pt,
+              minimum height=14mm, text width=1.5cm, fill=white},
+  arr/.style={-{Stealth[length=1.8mm]}, semithick},
+  lab/.style={midway, above=0.9cm, font=\scriptsize}]
+\node[box] (net)  {network output\\ $\psi_\theta$};
+\node[box, right=1.05cm of net] (fil)
+      {guided DST filter\\ $(K_x,K_y)$};
+\node[box, right=1.05cm of fil] (cnt)
+      {verified counts\\ $N(a)$, $N(b)$};
+\node[box, right=1.05cm of cnt] (enc)
+      {Temple\\ bound $I$};
+\node[box, right=1.05cm of enc] (trn)
+      {certified angle\\ for $\psi_\theta$};
+\draw[arr] (net) -- (fil) node[lab] {$\psi_K$};
+\draw[arr] (fil) -- (cnt) node[lab] {$\eta,\rho$};
+\draw[arr] (cnt) -- (enc) node[lab] {count $1$};
+\draw[arr] (enc) -- (trn) node[lab] {Lemma~\ref{lem:transport}};
+\draw[arr, dashed] (enc.south) -- ++(0,-1.0) -| (fil.south)
+      node[pos=0.25, below, font=\scriptsize] {re-filter if worse};
+\end{tikzpicture}
+\caption{The certification pipeline. The counters are called for each
+candidate truncation pair; the filter keeps the narrowest enclosure among
+those whose verified state index agrees with that of the unfiltered output
+(Section~\ref{sec:filter}). The parenthesised arrows are the feedback that
+makes the filter guided rather than fixed.}
+\label{fig:pipeline}
+\end{figure}
+
+\subsection{A residual whose energy cannot leak}
+\label{sec:leakage}
+
+The training objective is the squared residual of \eqref{eq:residual}, a term
+that fixes the scale, a boundary term and an energy term,
+\begin{equation}
+  \begin{split}
+  \mathcal L(\theta) &=
+  \operatorname*{mean}_{i}\big(\Hh\psi_\theta-\eta(\psi_\theta)\psi_\theta\big)_i^2
+  + w_n\big(\langle\psi_\theta,\psi_\theta\rangle_h-1\big)^2 \\
+  &\quad + w_b\big(\psi_\theta(a)^2+\psi_\theta(b)^2\big)
+  + w_e\,\eta(\psi_\theta),
+  \end{split}
+  \label{eq:loss}
+\end{equation}
+with $(w_n,w_b,w_e)=(100,100,10)$ in one dimension. In two dimensions the
+residual and the energy are evaluated on the unit iterate
+$u=\psi_\theta/\norm{\psi_\theta}_h$, the Dirichlet condition is imposed
+exactly by replacing the network output with
+$\psi_\theta\leftarrow M\odot\psi_\theta$, where
+$M(x,y)=(x-a)(b-x)(y-a)(b-y)$, so the boundary term vanishes identically and
+$w_e=10$ is kept. In both dimensions $\eta(\psi_\theta)$ is the Rayleigh
+quotient of the iterate, treated as a constant in the backward pass (it is the
+minimizer over $E$, so detaching it leaves the gradient correct).
+
+Four properties of \eqref{eq:loss} matter for certification. First, because
+the residual uses the same $\eta$ as the certificate, the training objective
+and the certified quantity coincide; a network trained on a different energy
+(a learnable scalar, or a reference value) is optimizing a different residual,
+and the certificate then measures that other objective. Second, the scale must
+be fixed by an explicit term: without one $\psi\equiv0$ is an exact stationary
+point of the residual, the loss is quadratic in the amplitude, and the amplitude is
+left wherever the initialization put it---in our unnormalized two-dimensional
+run it stayed as small as $\norm{\psi}^2=6\times10^{-5}$ while the shape had
+already converged. One dimension fixes the scale with the penalty
+$(\norm{\psi}_h^2-1)^2$; two dimensions divide by the norm inside the loss
+instead. Third, the boundary condition: in one dimension the soft penalty of
+weight $100$ leaves endpoint values of order $10^{-4}$ and contributes a
+negligible part of the residual, whereas in two dimensions the same penalty is
+diluted by the $O(1/N)$ fraction of boundary nodes and leaves the residual at
+$O(1)$ (\ref{app:impl} records both failures), which is why the mask is used
+there. Fourth, the energy term $w_e\eta$ is variational: it pulls the iterate
+toward the lowest Rayleigh quotient and selects the ground state within the
+near-null space of the residual; because $\eta$ is computed from the iterate,
+it carries no external value.
+
+\subsection{Certificate-guided spectral filtering}
+\label{sec:filter}
+
+A trained network contains high-frequency components that contribute almost
+nothing to the Rayleigh quotient---which is stationary to first order---but
+dominate the residual, which is not. Filtering them out turns an
+uncertifiable output into a certifiable one. Under Dirichlet conditions the
+natural basis is the tensor product of sine functions,
+\begin{equation}
+  \psi(x_i,y_j)\approx\sum_{p=1}^{K_x}\sum_{q=1}^{K_y} c_{pq}
+  \sin\frac{p\pi x_i}{L}\sin\frac{q\pi y_j}{L},
+  \label{eq:dst}
+\end{equation}
+with coefficients obtained by a two-dimensional type-I discrete sine
+transform (DST-I) \citep{boyd2001}, which is separable, orthogonal up to a
+diagonal scaling, and self-inverse.
+
+The truncation order is chosen without any reference solution. For each
+candidate pair $(K_x,K_y)$ on a prescribed schedule we filter, certify, and
+record $(\text{width}, \text{state index})$. The selected pair is the one with
+the smallest certified width \emph{among those whose certified state index
+equals that of the unfiltered input}. The state-consistency constraint is not
+optional: without it the filter happily projects an excited state onto the
+ground-state sine, producing a much narrower certificate for the wrong
+function. On the runs below the filter changes $\psi$ by a relative $L^2$
+amount between $4\times10^{-6}$ and $2\times10^{-3}$, and reduces the residual
+norm by a factor between $1.2$ and $7\times10^{9}$---below threefold in half
+of the eighteen runs of the main sweep.
+
+\subsection{Transporting the bound to the raw output}
+\label{sec:transport}
+
+The certificate of Section~\ref{sec:filter} refers to $\psi_K$, not to the
+network output $\psi$. The gap can be bounded by an elementary inequality, so
+that the network output itself receives a certified angle.
+
+\begin{lemma}[Transport]\label{lem:transport}
+Let $u=\psi/\norm{\psi}_h$, $u_K=\psi_K/\norm{\psi_K}_h$, and let $\varphi$ be
+a unit eigenfunction. Then
+\begin{equation}
+  \sin\angle(u,\varphi)\ \le\ 2\norm{u-u_K}_h+\sin\angle(u_K,\varphi).
+  \label{eq:transport}
+\end{equation}
+\end{lemma}
+\begin{proof}
+Since $\sin\angle(u,\varphi)=\norm{u-(u\cdot\varphi)\varphi}_h$ and
+$\abs{(u_K-u)\cdot\varphi}\le\norm{u-u_K}_h$,
+\begin{align*}
+\sin\angle(u,\varphi)
+&\le \norm{u-u_K}_h+\norm{u_K-(u_K\!\cdot\!\varphi)\varphi}_h
+   +\abs{(u_K-u)\cdot\varphi}\\
+&\le 2\norm{u-u_K}_h+\sin\angle(u_K,\varphi). \qedhere
+\end{align*}
+\end{proof}
+
+The first term is computed from the two saved functions; the second is
+Theorem~\ref{thm:dk} applied to $\psi_K$. The implementation uses the
+conservative factor $2$ of \eqref{eq:transport}; a factor $1$ also follows from
+the Lipschitz property of $\sin$ on $[0,\pi/2]$. The inequality is what allows
+the tables to report a bound for the network output even when the unfiltered
+output is not certifiable, and it answers the question "what exactly is being
+certified?" with a number rather than a caveat.
+
+\subsection{What a row of the results table contains}
+\label{sec:row}
+
+For each run the protocol reports: the certified state index and whether it
+matches the target; the energy $\eta$ and the distance to an independently
+computed $\lambda_h$; the residual before and after filtering; the certified
+width before and after filtering; the certified angle bound, the transported
+bound for the raw output, and the true discrete angle (computed only for
+validation, never used by the protocol); the relative $L^2$ change caused by
+the filter; and whether the enclosure contains the reference. Reporting the
+raw and filtered columns side by side is essential: the first is what the
+network guarantees by itself, the second is what can be certified in its
+neighbourhood. Reporting only the second would overstate the network;
+reporting only the first would understate what the protocol can do.
+
+The one case in which this row does not exist is the degenerate level: there
+is no single state to describe, and the certificate of
+Section~\ref{sec:cert} refuses. Its replacement---a record for the invariant
+subspace, with the multiplicity measured by counting---is the subject of
+Section~\ref{sec:subspace}, and it is the object that the experiments of
+Section~\ref{sec:deg-results} report.

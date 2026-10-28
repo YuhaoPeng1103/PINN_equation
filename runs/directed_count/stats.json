@@ -1,0 +1,133 @@
+{
+  "one_dimensional": {
+    "rows": [
+      {
+        "potential": "harmonic",
+        "n": 2001,
+        "shifts": 121,
+        "certified_agree": 120,
+        "refused": 1,
+        "wrong": 0,
+        "float_agree": 121,
+        "median_ms": 5.194900004426017,
+        "max_ms": 6.341600004816428,
+        "refusals": [
+          {
+            "index": 120,
+            "of": 121,
+            "shift": 498.0351059124595,
+            "reason": "第 999 个主元的区间跨零",
+            "distance_to_spectrum": 0.0
+          }
+        ]
+      },
+      {
+        "potential": "infinite_well",
+        "n": 2001,
+        "shifts": 121,
+        "certified_agree": 121,
+        "refused": 0,
+        "wrong": 0,
+        "float_agree": 121,
+        "median_ms": 5.236400000285357,
+        "max_ms": 8.637199993245304,
+        "refusals": []
+      },
+      {
+        "potential": "finite_well",
+        "n": 2001,
+        "shifts": 121,
+        "certified_agree": 120,
+        "refused": 1,
+        "wrong": 0,
+        "float_agree": 121,
+        "median_ms": 5.222499996307306,
+        "max_ms": 6.1627999966731295,
+        "refusals": [
+          {
+            "index": 120,
+            "of": 121,
+            "shift": 270.79831797024184,
+            "reason": "第 999 个主元的区间跨零",
+            "distance_to_spectrum": 0.0
+          }
+        ]
+      }
+    ]
+  },
+  "separable_two_dimensional": {
+    "rows": [
+      {
+        "potential": "harmonic2d",
+        "n": 81,
+        "shifts": 25,
+        "agree": 25,
+        "refused": 0,
+        "wrong": 0,
+        "median_ms": 18.354500003624707,
+        "max_ms": 39.77269999450073,
+        "certified": true
+      },
+      {
+        "potential": "well2d",
+        "n": 81,
+        "shifts": 25,
+        "agree": 25,
+        "refused": 0,
+        "wrong": 0,
+        "median_ms": 17.528999989735894,
+        "max_ms": 20.279499993193895,
+        "certified": true
+      },
+      {
+        "potential": "anharmonic2d",
+        "n": 81,
+        "shifts": 25,
+        "agree": 0,
+        "refused": 25,
+        "wrong": 0,
+        "median_ms": 0.06930000381544232,
+        "max_ms": 0.09899999713525176,
+        "certified": false
+      }
+    ]
+  },
+  "determinant_recurrence": {
+    "rows": [
+      {
+        "potential": "harmonic",
+        "n": 2001,
+        "shifts": 121,
+        "unusable": 121,
+        "first_bad_k_min": 36,
+        "first_bad_k_max": 44
+      },
+      {
+        "potential": "infinite_well",
+        "n": 2001,
+        "shifts": 121,
+        "unusable": 121,
+        "first_bad_k_min": 37,
+        "first_bad_k_max": 43
+      },
+      {
+        "potential": "finite_well",
+        "n": 2001,
+        "shifts": 121,
+        "unusable": 121,
+        "first_bad_k_min": 35,
+        "first_bad_k_max": 45
+      }
+    ]
+  },
+  "general_two_dimensional": {
+    "n": 21,
+    "size": 361,
+    "shifts": 10,
+    "refused": 6,
+    "first_refusal_step": 174,
+    "median_refusal_step": 200.5,
+    "first_refusal_width": 0.4442004098014569,
+    "max_relative_width": 0.9255378751703606
+  }
+}

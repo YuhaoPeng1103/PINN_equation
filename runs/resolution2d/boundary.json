@@ -1,0 +1,448 @@
+{
+  "n_grid": 81,
+  "prediction": "single-state accepts iff verified gap > floor; gap = 0.9*split above split/floor ~ 1.11, gap ~ split at the crossing (bisection fallback)",
+  "rows": [
+    {
+      "lambda": 0.0,
+      "energy_pair": [
+        24.6632321673537,
+        24.663232167353872
+      ],
+      "split": 1.7053025658242404e-13,
+      "floor": 1.28e-05,
+      "single": [
+        {
+          "valid": false,
+          "width": null,
+          "spectral_gap": null,
+          "state_index": null,
+          "reason": "无法构造单态区间: 验证出的谱隙 7.074e-09 低于双精度惯性计数的分辨率 1.280e-05（本征值简并或近简并），拒绝认证"
+        },
+        {
+          "valid": false,
+          "width": null,
+          "spectral_gap": null,
+          "state_index": null,
+          "reason": "无法构造单态区间: 验证出的谱隙 7.074e-09 低于双精度惯性计数的分辨率 1.280e-05（本征值简并或近简并），拒绝认证"
+        }
+      ],
+      "single_accepted": false,
+      "cluster": {
+        "valid": true,
+        "multiplicity": 2,
+        "frobenius_residual": 6.220100706832197e-12,
+        "margin": 7.39744802427883,
+        "angle_bound": 8.408441244085103e-13,
+        "reason": "区间由二维 Sylvester 惯性验证恰含 2 个本征值；每个 ρ_i < δ_i；主子角界 sin Θ ≤ ρ_F/δ"
+      }
+    },
+    {
+      "lambda": 1e-05,
+      "energy_pair": [
+        24.663231787399518,
+        24.663232547307885
+      ],
+      "split": 7.599083673426321e-07,
+      "floor": 1.280000001e-05,
+      "single": [
+        {
+          "valid": false,
+          "width": null,
+          "spectral_gap": null,
+          "state_index": null,
+          "reason": "无法构造单态区间: 验证出的谱隙 7.599e-07 低于双精度惯性计数的分辨率 1.280e-05（本征值简并或近简并），拒绝认证"
+        },
+        {
+          "valid": false,
+          "width": null,
+          "spectral_gap": null,
+          "state_index": null,
+          "reason": "无法构造单态区间: 验证出的谱隙 7.599e-07 低于双精度惯性计数的分辨率 1.280e-05（本征值简并或近简并），拒绝认证"
+        }
+      ],
+      "single_accepted": false,
+      "cluster": {
+        "valid": true,
+        "multiplicity": 2,
+        "frobenius_residual": 5.5502297918594875e-12,
+        "margin": 7.397447834301971,
+        "angle_bound": 7.502898183510086e-13,
+        "reason": "区间由二维 Sylvester 惯性验证恰含 2 个本征值；每个 ρ_i < δ_i；主子角界 sin Θ ≤ ρ_F/δ"
+      }
+    },
+    {
+      "lambda": 3e-05,
+      "energy_pair": [
+        24.663231027489395,
+        24.66323330721458
+      ],
+      "split": 2.279725183740311e-06,
+      "floor": 1.2800000029999999e-05,
+      "single": [
+        {
+          "valid": false,
+          "width": null,
+          "spectral_gap": null,
+          "state_index": null,
+          "reason": "无法构造单态区间: 验证出的谱隙 2.280e-06 低于双精度惯性计数的分辨率 1.280e-05（本征值简并或近简并），拒绝认证"
+        },
+        {
+          "valid": false,
+          "width": null,
+          "spectral_gap": null,
+          "state_index": null,
+          "reason": "无法构造单态区间: 验证出的谱隙 2.280e-06 低于双精度惯性计数的分辨率 1.280e-05（本征值简并或近简并），拒绝认证"
+        }
+      ],
+      "single_accepted": false,
+      "cluster": {
+        "valid": true,
+        "multiplicity": 2,
+        "frobenius_residual": 6.437471936186808e-12,
+        "margin": 7.397447454348452,
+        "angle_bound": 8.702288155359129e-13,
+        "reason": "区间由二维 Sylvester 惯性验证恰含 2 个本征值；每个 ρ_i < δ_i；主子角界 sin Θ ≤ ρ_F/δ"
+      }
+    },
+    {
+      "lambda": 0.0001,
+      "energy_pair": [
+        24.66322836779537,
+        24.66323596687929
+      ],
+      "split": 7.599083922116279e-06,
+      "floor": 1.2800000099999998e-05,
+      "single": [
+        {
+          "valid": false,
+          "width": null,
+          "spectral_gap": null,
+          "state_index": null,
+          "reason": "无法构造单态区间: 验证出的谱隙 7.599e-06 低于双精度惯性计数的分辨率 1.280e-05（本征值简并或近简并），拒绝认证"
+        },
+        {
+          "valid": false,
+          "width": null,
+          "spectral_gap": null,
+          "state_index": null,
+          "reason": "无法构造单态区间: 验证出的谱隙 7.599e-06 低于双精度惯性计数的分辨率 1.280e-05（本征值简并或近简并），拒绝认证"
+        }
+      ],
+      "single_accepted": false,
+      "cluster": {
+        "valid": true,
+        "multiplicity": 2,
+        "frobenius_residual": 5.966688476645191e-12,
+        "margin": 7.397446124521796,
+        "angle_bound": 8.065876217558671e-13,
+        "reason": "区间由二维 Sylvester 惯性验证恰含 2 个本征值；每个 ρ_i < δ_i；主子角界 sin Θ ≤ ρ_F/δ"
+      }
+    },
+    {
+      "lambda": 0.00015,
+      "energy_pair": [
+        24.663226468004723,
+        24.66323786663067
+      ],
+      "split": 1.1398625947123264e-05,
+      "floor": 1.2800000149999998e-05,
+      "single": [
+        {
+          "valid": false,
+          "width": null,
+          "spectral_gap": null,
+          "state_index": null,
+          "reason": "无法构造单态区间: 验证出的谱隙 1.140e-05 低于双精度惯性计数的分辨率 1.280e-05（本征值简并或近简并），拒绝认证"
+        },
+        {
+          "valid": false,
+          "width": null,
+          "spectral_gap": null,
+          "state_index": null,
+          "reason": "无法构造单态区间: 验证出的谱隙 1.140e-05 低于双精度惯性计数的分辨率 1.280e-05（本征值简并或近简并），拒绝认证"
+        }
+      ],
+      "single_accepted": false,
+      "cluster": {
+        "valid": true,
+        "multiplicity": 2,
+        "frobenius_residual": 5.62895570109065e-12,
+        "margin": 7.397445174654635,
+        "angle_bound": 7.609323987120256e-13,
+        "reason": "区间由二维 Sylvester 惯性验证恰含 2 个本征值；每个 ρ_i < δ_i；主子角界 sin Θ ≤ ρ_F/δ"
+      }
+    },
+    {
+      "lambda": 0.00016,
+      "energy_pair": [
+        24.66322608804534,
+        24.663238246579695
+      ],
+      "split": 1.2158534353545747e-05,
+      "floor": 1.2800000159999998e-05,
+      "single": [
+        {
+          "valid": false,
+          "width": null,
+          "spectral_gap": null,
+          "state_index": null,
+          "reason": "无法构造单态区间: 验证出的谱隙 1.216e-05 低于双精度惯性计数的分辨率 1.280e-05（本征值简并或近简并），拒绝认证"
+        },
+        {
+          "valid": false,
+          "width": null,
+          "spectral_gap": null,
+          "state_index": null,
+          "reason": "无法构造单态区间: 验证出的谱隙 1.216e-05 低于双精度惯性计数的分辨率 1.280e-05（本征值简并或近简并），拒绝认证"
+        }
+      ],
+      "single_accepted": false,
+      "cluster": {
+        "valid": true,
+        "multiplicity": 2,
+        "frobenius_residual": 5.597845210225078e-12,
+        "margin": 7.397444984681769,
+        "angle_bound": 7.567268457983526e-13,
+        "reason": "区间由二维 Sylvester 惯性验证恰含 2 个本征值；每个 ρ_i < δ_i；主子角界 sin Θ ≤ ρ_F/δ"
+      }
+    },
+    {
+      "lambda": 0.00017,
+      "energy_pair": [
+        24.663225708085548,
+        24.663238626528255
+      ],
+      "split": 1.2918442706677524e-05,
+      "floor": 1.2800000169999998e-05,
+      "single": [
+        {
+          "valid": true,
+          "width": 4.9325876716466155e-11,
+          "spectral_gap": 1.291841834543248e-05,
+          "state_index": 1,
+          "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+        },
+        {
+          "valid": true,
+          "width": 4.9325876716466155e-11,
+          "spectral_gap": 1.2918417762774517e-05,
+          "state_index": 2,
+          "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+        }
+      ],
+      "single_accepted": true,
+      "cluster": {
+        "valid": true,
+        "multiplicity": 2,
+        "frobenius_residual": 6.022412934180952e-12,
+        "margin": 7.397444794709152,
+        "angle_bound": 8.141206999595781e-13,
+        "reason": "区间由二维 Sylvester 惯性验证恰含 2 个本征值；每个 ρ_i < δ_i；主子角界 sin Θ ≤ ρ_F/δ"
+      }
+    },
+    {
+      "lambda": 0.00019,
+      "energy_pair": [
+        24.66322494816677,
+        24.663239386426334
+      ],
+      "split": 1.4438259562155054e-05,
+      "floor": 1.280000019e-05,
+      "single": [
+        {
+          "valid": true,
+          "width": 4.9325876716466155e-11,
+          "spectral_gap": 1.2994409580071434e-05,
+          "state_index": 1,
+          "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+        },
+        {
+          "valid": true,
+          "width": 4.9325876716466155e-11,
+          "spectral_gap": 1.2994408247789366e-05,
+          "state_index": 2,
+          "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+        }
+      ],
+      "single_accepted": true,
+      "cluster": {
+        "valid": true,
+        "multiplicity": 2,
+        "frobenius_residual": 5.590032342676943e-12,
+        "margin": 7.397444414765129,
+        "angle_bound": 7.55670746443105e-13,
+        "reason": "区间由二维 Sylvester 惯性验证恰含 2 个本征值；每个 ρ_i < δ_i；主子角界 sin Θ ≤ ρ_F/δ"
+      }
+    },
+    {
+      "lambda": 0.0002,
+      "energy_pair": [
+        24.663224568206036,
+        24.663239766373948
+      ],
+      "split": 1.5198167911734117e-05,
+      "floor": 1.28000002e-05,
+      "single": [
+        {
+          "valid": true,
+          "width": 4.9325876716466155e-11,
+          "spectral_gap": 1.3678326879753793e-05,
+          "state_index": 1,
+          "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+        },
+        {
+          "valid": true,
+          "width": 4.9325876716466155e-11,
+          "spectral_gap": 1.3678326044850881e-05,
+          "state_index": 2,
+          "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+        }
+      ],
+      "single_accepted": true,
+      "cluster": {
+        "valid": true,
+        "multiplicity": 2,
+        "frobenius_residual": 5.452673278488544e-12,
+        "margin": 7.397444224793876,
+        "angle_bound": 7.371023170695792e-13,
+        "reason": "区间由二维 Sylvester 惯性验证恰含 2 个本征值；每个 ρ_i < δ_i；主子角界 sin Θ ≤ ρ_F/δ"
+      }
+    },
+    {
+      "lambda": 0.0003,
+      "energy_pair": [
+        24.663220768582626,
+        24.66324356583444
+      ],
+      "split": 2.2797251812534114e-05,
+      "floor": 1.28000003e-05,
+      "single": [
+        {
+          "valid": true,
+          "width": 4.9325876716466155e-11,
+          "spectral_gap": 2.0517501677803226e-05,
+          "state_index": 1,
+          "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+        },
+        {
+          "valid": true,
+          "width": 4.9325876716466155e-11,
+          "spectral_gap": 2.051750229595261e-05,
+          "state_index": 2,
+          "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+        }
+      ],
+      "single_accepted": true,
+      "cluster": {
+        "valid": true,
+        "multiplicity": 2,
+        "frobenius_residual": 5.660496368074745e-12,
+        "margin": 7.397442325094243,
+        "angle_bound": 7.651964178041267e-13,
+        "reason": "区间由二维 Sylvester 惯性验证恰含 2 个本征值；每个 ρ_i < δ_i；主子角界 sin Θ ≤ ρ_F/δ"
+      }
+    },
+    {
+      "lambda": 0.0004,
+      "energy_pair": [
+        24.66321696892872,
+        24.6632473652645
+      ],
+      "split": 3.039633578083567e-05,
+      "floor": 1.28000004e-05,
+      "single": [
+        {
+          "valid": true,
+          "width": 4.9325876716466155e-11,
+          "spectral_gap": 2.73566783303692e-05,
+          "state_index": 1,
+          "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+        },
+        {
+          "valid": true,
+          "width": 4.9325876716466155e-11,
+          "spectral_gap": 2.735667675293393e-05,
+          "state_index": 2,
+          "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+        }
+      ],
+      "single_accepted": true,
+      "cluster": {
+        "valid": true,
+        "multiplicity": 2,
+        "frobenius_residual": 7.241291239703236e-12,
+        "margin": 7.3974404254225945,
+        "angle_bound": 9.788914574853859e-13,
+        "reason": "区间由二维 Sylvester 惯性验证恰含 2 个本征值；每个 ρ_i < δ_i；主子角界 sin Θ ≤ ρ_F/δ"
+      }
+    },
+    {
+      "lambda": 0.001,
+      "energy_pair": [
+        24.66319417031989,
+        24.66327016115935
+      ],
+      "split": 7.59908394591946e-05,
+      "floor": 1.2800000999999999e-05,
+      "single": [
+        {
+          "valid": true,
+          "width": 4.9325876716466155e-11,
+          "spectral_gap": 6.839173103730898e-05,
+          "state_index": 1,
+          "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+        },
+        {
+          "valid": true,
+          "width": 4.9325876716466155e-11,
+          "spectral_gap": 6.839173063932906e-05,
+          "state_index": 2,
+          "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+        }
+      ],
+      "single_accepted": true,
+      "cluster": {
+        "valid": true,
+        "multiplicity": 2,
+        "frobenius_residual": 6.147973118691054e-12,
+        "margin": 7.397429027994793,
+        "angle_bound": 8.31095924736107e-13,
+        "reason": "区间由二维 Sylvester 惯性验证恰含 2 个本征值；每个 ρ_i < δ_i；主子角界 sin Θ ≤ ρ_F/δ"
+      }
+    },
+    {
+      "lambda": 0.01,
+      "energy_pair": [
+        24.662852051706025,
+        24.663611960059296
+      ],
+      "split": 0.0007599083532703332,
+      "floor": 1.2800009999999998e-05,
+      "single": [
+        {
+          "valid": true,
+          "width": 4.9325876716466155e-11,
+          "spectral_gap": 0.0006839174935252298,
+          "state_index": 1,
+          "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+        },
+        {
+          "valid": true,
+          "width": 4.9325876716466155e-11,
+          "spectral_gap": 0.0006839174930626171,
+          "state_index": 2,
+          "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+        }
+      ],
+      "single_accepted": true,
+      "cluster": {
+        "valid": true,
+        "multiplicity": 2,
+        "frobenius_residual": 6.043651489547502e-12,
+        "margin": 7.39725818975505,
+        "angle_bound": 8.170123760067958e-13,
+        "reason": "区间由二维 Sylvester 惯性验证恰含 2 个本征值；每个 ρ_i < δ_i；主子角界 sin Θ ≤ ρ_F/δ"
+      }
+    }
+  ]
+}

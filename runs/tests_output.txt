@@ -1,0 +1,75 @@
+﻿[test_data_targets.py]
+  PASS test_data_targets::test_grid_defaults
+  PASS test_data_targets::test_target_values_within_h
+  PASS test_data_targets::test_unknown_target
+  PASS test_data_targets::test_similarity_identity_and_orthogonality
+[test_eigen.py]
+  PASS test_eigen::test_dense_random_matches_numpy
+  PASS test_eigen::test_tridiagonal_identity
+  PASS test_eigen::test_tridiagonal_wrapper_builds_from_diagonals
+  PASS test_eigen::test_tridiagonal_larger
+  PASS test_eigen::test_diagonal_matrix
+  PASS test_eigen::test_largest_off_diagonal
+  PASS test_eigen::test_harmonic_hamiltonian_spectrum
+[test_evaluate.py]
+  PASS test_evaluate::test_perfect_solution_scores_perfectly
+  PASS test_evaluate::test_orthogonal_noise_is_caught
+  PASS test_evaluate::test_rayleigh_energy_matches_for_exact_state
+  PASS test_evaluate::test_residual_rms_of_exact_state_small
+  PASS test_evaluate::test_format_table
+[test_inputs.py]
+  PASS test_inputs::test_uniform_collocation
+  PASS test_inputs::test_energy_blocks_one_per_energy
+  PASS test_inputs::test_well_aware_collocation_covers_edges
+  PASS test_inputs::test_hhl_input_map_is_affine
+  PASS test_inputs::test_hhl_pairs_shape
+  PASS test_inputs::test_dirichlet_points
+[test_losses.py]
+  SKIP 整个模块（缺少模块 torch）
+
+[test_networks.py]
+  SKIP 整个模块（缺少模块 torch）
+
+[test_numerov.py]
+  PASS test_numerov::test_harmonic_exact_odd_states
+  PASS test_numerov::test_harmonic_all_states_close
+  PASS test_numerov::test_infinite_well_against_analytic
+  PASS test_numerov::test_finite_well_monotone
+  PASS test_numerov::test_wavefunctions_orthonormal_and_shape
+  PASS test_numerov::test_energy_window_too_small
+[test_physics_spectrum.py]
+  PASS test_physics_spectrum::test_harmonic_energies
+python.exe : D:\基于神经网络的薛定谔方程求值问题\tests\test_physics_spectrum.py:48: RuntimeWarning: invalid value encountered in divide
+所在位置 行:5 字符: 1
++ & "C:\Users\24472\.dsh\dsh-runtimes\dsh-primary-runtime\dependencies\ ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (D:\基于神经网络的薛定谔方程...tered in divide:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  ratio = psi(x) / raw
+  PASS test_physics_spectrum::test_harmonic_wavefunction_matches_analytic
+  PASS test_physics_spectrum::test_harmonic_orthogonality
+  PASS test_physics_spectrum::test_infinite_well_energies_and_boundaries
+  PASS test_physics_spectrum::test_infinite_well_zero_at_nodes
+  PASS test_physics_spectrum::test_finite_well_binding_energies_ordering
+  PASS test_physics_spectrum::test_finite_well_norm_and_tails
+  PASS test_physics_spectrum::test_hydrogen_energies
+  PASS test_physics_spectrum::test_hydrogen_1s_normalization
+  PASS test_physics_spectrum::test_fix_sign_convention
+  PASS test_physics_spectrum::test_hhl_normalization
+  PASS test_physics_spectrum::test_get_reference_dispatch
+[test_potentials.py]
+  PASS test_potentials::test_harmonic_potential
+  PASS test_potentials::test_infinite_well_potential_jumps
+  PASS test_potentials::test_finite_well_potential
+  PASS test_potentials::test_poschl_teller_symmetric
+  PASS test_potentials::test_unknown_potential
+[test_train.py]
+  SKIP 整个模块（缺少模块 torch）
+
+[test_verify.py]
+  PASS test_verify::test_harmonic_ground_state_cross_check
+  PASS test_verify::test_finite_well_cross_check
+  PASS test_verify::test_convergence_reduces_error
+
+48 passed, 0 failed, 0 skipped

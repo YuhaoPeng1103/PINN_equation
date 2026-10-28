@@ -1,0 +1,23 @@
+\scriptsize
+\setlength{\tabcolsep}{2pt}
+\begin{tabular}{lccccccc}
+\toprule
+Input & $m$ & $N(b)\!-\!N(a)$ & $\rho_F$ & $\delta$ & $\Theta\le$ & $\Theta_{\mathrm{true}}$ & outcome \\
+\midrule
+Exact pair & 2 & 2 & $6.1\times10^{-12}$ & $7.4$ & $8.2\times10^{-13}$ & $2.3\times10^{-16}$ & accepted \\
+Exact pair, rotated basis & 2 & 2 & $6.3\times10^{-12}$ & $7.4$ & $8.5\times10^{-13}$ & $3.0\times10^{-16}$ & accepted \\
+One member ($m=1$) & 1 & -- & $4.4\times10^{-12}$ & -- & -- & -- & refused \\
+Ground $+$ 4th level & 2 & -- & $5.7\times10^{-12}$ & -- & -- & -- & refused \\
+\midrule
+Networks 0, 1 & 2 & -- & $16.3$ & $6.08$ & -- & -- & refused \\
+Networks 0, 2 & 2 & 2 & $4.6$ & $7.31$ & $0.68$ & $2.8\times10^{-2}$ & accepted \\
+Networks 0, 3 & 2 & 2 & $4.1\times10^{-2}$ & $7.4$ & $5.6\times10^{-3}$ & $3.0\times10^{-4}$ & accepted \\
+Networks 1, 2 & 2 & -- & $7.53$ & $7.18$ & -- & -- & refused \\
+Networks 1, 3 & 2 & 2 & $4.5\times10^{-2}$ & $7.4$ & $6.1\times10^{-3}$ & $2.4\times10^{-4}$ & accepted \\
+Networks 2, 3 & 2 & 2 & $4.7\times10^{-2}$ & $7.4$ & $6.3\times10^{-3}$ & $2.5\times10^{-4}$ & accepted \\
+Seeds 0, 1, rotated & 2 & -- & $16.3$ & $6.08$ & -- & -- & refused \\
+Seeds 0, 3, rotated & 2 & 2 & $4.1\times10^{-2}$ & $7.4$ & $5.6\times10^{-3}$ & $3.0\times10^{-4}$ & accepted \\
+Network $+$ partner & 2 & 2 & $3.8\times10^{-2}$ & $7.4$ & $5.2\times10^{-3}$ & $2.8\times10^{-4}$ & accepted \\
+Network $+$ mix, partner & 2 & 2 & $3.8\times10^{-2}$ & $7.4$ & $5.2\times10^{-3}$ & $2.8\times10^{-4}$ & accepted \\
+\bottomrule
+\end{tabular}

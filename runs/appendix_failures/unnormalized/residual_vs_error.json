@@ -1,0 +1,10 @@
+{
+ "run": "runs/appendix_failures/unnormalized",
+ "norm_raw": 0.007727216906384147,
+ "eta": 9.864542950760722,
+ "lambda0_dense": 9.86453205399011,
+ "residual_norm_unit_field": 0.037610117119830054,
+ "residual_norm_raw": 0.0002906215328594386,
+ "distance_l2_to_ground_state": 0.992272783553699,
+ "ratio_distance_over_residual": 3414.312675976489
+}

@@ -1,0 +1,89 @@
+{
+  "environment": {
+    "python": "3.11.9",
+    "platform": "Windows-10-10.0.26300-SP0",
+    "numpy": "2.4.6",
+    "torch": "2.12.0+cpu",
+    "cuda": false
+  },
+  "state": 0,
+  "seed": 0,
+  "epochs": 2000,
+  "width": 128,
+  "depth": 4,
+  "grad_balance": false,
+  "orthogonalize": false,
+  "use_energy": false,
+  "energy_sampling": "grid",
+  "lr": 0.001,
+  "energy_weight": 10.0,
+  "residual_energy": "reference",
+  "learned_energy": null,
+  "metrics": {
+    "energy_model": 3.0383025438387543,
+    "energy_ref": 0.5,
+    "energy_abs_err": 2.5383025438387543,
+    "energy_rel_err": 5.076605087677509,
+    "overlap": 0.6717170103444833,
+    "inf_norm": 0.40351615645241073,
+    "residual_rms": 0.7872985962525066
+  },
+  "history": {
+    "epoch": [
+      1,
+      500,
+      1000,
+      1500,
+      2000
+    ],
+    "loss": [
+      220.5336872992958,
+      3.6780944155799884,
+      3.5752216299197865,
+      2.7805799241633875,
+      0.7786263675171857
+    ],
+    "val_loss": [
+      4.6696435939794165,
+      3.9380894431854334,
+      3.501986518629246,
+      3.4602920979002114,
+      3.3697796078325344,
+      3.2947355267155496,
+      3.134111858899527,
+      2.56052067289313,
+      1.5078590175988908,
+      0.8337799435427942
+    ],
+    "energy": [],
+    "seconds": [
+      0.0933221000013873,
+      42.05902580000111,
+      83.30604300000414,
+      124.85309870000492,
+      166.78087900000537
+    ],
+    "weights": [
+      {
+        "residual": 1.0,
+        "normalization": 100.0
+      },
+      {
+        "residual": 1.0,
+        "normalization": 100.0
+      },
+      {
+        "residual": 1.0,
+        "normalization": 100.0
+      },
+      {
+        "residual": 1.0,
+        "normalization": 100.0
+      },
+      {
+        "residual": 1.0,
+        "normalization": 100.0
+      }
+    ]
+  }
+}

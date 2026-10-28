@@ -1,0 +1,186 @@
+{
+  "potential": "finite_well",
+  "state": 2,
+  "seed": 0,
+  "epochs": 10000,
+  "width": 64,
+  "depth": 3,
+  "learned_energy": false,
+  "rayleigh_energy": true,
+  "deflate_from": [
+    "runs\\seeds\\certs5_deflated\\finite_well_1\\seed0\\wavefunction.npz",
+    "runs\\seeds\\certs5_rayleigh\\finite_well_0\\seed0\\wavefunction.npz"
+  ],
+  "deflate_overlap": 5.684341886080807e-17,
+  "deflate_overlaps": [
+    5.684341886080807e-17,
+    -2.1316282072803025e-17
+  ],
+  "residual_energy": "rayleigh",
+  "use_energy": true,
+  "weights": {
+    "residual": 1.0,
+    "normalization": 100.0,
+    "boundary": 100.0,
+    "energy": 10.0
+  },
+  "learned_energy_value": null,
+  "residual_energy_value": -40.81415780315256,
+  "metrics": {
+    "energy_model": -40.81776540593691,
+    "energy_ref": -40.86247423181822,
+    "energy_abs_err": 0.0447088258813082,
+    "energy_rel_err": 0.001094129191190654,
+    "overlap": 0.999972711920249,
+    "inf_norm": 0.01008359942775644,
+    "residual_rms": 0.30170348445995215
+  },
+  "certificate": {
+    "energy": -40.814157803152575,
+    "residual_norm": 1.2607940606973038,
+    "weinstein_lower": -42.07495186389069,
+    "weinstein_upper": -39.55336374241446,
+    "interval_lower": -45.90317629337641,
+    "interval_upper": -33.76207151790823,
+    "temple_lower": -41.03956651193475,
+    "temple_upper": -40.501798619009115,
+    "spectral_gap": 5.0890184901830215,
+    "eigenfunction_angle_bound": 0.250355076704718,
+    "valid": true,
+    "reason": "Temple 区间已由 Sturm 计数验证为单态区间；区间由 isolating_interval 自动构造",
+    "state_index": 2,
+    "width": 0.5377678929256362
+  },
+  "history": {
+    "epoch": [
+      1,
+      1000,
+      2000,
+      3000,
+      4000,
+      5000,
+      6000,
+      7000,
+      8000,
+      9000,
+      10000
+    ],
+    "loss": [
+      373.2400457331045,
+      -407.5356349710687,
+      -407.98344987841256,
+      -403.8490804742287,
+      -407.61593919962235,
+      -408.0409614301964,
+      -407.5751935925753,
+      -408.05159309006285,
+      -408.0373016125987,
+      -408.054167436019,
+      -407.72715595752555
+    ],
+    "val_loss": [
+      1.1670709425779406,
+      0.3284436647373857,
+      0.18905257909446385,
+      0.15689849016311108,
+      0.13939480857977574,
+      2.264860430233156,
+      0.43528695673878026,
+      0.29091464400437583,
+      0.2799660348010564,
+      0.10593566933938288,
+      0.10623905503821195,
+      0.368210902478175,
+      0.09924768688403134,
+      0.09532721834129629,
+      0.09490153408024034,
+      0.09879211015081292,
+      0.0948690193421007,
+      0.09118131957750575,
+      0.09112472564675764,
+      0.25933211806905165
+    ],
+    "energy": [],
+    "seconds": [
+      0.006983300001593307,
+      2.7126087000069674,
+      5.443198100001609,
+      8.149860000004992,
+      10.918915900001593,
+      13.706705600001442,
+      16.45272250000562,
+      19.21166080000694,
+      21.954179800006386,
+      24.719945200005895,
+      27.484720500004187
+    ],
+    "weights": [
+      {
+        "residual": 1.0,
+        "normalization": 100.0,
+        "boundary": 100.0,
+        "energy": 10.0
+      },
+      {
+        "residual": 1.0,
+        "normalization": 100.0,
+        "boundary": 100.0,
+        "energy": 10.0
+      },
+      {
+        "residual": 1.0,
+        "normalization": 100.0,
+        "boundary": 100.0,
+        "energy": 10.0
+      },
+      {
+        "residual": 1.0,
+        "normalization": 100.0,
+        "boundary": 100.0,
+        "energy": 10.0
+      },
+      {
+        "residual": 1.0,
+        "normalization": 100.0,
+        "boundary": 100.0,
+        "energy": 10.0
+      },
+      {
+        "residual": 1.0,
+        "normalization": 100.0,
+        "boundary": 100.0,
+        "energy": 10.0
+      },
+      {
+        "residual": 1.0,
+        "normalization": 100.0,
+        "boundary": 100.0,
+        "energy": 10.0
+      },
+      {
+        "residual": 1.0,
+        "normalization": 100.0,
+        "boundary": 100.0,
+        "energy": 10.0
+      },
+      {
+        "residual": 1.0,
+        "normalization": 100.0,
+        "boundary": 100.0,
+        "energy": 10.0
+      },
+      {
+        "residual": 1.0,
+        "normalization": 100.0,
+        "boundary": 100.0,
+        "energy": 10.0
+      },
+      {
+        "residual": 1.0,
+        "normalization": 100.0,
+        "boundary": 100.0,
+        "energy": 10.0
+      }
+    ]
+  }
+}

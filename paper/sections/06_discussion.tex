@@ -1,0 +1,223 @@
+\section{Discussion}
+\label{sec:discussion}
+
+\subsection{What the protocol buys, and what it costs}
+
+The certificate turns an approximation into a statement with a hypothesis and
+a conclusion: \emph{if} the interval contains exactly one eigenvalue (checked),
+\emph{then} the eigenvalue lies in $[\eta-\rho^2/(b-\eta),\,\eta+\rho^2/(\eta-a)]$
+and the eigenfunction is within $\arcsin(\rho/\gamma)$ of $\psi$. The
+hypothesis is the part that classical presentations leave to the user; making
+it a computation is what allows the bound to be used on a mesh-free
+approximation whose spectrum is unknown.
+
+The cost is small. In two dimensions a certificate requires four to six
+verified counts, each a sparse factorization taking $0.03$\,s at
+$81\times81$; in one dimension a count takes $0.4$\,ms, so the count-only
+bisection fallback can be used freely and a certificate spends some two
+hundred of them. Measured end to end, a full certificate takes $0.19$\,s and
+$0.074$\,s against $30$--$110$\,s of training. The guided filter repeats the certificate at each
+candidate cutoff---$27$ candidates in the one-dimensional runs and $30$--$62$
+in the two-dimensional ones---which costs $2.6$\,s and, scaled from the
+measured $16$\,s at $81$ candidates, $6$--$12$\,s, still seconds. There is no reason not to certify every run that is reported.
+
+The benefit is not accuracy but accountability. In our own experiments the
+certificate changed decisions four times: it rejected an excited-state run
+that had a valid-looking energy (state index mismatch), it exposed a
+degenerate state masquerading as a $10^{-12}$-accurate one, it showed that
+part of what looked like network error on the finite well was discretization
+error that no amount of training could remove, and it decided which pairs of
+independently trained networks actually span a degenerate level---accepting
+the three pairs that contain the orthogonal partner with bounds of
+$5$--$6\times10^{-3}$, refusing the two collapsed pairs, and pricing the
+ambiguous pair at $0.68$.
+
+\subsection{Limitations}
+
+\paragraph{The enclosure can be uninformative} For the finite well the ratio
+of certified width to true error is $10^{3}$ and the angle bound is $O(1)$.
+The bound is correct and useless. This is not a defect of the implementation
+but a property of residual-based bounds on non-smooth problems: the residual
+cannot distinguish a genuine high-wavenumber component from an error of the
+same shape, and the spectral gap at the relevant scale is large enough that
+the quadratic Temple gain does not compensate. Any claim that such bounds
+``certify PINN accuracy'' must be conditioned on the potential.
+
+\paragraph{Degeneracy is now inside the protocol, but only at counting
+resolution} The cluster certificate of Section~\ref{sec:subspace} removes the
+structural obstacle: a degenerate level is certified as an invariant subspace,
+with the multiplicity measured by the count and the angle bounded by
+Theorem~\ref{thm:angle}. Two limitations remain, and they are of different
+kinds. The first is the resolution floor \eqref{eq:floor}: two shifts closer
+than $10^{-9}s$ cannot be separated by the count, and a cluster whose boundary
+margin falls below the floor is refused---including, as the degeneracy
+experiment shows, a pair that double precision can barely split. The floor is
+a declared safety margin rather than a theorem (Section~\ref{sec:floor}), and
+directed rounding does not remove it: it makes the count beneath the margin
+exact, so that the refusal happens for a stated reason at a stated pivot,
+rather than moving the margin. Counting at a higher precision would move the
+floor but not abolish the need for one. The second limitation is structural: a
+trial subspace that omits a member of the level is refused because its
+dimension disagrees with the count, which is the correct answer but means that
+the certificate can detect a wrong basis and cannot repair it. A milder
+limitation is that the cluster bound is first order in $\rho$: unlike the
+Kato--Temple bound it does not improve quadratically as the residual shrinks,
+because a cluster has no interior eigenvalue to isolate. For very accurate
+subspaces the counting resolution, not the angle bound, becomes the limiting
+quantity.
+
+\paragraph{The certified object is discrete} The gap between $\Hh$ and
+$\mathcal H$ is $O(h^2)$ for smooth eigenfunctions and dominates the
+certificate at the grid sizes used here (Section~\ref{sec:discretization}). A
+certificate for the continuous operator would require either an explicit
+$O(h^2)$ bound with computable constants, or a homotopy-based enclosure of the
+elliptic problem itself \citep{plum1991}, which needs a priori pointwise
+bounds on the eigenfunction that a trained network does not supply; nor is a
+$p$-version/spectral discretization with exponential convergence implemented.
+We do not claim any of the three. What
+Section~\ref{sec:variational} does claim is the one-sided half, and it is
+enough to change what a reported energy means: the interpolant of the network
+eigenfunction is a conforming trial function, so its Rayleigh quotient bounds
+the continuous eigenvalue from above without any regularity input. The other
+side is where the difficulty sits, and the finite well shows it is not a
+technicality: a certified discrete eigenvalue can lie \emph{above} the
+continuous one when the potential is discontinuous, so no care with the
+factorization turns a discrete count into a continuous enclosure. The same boundary explains why the count
+refers to $\Hh$ and not to the spectrum of a non-conforming trial space: such
+a space can carry spurious eigenvalues \citep{lewinsere2010}, so a discrete
+eigenvalue computed from it would not by itself identify the state it belongs
+to.
+
+\paragraph{Directed rounding in one dimension, not in general two} The count
+of Section~\ref{sec:certified} is computed with outward rounding, so in one
+dimension---and in two whenever the potential is separable, which covers the
+harmonic oscillator and the box---it is a theorem about the stored matrix
+rather than a guarded estimate. What remains outside is the general
+two-dimensional count for a non-separable potential: the interval elimination
+refuses on most shifts at the grid sizes we use, so the anharmonic experiments
+still read their count off the floating-point factorization with the checks of
+Section~\ref{sec:counting}. We report that measurement rather than route
+around it. The separable construction suggests the next step---splitting a
+non-separable potential into separable pieces and carrying the remainder as a
+perturbation---but we have not implemented it, and we do not claim it here.
+
+\paragraph{Statistical power} We report counts, not rates with confidence
+intervals. Every enclosure we report contains the discrete eigenvalue to which
+it refers---the eighteen of the main sweep, the nine learnable-energy and nine
+reference-energy runs of the leakage audit, and the three deflated runs, for
+$39/39$; in the multi-state chain each enclosure contains the eigenvalue of
+the state that its certified index names. The Wilson 95\% interval for
+$39/39$ is $[0.91,1.0]$, so the data are
+still consistent with a per-run failure probability as large as $9\%$; the
+eighteen runs of the main sweep alone give $[0.82,1.0]$. The multi-state chain
+is the more demanding test and is not perfect: $25/27$ certify the
+\emph{requested} state, Wilson $[0.77,0.98]$, with both failures traced to an
+upstream state mismatch that the state index flagged. A claim of the form
+``the method certifies correctly with probability at least $0.95$'' would
+require about seventy runs with no failure, and we do not make it.
+
+\subsection{Why not solve \texorpdfstring{$\Hh$}{H\_h} instead?}
+\label{sec:why}
+
+A referee may reasonably ask what the certificate adds, since on every
+problem in this paper $\Hh$ is assembled and a shift-invert Lanczos solve of
+the same matrix returns $\lambda_h$ and its eigenvector in $20$\,ms at
+$81\times81$ and $1.7$\,ms at $N=2001$, roughly ten times faster than the
+certificate in two dimensions and forty times in one ($0.19$\,s and
+$0.074$\,s; both measured in
+\texttt{scripts/bench\_count.py}). We do not think the answer is speed, and
+the protocol should not be sold on it. Three things are at stake that a solve of $\Hh$
+does not supply.
+
+\emph{The certificate does not need a converged eigenvector.} Counting is the
+only operation it performs on $\Hh$, and ARPACK is used to propose intervals
+that a count then verifies; the count-only fallback of
+Section~\ref{sec:isolating} removes even that. The statement therefore
+attaches to the object the user has---one network output, one snapshot, one
+subspace---rather than to the object a solver would produce instead.
+
+\emph{At a degenerate level the classical comparison is ill-posed.} The
+eigenvector a solver returns for a multiple eigenvalue is an arbitrary element
+of the level, chosen by its tie-breaking; the overlap of the same network
+output with it can be $1$ or $0$ without anything about the network
+changing. The experiments of Section~\ref{sec:deg-results} are exactly this
+case: three runs and the solver's eigenvector coincide, the fourth does not,
+and every residual-based comparison is silent. The cluster certificate is
+invariant under the choice, and it prices the difference. This is the one
+place where the certificate states something that \emph{cannot} be read off a
+solver's output.
+
+\emph{The audit is of the procedure, not of a number.} State index, two-sided
+enclosure, angle bound and measured multiplicity together describe a pipeline
+end to end; a comparison with a reference eigenvalue describes one run. The
+leakage audit (Section~\ref{sec:leak-results}) and the state-index failures of
+the multi-state chain (Section~\ref{sec:multistate}) are decisions of the
+first kind. This is also the honest limit of the present work: when $\Hh$
+cannot be assembled---the high-dimensional regime that motivates neural
+eigen-solvers in the first place---every statement here refers to a matrix
+that does not exist, and matrix-free verification is open. The protocol is
+addressed to the intermediate regime in which the problem is small enough to
+assemble and large enough that the learned function, not the solver, is what
+is being reported.
+
+\subsection{Relation to existing work}
+
+Enclosure of eigenvalues by variational bounds plus a verified count is the
+standard toolkit of a posteriori eigenvalue analysis for finite elements
+\citep{babuska1991}: the Temple and Lehmann--Goerisch bounds are used exactly
+as here, and the count is usually obtained from a Cholesky factorization of
+the stiffness matrix at a shift. Our contribution is not to that theory but to
+its transfer: the approximation is a network, the matrix is assembled for the
+certificate alone, and the two failure modes that matter in this setting
+(degeneracy and leakage) are given explicit treatments.
+
+For clusters the closest antecedent is \citet{cances2020}, who give
+guaranteed two-sided bounds for eigenvalue clusters of conforming
+discretizations, multiplicities included. Their analysis is built on the
+Galerkin structure---residual estimators, orthogonality, and a comparison
+between the approximation space and its neighbourhood. A trained network has
+none of these properties, and applying those bounds to one would require
+proving an analogue from scratch.
+The counting route taken here needs no such hypothesis: it measures the
+multiplicity directly and bounds the subspace by the residual-to-margin
+ratio, which is why the same statement covers exact, approximate and
+accidentally degenerate clusters.
+
+For forward PDEs, a posteriori error estimates for physics-informed networks
+have begun to appear \citep{mishra2023}; they bound the error of a solution
+operator in a norm, and require regularity assumptions on the data. An
+eigenvalue problem differs in that the object to be bounded is a spectral
+quantity and the unknown is defined only up to a subspace; the counting
+machinery is what replaces the coercivity argument.
+
+Verified-computing libraries such as INTLAB~\citep{rump1999} and
+Arb~\citep{johansson2017}, and their Python interfaces, would supply the same
+arithmetic at arbitrary precision. We use only IEEE doubles with one-ulp
+outward padding (\texttt{nextafter}) because the recurrences need nothing
+more: the certified count is a sign test on pivots whose intervals close under
+a correctly rounded operation, and the failure mode---a pivot interval that
+contains zero---is detected and refused rather than hidden. The same libraries
+remain the natural route to a fully rigorous two-dimensional count and to
+interval enclosures of the Rayleigh quotients themselves, at a modest
+constant-factor cost.
+
+\subsection{A reporting checklist}
+
+The experiments suggest a short checklist for papers that report neural
+eigenpairs, each item of which would have changed the interpretation of at
+least one run in this study:
+\begin{enumerate}
+\item state the discrete operator and the grid; report the discretization gap
+  separately from the network error;
+\item report the certified state index, not only the energy;
+\item report the enclosure width, and the ratio of width to true error, not
+  only the true error;
+\item report raw and filtered quantities side by side, with the $L^2$ change
+  caused by the filter;
+\item state whether any reference quantity entered the training objective;
+\item refuse to certify a degenerate state individually rather than reporting
+  its residual as an accuracy, and certify the invariant subspace instead,
+  with the multiplicity measured by counting.
+\end{enumerate}
+Items 2, 3 and 6 are cheap; they require no additional theory and would make
+the reported numbers comparable across papers.

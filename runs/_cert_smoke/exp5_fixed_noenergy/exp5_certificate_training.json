@@ -1,0 +1,164 @@
+{
+  "potential": "harmonic",
+  "state": 0,
+  "seed": 0,
+  "epochs": 3000,
+  "width": 128,
+  "depth": 4,
+  "learned_energy": false,
+  "residual_energy": "reference",
+  "use_energy": false,
+  "weights": {
+    "residual": 1.0,
+    "normalization": 100.0,
+    "boundary": 100.0,
+    "energy": 10.0
+  },
+  "learned_energy_value": null,
+  "metrics": {
+    "energy_model": 5.768294238101847,
+    "energy_ref": 0.5,
+    "energy_abs_err": 5.268294238101847,
+    "energy_rel_err": 10.536588476203693,
+    "overlap": 0.4293842029316207,
+    "inf_norm": 0.6874247235045343,
+    "residual_rms": 1.2613705729544564
+  },
+  "certificate": {
+    "energy": 5.76839595061814,
+    "residual_norm": 4.316191481888032,
+    "weinstein_lower": 1.4522044687243396,
+    "weinstein_upper": 10.08458743251194,
+    "interval_lower": 4.499953875800203,
+    "interval_upper": 6.4999045289278,
+    "temple_lower": null,
+    "temple_upper": null,
+    "spectral_gap": 0.731508578303892,
+    "eigenfunction_angle_bound": 1.5707963267948966,
+    "valid": false,
+    "reason": "Temple 二次界不可用（残差相对谱隙太大）: Temple 条件 r² < (upper−η)(η−lower) 不成立: r²=18.6295, 阈值=0.927876",
+    "state_index": 5,
+    "width": null
+  },
+  "history": {
+    "epoch": [
+      1,
+      300,
+      600,
+      900,
+      1200,
+      1500,
+      1800,
+      2100,
+      2400,
+      2700,
+      3000
+    ],
+    "loss": [
+      2470.529828156385,
+      9.373370046348215,
+      5.983750273143313,
+      5.1122519876141626,
+      12.020423822961261,
+      5.218543082342741,
+      28.867215287983022,
+      3.955690160413357,
+      15.306463599262308,
+      4.010345971525038,
+      3.830089072382334
+    ],
+    "val_loss": [
+      24.927571056854173,
+      9.346867598562483,
+      7.028444202527296,
+      5.978087023144378,
+      9.315496817421561,
+      5.108900028293031,
+      4.674524233921819,
+      15.470375435548391,
+      4.338340186200121,
+      4.894613819850795,
+      4.099019332807282,
+      8.779831357333709,
+      3.976207060585035,
+      3.955489233389324,
+      4.170418124445983,
+      13.691968088334797,
+      3.89780297600121,
+      4.377053934381988,
+      3.855891436727884,
+      3.8300200370412014
+    ],
+    "energy": [],
+    "seconds": [
+      0.018173500000557397,
+      4.44248030000017,
+      8.875671499998134,
+      13.303725300000224,
+      17.717340399998648,
+      22.189620400000422,
+      26.80578969999624,
+      31.435018299998774,
+      36.04840359999798,
+      40.7183384999953,
+      45.31383339999593
+    ],
+    "weights": [
+      {
+        "residual": 1.0,
+        "normalization": 100.0,
+        "boundary": 100.0
+      },
+      {
+        "residual": 1.0,
+        "normalization": 100.0,
+        "boundary": 100.0
+      },
+      {
+        "residual": 1.0,
+        "normalization": 100.0,
+        "boundary": 100.0
+      },
+      {
+        "residual": 1.0,
+        "normalization": 100.0,
+        "boundary": 100.0
+      },
+      {
+        "residual": 1.0,
+        "normalization": 100.0,
+        "boundary": 100.0
+      },
+      {
+        "residual": 1.0,
+        "normalization": 100.0,
+        "boundary": 100.0
+      },
+      {
+        "residual": 1.0,
+        "normalization": 100.0,
+        "boundary": 100.0
+      },
+      {
+        "residual": 1.0,
+        "normalization": 100.0,
+        "boundary": 100.0
+      },
+      {
+        "residual": 1.0,
+        "normalization": 100.0,
+        "boundary": 100.0
+      },
+      {
+        "residual": 1.0,
+        "normalization": 100.0,
+        "boundary": 100.0
+      },
+      {
+        "residual": 1.0,
+        "normalization": 100.0,
+        "boundary": 100.0
+      }
+    ]
+  }
+}

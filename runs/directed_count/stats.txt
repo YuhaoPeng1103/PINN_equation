@@ -1,0 +1,10 @@
+1D harmonic       agree=120/121 refused=1 wrong=0 median=5.2ms
+1D infinite_well  agree=121/121 refused=0 wrong=0 median=5.2ms
+1D finite_well    agree=120/121 refused=1 wrong=0 median=5.2ms
+2D harmonic2d     agree=25/25 refused=0 wrong=0 median=18ms
+2D well2d         agree=25/25 refused=0 wrong=0 median=18ms
+2D anharmonic2d   agree=0/25 refused=25 wrong=0 median=0ms
+determinant recurrence harmonic       unusable on 121/121 shifts, first bad k=36..44
+determinant recurrence infinite_well  unusable on 121/121 shifts, first bad k=37..43
+determinant recurrence finite_well    unusable on 121/121 shifts, first bad k=35..45
+2D general (n=21, 361 unknowns): refused 6/10 shifts, first refusal at step 174, max relative pivot width 9.3e-01

@@ -1,0 +1,77 @@
+{
+  "reference": "dense LAPACK (scripts/dense_reference_2d.py)",
+  "rows": [
+    {
+      "path": "runs\\seeds2d\\harmonic2d\\seed0\\wavefunction2d.npz",
+      "potential": "harmonic2d",
+      "dense": 1.0004352123784992,
+      "filtered_lower": 1.0004128197393076,
+      "filtered_upper": 1.0004586932153365,
+      "contains": true
+    },
+    {
+      "path": "runs\\seeds2d\\harmonic2d\\seed1\\wavefunction2d.npz",
+      "potential": "harmonic2d",
+      "dense": 1.0004352123784992,
+      "filtered_lower": 1.000384603892667,
+      "filtered_upper": 1.0004885481433783,
+      "contains": true
+    },
+    {
+      "path": "runs\\seeds2d\\harmonic2d\\seed2\\wavefunction2d.npz",
+      "potential": "harmonic2d",
+      "dense": 1.0004352123784992,
+      "filtered_lower": 1.0003813051440797,
+      "filtered_upper": 1.0004920644155244,
+      "contains": true
+    },
+    {
+      "path": "runs\\seeds2d\\well2d\\seed0\\wavefunction2d.npz",
+      "potential": "well2d",
+      "dense": 9.868336118746408,
+      "filtered_lower": 9.868336118736565,
+      "filtered_upper": 9.8683361187563,
+      "contains": true
+    },
+    {
+      "path": "runs\\seeds2d\\well2d\\seed1\\wavefunction2d.npz",
+      "potential": "well2d",
+      "dense": 9.868336118746408,
+      "filtered_lower": 9.868336118736568,
+      "filtered_upper": 9.868336118756304,
+      "contains": true
+    },
+    {
+      "path": "runs\\seeds2d\\well2d\\seed2\\wavefunction2d.npz",
+      "potential": "well2d",
+      "dense": 9.868336118746408,
+      "filtered_lower": 9.868336118736565,
+      "filtered_upper": 9.8683361187563,
+      "contains": true
+    },
+    {
+      "path": "runs\\seeds2d\\anharmonic2d\\seed0\\wavefunction2d.npz",
+      "potential": "anharmonic2d",
+      "dense": 1.0977405029038965,
+      "filtered_lower": 1.097354349345693,
+      "filtered_upper": 1.0981286306954967,
+      "contains": true
+    },
+    {
+      "path": "runs\\seeds2d\\anharmonic2d\\seed1\\wavefunction2d.npz",
+      "potential": "anharmonic2d",
+      "dense": 1.0977405029038965,
+      "filtered_lower": 1.0971016489388594,
+      "filtered_upper": 1.0983875907436746,
+      "contains": true
+    },
+    {
+      "path": "runs\\seeds2d\\anharmonic2d\\seed2\\wavefunction2d.npz",
+      "potential": "anharmonic2d",
+      "dense": 1.0977405029038965,
+      "filtered_lower": 1.0970426364401356,
+      "filtered_upper": 1.0984552574442954,
+      "contains": true
+    }
+  ]
+}

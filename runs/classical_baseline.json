@@ -1,0 +1,63 @@
+[
+  {
+    "problem": "harmonic",
+    "n": 0,
+    "method": "numerov",
+    "energy_model": 0.49999999999489575,
+    "energy_ref": 0.5,
+    "energy_abs_err": 5.104250355714157e-12,
+    "energy_rel_err": 1.0208500711428314e-11,
+    "overlap": 0.9999999999999621,
+    "inf_norm": 1.2292770993363271e-08,
+    "residual_rms": 1.1730405919737626e-06
+  },
+  {
+    "problem": "harmonic",
+    "n": 1,
+    "method": "numerov",
+    "energy_model": 1.4999999999678957,
+    "energy_ref": 1.5,
+    "energy_abs_err": 3.210431920308565e-11,
+    "energy_rel_err": 2.1402879468723768e-11,
+    "overlap": 0.9999999999999611,
+    "inf_norm": 1.0409900550627007e-07,
+    "residual_rms": 4.57706916007154e-06
+  },
+  {
+    "problem": "harmonic",
+    "n": 2,
+    "method": "numerov",
+    "energy_model": 2.49999999987761,
+    "energy_ref": 2.5,
+    "energy_abs_err": 1.2239009805625756e-10,
+    "energy_rel_err": 4.895603922250302e-11,
+    "overlap": 0.9999999999999216,
+    "inf_norm": 6.146525432425813e-07,
+    "residual_rms": 1.9335693980246716e-05
+  },
+  {
+    "problem": "harmonic",
+    "n": 3,
+    "method": "numerov",
+    "energy_model": 3.4999999997680247,
+    "energy_ref": 3.5,
+    "energy_abs_err": 2.319753278356984e-10,
+    "energy_rel_err": 6.627866509591383e-11,
+    "overlap": 0.9999999999990157,
+    "inf_norm": 2.9201513776243617e-06,
+    "residual_rms": 8.357011977261205e-05
+  },
+  {
+    "problem": "infinite_well",
+    "n": 0,
+    "method": "numerov",
+    "energy_model": 4.954600785640873,
+    "energy_ref": 4.934802200544679,
+    "energy_abs_err": 0.019798585096194365,
+    "energy_rel_err": 0.004012032152779922,
+    "overlap": 0.9999978532409999,
+    "inf_norm": 0.0044428756299124735,
+    "residual_rms": 140.88356501780765,
+    "note": "V0=2000 深阱近似；误差含 O(E/V0) 物理偏差"
+  }
+]

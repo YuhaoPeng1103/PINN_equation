@@ -1,0 +1,10 @@
+{
+ "run": "runs/appendix_failures/soft_boundary",
+ "norm_raw": 2.9359496504628475,
+ "eta": 9.914397683150018,
+ "lambda0_dense": 9.86453205399011,
+ "residual_norm_unit_field": 5.722933376925245,
+ "residual_norm_raw": 16.802244247605838,
+ "distance_l2_to_ground_state": 1.9363149617450646,
+ "ratio_distance_over_residual": 0.1152414482976565
+}

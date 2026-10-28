@@ -1,0 +1,138 @@
+\section{Introduction}
+\label{sec:intro}
+
+Neural representations of quantum wavefunctions are now used both as
+variational ans\"atze for many-body problems \citep{carleo2017,hermann2020,pfau2020}
+and as mesh-free solvers for the stationary Schr\"odinger equation
+\citep{raissi2019,karniadakis2021}. In the second setting a network $\psi_\theta$ is trained so
+that $\Hh\psi_\theta\approx E\psi_\theta$ in a discrete $L^2$ sense, and the
+paper reports an energy error and a wavefunction overlap against a reference
+solution.
+
+This evaluation scheme has a structural weakness. The reference is either an
+analytic solution---available only for textbook potentials---or the output of
+a classical solver on the same grid. In the second case the comparison
+measures agreement between two approximations, not accuracy, and it silently
+absorbs the discretization error of the grid into the "method error". More
+importantly, in a genuinely new problem there is no reference at all, and the
+only quantities available are those the approximation itself provides. A
+residual is such a quantity, but making it small is itself delicate---the
+gradient pathologies of residual training are well documented
+\citep{wang2021}---and even a small residual is not an error: a residual of
+$10^{-2}$ may correspond to an energy error of $10^{-6}$ or to a wavefunction
+that is entirely the wrong eigenstate. Both directions occur in the runs
+reported below. A network whose energy was accurate to seven digits
+($|\eta-\lambda_h|=2.6\times10^{-7}$ on the infinite-well grid) carried a
+residual of $0.53$, so that the certificate could prove only an angle bound
+of $0.56$~rad and an enclosure six orders of magnitude wider than the true
+error (Section~\ref{sec:leak-results}). Conversely, a network trained with a
+scale-invariant loss returned a field whose residual norm was
+$2.9\times10^{-4}$ while its $L^2$ distance from the eigenfunction of unit norm
+was $0.99$: the residual had been made small by shrinking the field
+(\ref{app:failures}).
+
+The numerical analysis literature solved the corresponding problem for finite
+element and spectral methods long ago: eigenvalue enclosures follow from
+variational bounds (Weinstein, Kato--Temple, Lehmann--Goerisch) together with
+a verified count of the spectrum in an interval \citep{babuska1991,parlett1998},
+and eigenvector bounds follow from the $\sin\theta$ theorems of
+Davis and Kahan \citep{daviskahan1970}. Verified-computing packages routinely
+return such enclosures with directed rounding. What has not been done, to our
+knowledge, is to connect this machinery to neural eigenpairs, where the
+"approximation" is a mesh-free function that must first be sampled on a grid,
+where the hypothesis of the classical theorems (an interval containing exactly
+one eigenvalue) is not available a priori, and where the training procedure
+itself can leak the reference solution into the object being evaluated.
+
+This paper closes that gap with a protocol and a reference implementation. The
+ingredients are classical; the contribution is that they are assembled into
+something that can be run on a neural eigenpair and that verifies its own
+hypotheses. Specifically:
+
+\begin{enumerate}
+\item \textbf{A computable certificate} (Section~\ref{sec:cert}) that takes an
+  approximate eigenfunction $\psi$ on a grid and returns
+  (i) an interval $[a,b]$ that is \emph{verified} to contain exactly one
+  eigenvalue of the discrete Hamiltonian $\Hh$,
+  (ii) a two-sided enclosure of that eigenvalue from the Kato--Temple bound,
+  and (iii) an upper bound on the angle between $\psi$ and the exact discrete
+  eigenfunction from the Davis--Kahan theorem. The verification of (i) uses
+  Sturm sequences in one dimension and the Sylvester inertia of a no-pivot
+  sparse LU factorization in two; it never uses a reference eigenvalue.
+\item \textbf{Two numerical safeguards} that the verification needs in
+  floating point: an explicit check that the factorization performed no
+  pivoting, and a \emph{resolution floor} below which an interval is declared
+  unverifiable. The second is what makes the single-state protocol refuse a
+  degenerate state instead of certifying it with a spuriously narrow interval
+  (Section~\ref{sec:floor}).
+\item \textbf{A cluster certificate} (Section~\ref{sec:subspace}) for the case
+  the single-state certificate must refuse. At a degenerate level no
+  eigenfunction is defined by the problem, so we certify the invariant
+  subspace instead: the multiplicity is measured by the same verified count,
+  each cluster eigenvalue is bracketed to within the residual of its Ritz
+  pair, and a principal-angle bound (Theorem~\ref{thm:angle}) certifies the
+  subspace spanned by a set of network outputs without separating their Ritz
+  values. The construction also yields the failure modes that matter in
+  practice---a subspace that missed a state is refused because its dimension
+  does not match the count, and a set of independent training runs that
+  collapsed onto the same representative is either refused (when the only
+  second direction they contain is the difference of two nearly identical
+  outputs) or accepted with a bound orders of magnitude weaker than a genuine
+  pair's.
+\item \textbf{A protocol} (Section~\ref{sec:protocol}) that uses the
+  certificate in four ways: to remove leakage from the training residual by
+  evaluating the energy at the Rayleigh quotient of the current iterate, to
+  select the truncation order of a Dirichlet spectral filter a posteriori
+  without any reference, and to carry the certified angle bound back to the
+  unfiltered network output through an elementary transport inequality, and
+  to decide which sets of independent outputs actually span a degenerate
+  level (Section~\ref{sec:deg-results}).
+\item \textbf{A directed-rounding count} (Section~\ref{sec:certified}): the
+  one-dimensional Sturm count, and the two-dimensional one for separable
+  potentials, are recomputed in interval arithmetic with outward rounding, so
+  that a verified count is a theorem about the stored matrix rather than a
+  guarded floating-point estimate. An unresolved pivot or an unresolved sum
+  is \emph{refused}, with its position, never rounded to an integer; bisection
+  on the certified count returns certified brackets for discrete eigenvalues
+  in one and two dimensions.
+\item \textbf{A variational bound on the continuous operator}
+  (Section~\ref{sec:variational}): any conforming trial function is a witness
+  that $\lambda_1(\mathcal H)$ does not exceed its Rayleigh quotient, and the
+  P1/Q1 interpolant of a sampled eigenfunction---including a network's---is
+  conforming, so the bound on $\mathcal H$ costs one quadrature and no
+  reference solution, no grid operator and no interpolation constant. The
+  matching lower bound needs a comparison principle; we obtain it for the
+  infinite well and the box and show it to fail for the finite well, whose
+  certified discrete energy can lie above the continuous one.
+\item \textbf{An empirical audit} (Section~\ref{sec:results}) on six
+  potentials in one and two dimensions, three seeds each, including a
+  degeneracy experiment, a controlled splitting that locates the boundary
+  between state and subspace certification, a leakage comparison, and a
+  separation of network error from discretization error.
+\end{enumerate}
+
+We state clearly what is \emph{not} claimed. We do not propose new spectral
+inequalities: Weinstein's, Temple's and Davis--Kahan's bounds are classical,
+and the cluster statements of Section~\ref{sec:subspace} are rearrangements of
+the same two arguments applied to an invariant subspace rather than to a
+vector; what is new is the construction that makes them \emph{decidable}
+for a degenerate level, where the single-state hypothesis cannot hold. The two-sided
+enclosures of Sections~\ref{sec:cert}--\ref{sec:subspace} refer to the
+finite-difference operator $\Hh$, and the bridge to the continuum in
+Section~\ref{sec:certified} is one-sided: an upper bound for every potential,
+a lower bound only where a comparison principle exists. Interval arithmetic
+does not reach the general two-dimensional count either---the separable case
+is exact, while the interval elimination refuses on most shifts, and we report
+that measurement rather than route around it. Finally, we do not
+claim that the certificate is tight. It is not, for non-smooth potentials; we
+report the ratio between certified width and true error rather than hiding it.
+
+The intended use of the protocol is therefore not to replace an eigensolver.
+On every problem in this paper a classical solver produces the eigenpair in a
+fraction of the time, and the certificate applied to that eigenpair is
+$10^{7}$--$10^{10}$ times narrower than the one applied to a trained network,
+except on the two infinite wells, where the filtered network is itself the
+exact sine mode and the two certificates coincide at the round-off floor.
+The intended use is to answer, for a network that has already been trained,
+the question "how wrong can this be?", and to make that answer an auditable
+number in a table.

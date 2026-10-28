@@ -1,0 +1,45 @@
+{
+  "environment": {
+    "python": "3.11.9",
+    "platform": "Windows-10-10.0.26300-SP0",
+    "numpy": "2.4.6",
+    "torch": "2.12.0+cpu",
+    "cuda": false
+  },
+  "state": 0,
+  "grad_balance": false,
+  "orthogonalize": false,
+  "metrics": {
+    "energy_model": 5.489345536880345,
+    "energy_ref": 0.5,
+    "energy_abs_err": 4.989345536880345,
+    "energy_rel_err": 9.97869107376069,
+    "overlap": 0.5123333023108558,
+    "inf_norm": 0.5970850747692937,
+    "residual_rms": 2.2635985112045134
+  },
+  "history": {
+    "epoch": [
+      1
+    ],
+    "loss": [
+      191.39975818526003
+    ],
+    "val_loss": [
+      0.1093821380835055
+    ],
+    "energy": [
+      52.26454004672467
+    ],
+    "seconds": [
+      0.06336739999824204
+    ],
+    "weights": [
+      {
+        "residual": 1.0,
+        "energy": 1.0,
+        "normalization": 1.0
+      }
+    ]
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "rows": [
+    {
+      "potential": "harmonic",
+      "grid_points": 2001,
+      "eigenvector_solver": "scipy.linalg.eigh_tridiagonal (LAPACK)",
+      "rayleigh_quotient": 0.49999887499870965,
+      "lapack_value_used": false,
+      "lapack_eigenvalue_abs_error_order": "eps*||H_h||; not used as a reference",
+      "valid": true,
+      "width": 1.999955756559757e-12,
+      "angle_bound": 5.885790130620067e-12
+    },
+    {
+      "potential": "infinite_well",
+      "grid_points": 2001,
+      "eigenvector_solver": "scipy.linalg.eigh_tridiagonal (LAPACK)",
+      "rayleigh_quotient": 4.934801185969263,
+      "lapack_value_used": false,
+      "lapack_eigenvalue_abs_error_order": "eps*||H_h||; not used as a reference",
+      "valid": true,
+      "width": 9.869438599707792e-12,
+      "angle_bound": 1.979023034046006e-09
+    },
+    {
+      "potential": "finite_well",
+      "grid_points": 2001,
+      "eigenvector_solver": "scipy.linalg.eigh_tridiagonal (LAPACK)",
+      "rayleigh_quotient": -48.97376212635572,
+      "lapack_value_used": false,
+      "lapack_eigenvalue_abs_error_order": "eps*||H_h||; not used as a reference",
+      "valid": true,
+      "width": 9.794121069717221e-11,
+      "angle_bound": 3.5704579861642933e-12
+    }
+  ]
+}

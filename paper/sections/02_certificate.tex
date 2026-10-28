@@ -1,0 +1,265 @@
+\section{The certificate}
+\label{sec:cert}
+
+\subsection{Setting and notation}
+
+Let $\Omega=(0,L)^d\subset\R^d$, $d\in\{1,2\}$, and let $x_i=a+ih$,
+$i=0,\dots,n-1$, $h=L/(n-1)$, be a uniform grid with $n$ points per dimension.
+We denote by $I=\{1,\dots,n-2\}^d$ the interior nodes and by
+$\Hh:\R^{|I|}\to\R^{|I|}$ the five-point (three-point in 1D) Dirichlet
+discretization
+\begin{equation}
+  \Hh \psi = -\tfrac12\Delta_h\psi + V\psi,\qquad
+  \Delta_h\psi = \sum_{k=1}^{d}\frac{\psi_{i-e_k}-2\psi_i+\psi_{i+e_k}}{h^2},
+  \label{eq:Hh}
+\end{equation}
+with $\psi$ extended by zero on $\partial I$ (hard Dirichlet data).
+The discrete inner product and norm are
+\begin{equation}
+  \langle u,v\rangle_h = h^d\!\!\sum_{i\in I} u_i v_i,
+  \qquad \norm{u}_h=\langle u,u\rangle_h^{1/2}.
+\end{equation}
+$\Hh$ is symmetric, so its spectrum
+$\spec(\Hh)=\{\lambda_0\le\lambda_1\le\cdots\}$ is real and may be ordered. It
+is \emph{not} positive definite in general---the finite well used below has
+$V_0=50$ and a ground energy of $-48.97$---and nothing that follows uses
+positivity: the count, the Temple bound and the angle bound need only symmetry
+and an isolating interval. All statements in this section refer to $\Hh$, never to the
+continuous operator; Section~\ref{sec:discretization} quantifies the
+difference.
+
+\begin{definition}[Approximate eigenpair]\label{def:pair}
+For a nonzero $\psi\in\R^{|I|}$ (extended by zero), define the discrete
+Rayleigh quotient and the residual
+\begin{equation}
+  \eta(\psi) = \frac{\langle\psi,\Hh\psi\rangle_h}{\langle\psi,\psi\rangle_h},
+  \qquad
+  r(\psi) = \Hh\psi - \eta(\psi)\psi,
+  \qquad
+  \rho = \norm{r}_h .
+  \label{eq:residual}
+\end{equation}
+We call $(\psi,\eta(\psi))$ an approximate eigenpair with residual norm $\rho$.
+\end{definition}
+
+The choice $\eta=\eta(\psi)$ is not cosmetic: it is the value of $E$ that
+minimizes $\norm{\Hh\psi-E\psi}_h$, and it is the same object that enters the
+bounds below. Using a different energy---for instance a learned scalar or a
+reference value---in the residual produces a quantity that is not the
+certificate's residual, a point we return to in Section~\ref{sec:leakage}.
+
+\begin{lemma}[Weinstein \citep{weinstein1934}]\label{lem:weinstein}
+  $\operatorname{dist}\big(\eta,\spec(\Hh)\big)\le \rho$.
+\end{lemma}
+\begin{proof}
+  If $\eta\notin\spec(\Hh)$ then $(\Hh-\eta)^{-1}$ exists with norm
+  $1/\operatorname{dist}(\eta,\spec(\Hh))$, and
+  $\psi=(\Hh-\eta)^{-1}r$ gives
+  $1=\norm{\psi}_h\le \rho/\operatorname{dist}(\eta,\spec(\Hh))$.
+\end{proof}
+
+Lemma~\ref{lem:weinstein} needs no hypothesis and no reference solution: it
+says only that \emph{some} eigenvalue lies within $\rho$ of $\eta$. It does
+not say which one, and it does not bound the eigenfunction. To obtain a
+two-sided enclosure of a \emph{specific} eigenvalue and an angle bound for its
+eigenfunction, one needs an interval known to contain exactly one eigenvalue.
+The rest of this section is about obtaining that knowledge.
+
+\subsection{Verified counting of the spectrum}
+\label{sec:counting}
+
+For $\sigma\in\R$ define
+\begin{equation}
+  N(\sigma) = \#\{\lambda\in\spec(\Hh): \lambda<\sigma\}.
+\end{equation}
+If $a<\eta<b$ and $N(b)-N(a)=1$, then $(a,b)$ contains exactly one
+eigenvalue, and that eigenvalue is the $k$-th one with $k=N(a)$.
+
+\paragraph{One dimension} $\Hh-\sigma I$ is symmetric tridiagonal with
+diagonal $d_i=V(x_i)-\sigma+1/h^2$ and constant off-diagonal
+$-1/(2h^2)$. The Sturm sequence
+\begin{equation}
+  p_1=d_1,\qquad
+  p_i=d_i-\left(\frac{1}{2h^{2}}\right)^{\!2}\frac{1}{p_{i-1}},\qquad
+  i=2,\dots,|I|,
+\end{equation}
+is the pivot sequence of the $\mathrm{LDL}^{\mathsf T}$ factorization, and by
+Sylvester's law of
+inertia $N(\sigma)$ equals the number of negative $p_i$. The matrix
+$\Hh-\sigma I$ is singular if and only if some $p_i=0$, a case the retry
+logic described below excludes. The recurrence is $O(|I|)$; a count is
+cheaper than a single back-substitution.
+
+\paragraph{Two dimensions} The Sylvester law of inertia states that for a
+symmetric matrix $A$ the triple $(n_+,n_-,n_0)$ of positive, negative and zero
+eigenvalues is invariant under congruence \citep{golub2013}. If $A=LU$ with $L$ unit lower
+triangular and no row or column exchanges, then $U=DL^{\!\top}$ with
+$D=\operatorname{diag}(U_{ii})$ and $A=LDL^{\!\top}$, hence
+\begin{equation}
+  N(\sigma) = \#\{i : U_{ii}<0\}
+  \qquad\text{for } A=\Hh-\sigma I .
+  \label{eq:inertia}
+\end{equation}
+We compute the factorization with SciPy's \texttt{splu}, called as
+\begin{center}\small\ttfamily
+splu(A, permc\_spec="NATURAL", diag\_pivot\_thresh=0.0,\\
+\hspace*{2em}SymmetricMode),
+\end{center}
+which suppresses both column permutations and threshold pivoting. Because a \emph{silent} pivot in a library routine would
+invalidate \eqref{eq:inertia}, the implementation checks three conditions
+before using the count:
+\begin{enumerate}
+\item the returned row and column permutations are both the identity;
+\item $\min_i |U_{ii}| > 10^{-13}\,s$, where
+  $s=\max\{1,\ \tfrac12(2/h_x^2+2/h_y^2)+\max|V|\}$ is the natural scale of
+  $\Hh$ (a degenerate pivot makes the sign of $U_{ii}$ meaningless);
+\item the shift is not within the resolution floor of a spectral gap
+  (Section~\ref{sec:floor}).
+\end{enumerate}
+If (i) or (ii) fails, the shift is perturbed by $10^{-11}s\cdot10^{k}$ and the
+factorization repeated, up to six times; if all attempts fail the count is
+reported as unavailable rather than guessed. For the $81\times81$ grid used
+below ($|I|=6241$, bandwidth $79$) one factorization takes about $0.03$\,s on a single CPU
+core at $N=81$ (and $0.13$\,s at $N=121$), which makes the four to six
+counts per certificate negligible next to training.
+
+\subsection{Constructing an isolating interval}
+\label{sec:isolating}
+
+The approximate spectrum produced by a shift-invert Lanczos iteration,
+computed with \texttt{ARPACK}~\citep{lehoucq1998}, is used only to
+\emph{propose} endpoints; the interval is accepted only after two verified
+counts. For the $k$-th state the proposal is
+\begin{equation}
+  a=\hat\lambda_{k-1}+\tfrac{1}{10}(\hat\lambda_k-\hat\lambda_{k-1}),\qquad
+  b=\hat\lambda_{k+1}-\tfrac{1}{10}(\hat\lambda_{k+1}-\hat\lambda_k),
+\end{equation}
+with the obvious modifications at the spectral edges. If $a<\eta<b$ and
+$N(b)-N(a)=1$, the interval is accepted and $k=N(a)$ is reported as the
+\emph{certified state index}. Otherwise a bisection fallback brackets the
+$k$-th eigenvalue using only counts, and the resulting interval is verified in
+the same way. A proposal is never trusted: a corrupted or missing approximate
+spectrum can only make the construction fail, not make it wrong.
+
+The two verified counts give more than isolation. They certify
+$\gamma:=\min(\eta-a,\,b-\eta)$ as a lower bound on the distance from $\eta$
+to the rest of the spectrum, which is the quantity needed by both the Temple
+and the Davis--Kahan bounds.
+
+\subsection{The two bounds}
+\label{sec:bounds}
+
+\begin{theorem}[Kato--Temple; classical \citep{temple1928,kato1949,parlett1998}]
+\label{thm:temple}
+Let $(a,b)$ contain exactly one eigenvalue $\lambda$ of $\Hh$, let
+$a<\eta<b$, and suppose
+\begin{equation}
+  \rho^2 < (b-\eta)(\eta-a).
+  \label{eq:templecond}
+\end{equation}
+Then
+\begin{equation}
+  \eta-\frac{\rho^2}{b-\eta}\ \le\ \lambda\ \le\ \eta+\frac{\rho^2}{\eta-a}.
+  \label{eq:temple}
+\end{equation}
+\end{theorem}
+
+Note the crossed denominators: the lower bound uses the distance to the
+\emph{upper} neighbour and the upper bound the distance to the \emph{lower}
+one. Swapping them produces bounds that are numerically plausible and wrong;
+this was a real defect in the first version of our code and is now covered by
+a regression test. Condition \eqref{eq:templecond} is also checked at run
+time: when it fails the certificate is marked invalid and says so, and it
+carries no enclosure of the requested state at all. The Weinstein interval is
+returned alongside as a diagnostic, not as a substitute: by
+Lemma~\ref{lem:weinstein} it says only that \emph{some} eigenvalue lies within
+$\rho$ of $\eta$.
+
+\begin{theorem}[Davis--Kahan \citep{daviskahan1970}]
+\label{thm:dk}
+Under the isolation hypothesis of Theorem~\ref{thm:temple}, let $\varphi$ be
+the unit eigenfunction of $\lambda$. Then
+\begin{equation}
+  \sin\angle(\psi,\varphi)\ \le\ \frac{\rho}{\gamma},
+  \qquad \gamma=\min(\eta-a,\,b-\eta).
+  \label{eq:dk}
+\end{equation}
+\end{theorem}
+
+The angle bound requires only the verified gap, not condition
+\eqref{eq:templecond}. It is also the reason why the protocol reports the
+state index: if $\psi$ happens to approximate the second eigenfunction while
+the caller asked for the first, \eqref{eq:dk} remains true but describes a
+different $\varphi$.
+
+\subsection{Resolution floor and the refusal of degeneracy}
+\label{sec:floor}
+
+Floating-point counting has a resolution limit. If two eigenvalues are closer
+than the accuracy with which the inertia of $\Hh-\sigma I$ can be computed,
+then $N(b)-N(a)=1$ may be reported for an interval whose interior contains two
+eigenvalues, and every bound built on that interval is meaningless. We
+therefore refuse to certify when
+\begin{equation}
+  \min(\eta-a,\,b-\eta) \le 10^{-9}\,s,
+  \label{eq:floor}
+\end{equation}
+with
+\begin{equation}
+  \begin{aligned}
+  s &= \max\big\{1,\ \max_i\lvert 1/h^2+V_i\rvert,\ 1/h^2\big\}
+    &&\text{(one dimension)},\\
+  s &= \max\big\{1,\ 1/h_x^2+1/h_y^2+\max\lvert V\rvert\big\}
+    &&\text{(two dimensions)}.
+  \end{aligned}
+\end{equation}
+The first entry is the largest diagonal entry of $\Hh$ or twice the
+off-diagonal one, and the two coincide when $V\ge0$.
+The constant $10^{-9}$ is a heuristic safety margin of roughly $10^{7}$
+machine epsilons relative to the operator scale; it is not a theorem. It is
+chosen far above the observed noise of the count in our tests and far below
+any spectral gap of physical interest.
+
+\begin{remark}[Degeneracy is refused, not accommodated]
+\label{sec:degeneracy}
+If the state of interest is degenerate, no interval satisfying the isolation
+hypothesis exists, and the protocol returns \texttt{valid=False} together with
+the reason. This is correct behaviour, not a numerical failure. A residual of
+$10^{-12}$ for a degenerate eigenvector is possible, and a report that quotes
+only the residual will describe it as an accuracy of $10^{-12}$; the
+certificate instead states that the state cannot be identified. The
+distinction matters for any automatic workflow that uses the certificate to
+select states, and it is demonstrated in Section~\ref{sec:deg-results}.
+What the refusal does not mean is that nothing can be said at such a level: Section~\ref{sec:subspace} replaces the isolated state by the invariant subspace, for which an isolating interval---one containing exactly the degenerate cluster---does exist and the same counting machinery verifies it.
+\end{remark}
+
+\subsection{What is and is not certified}
+\label{sec:fp}
+
+The enclosure \eqref{eq:temple} and the angle bound \eqref{eq:dk} are
+theorems about the exact matrix $\Hh$; the implementation evaluates them in
+double precision. The arithmetic of the Rayleigh quotient and the residual is
+not the issue---it is a few $O(\varepsilon)$ perturbations of quantities that
+are themselves $O(1)$---but the count $N(\sigma)$ is a combinatorial object
+computed from a floating-point factorization, and a single misclassified sign
+changes it by one. The guards of Section~\ref{sec:counting} and the floor
+\eqref{eq:floor} are designed so that the count is wrong only if the
+factorization is wrong by much more than its typical error, which we have not
+observed; but they do not constitute a proof. Section~\ref{sec:certified}
+closes this gap for the one-dimensional count and for two-dimensional
+separable potentials, by redoing the count in directed-rounding interval
+arithmetic at a factor of thirteen in cost; the general two-dimensional
+factorization remains floating point there, and we say why.
+
+The second limitation is scope: everything above refers to $\Hh$. A
+two-sided bound for the continuous operator would require an
+eigenvalue-perturbation estimate between $\Hh$ and $\mathcal H$ with explicit
+constants; Section~\ref{sec:variational} instead obtains a one-sided bound
+from the min--max principle, which needs no such estimate and costs one
+Rayleigh quotient. Section~\ref{sec:discretization} measures
+this gap for the two potentials where the truncated-domain eigenvalue is
+known, and shows that at $N=81$ the gap ($3.5\times10^{-4}$) exceeds the certified
+width of a trained two-dimensional network ($0.5$--$1.1\times10^{-4}$) by a
+factor of three to eight. The certificate is therefore already limited by the
+grid, not by the network: refining the network cannot buy accuracy that the
+discretization does not have.

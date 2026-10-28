@@ -1,0 +1,1 @@
+[worker] exp5 finite_well state=1 seed=0 -> energy_model=-4.7138e+01, energy_ref=-4.5925e+01, energy_abs_err=1.2137e+00, energy_rel_err=2.6429e-02, overlap=7.7047e-01, inf_norm=7.1169e-01, residual_rms=4.3479e-01

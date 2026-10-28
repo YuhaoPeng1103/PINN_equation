@@ -1,0 +1,175 @@
+{
+  "potential": "harmonic",
+  "state": 0,
+  "seed": 0,
+  "epochs": 3000,
+  "width": 64,
+  "depth": 3,
+  "learned_energy": false,
+  "residual_energy": "reference",
+  "use_energy": true,
+  "weights": {
+    "residual": 1.0,
+    "normalization": 100.0,
+    "boundary": 100.0,
+    "energy": 10.0
+  },
+  "learned_energy_value": null,
+  "metrics": {
+    "energy_model": 0.5000146101575,
+    "energy_ref": 0.5,
+    "energy_abs_err": 1.4610157500039023e-05,
+    "energy_rel_err": 2.9220315000078045e-05,
+    "overlap": 0.999997991191935,
+    "inf_norm": 0.0015657252002211908,
+    "residual_rms": 0.09588669472532727
+  },
+  "certificate": {
+    "energy": 0.5000200075047921,
+    "residual_norm": 0.33051919318100415,
+    "weinstein_lower": 0.169500814322788,
+    "weinstein_upper": 0.8305392006867963,
+    "interval_lower": -0.5000011250031093,
+    "interval_upper": 1.4999943749771771,
+    "temple_lower": 0.39077427019839195,
+    "temple_upper": 0.6092606360383684,
+    "spectral_gap": 0.999974367471385,
+    "eigenfunction_angle_bound": 0.33686260872764223,
+    "valid": true,
+    "reason": "Temple 区间已由 Sturm 计数验证为单态区间；区间由 isolating_interval 自动构造",
+    "state_index": 0,
+    "width": 0.2184863658399765
+  },
+  "history": {
+    "epoch": [
+      1,
+      300,
+      600,
+      900,
+      1200,
+      1500,
+      1800,
+      2100,
+      2400,
+      2700,
+      3000
+    ],
+    "loss": [
+      506.0094450363084,
+      58.04713644896931,
+      12.296647740583987,
+      5.760404006473095,
+      5.211424425337185,
+      5.043069797591736,
+      7.622418988507932,
+      5.016245988828165,
+      5.012725232373809,
+      5.009541738537482,
+      5.050095642303285
+    ],
+    "val_loss": [
+      4.935276625558403,
+      3.913254310670163,
+      3.219495263836313,
+      0.8244684318445709,
+      0.285740283463664,
+      0.1566831050379651,
+      0.10065588021859986,
+      0.1788318707865552,
+      0.30378118139670784,
+      0.03722468692491174,
+      0.05482424072602009,
+      2.5698892545658047,
+      0.018793380698422624,
+      0.015840765327125347,
+      0.01345867032898924,
+      0.012283601854089264,
+      0.010354243369414337,
+      0.009146253279417767,
+      0.11688848638658975,
+      0.015572219072679878
+    ],
+    "energy": [],
+    "seconds": [
+      0.006711499998345971,
+      0.7909397000039462,
+      1.5792770000043674,
+      2.3497801999983494,
+      3.136307900000247,
+      3.917200399999274,
+      4.696887199999765,
+      5.4667230999984895,
+      6.245985400004429,
+      7.046270300001197,
+      7.843735000002198
+    ],
+    "weights": [
+      {
+        "residual": 1.0,
+        "normalization": 100.0,
+        "boundary": 100.0,
+        "energy": 10.0
+      },
+      {
+        "residual": 1.0,
+        "normalization": 100.0,
+        "boundary": 100.0,
+        "energy": 10.0
+      },
+      {
+        "residual": 1.0,
+        "normalization": 100.0,
+        "boundary": 100.0,
+        "energy": 10.0
+      },
+      {
+        "residual": 1.0,
+        "normalization": 100.0,
+        "boundary": 100.0,
+        "energy": 10.0
+      },
+      {
+        "residual": 1.0,
+        "normalization": 100.0,
+        "boundary": 100.0,
+        "energy": 10.0
+      },
+      {
+        "residual": 1.0,
+        "normalization": 100.0,
+        "boundary": 100.0,
+        "energy": 10.0
+      },
+      {
+        "residual": 1.0,
+        "normalization": 100.0,
+        "boundary": 100.0,
+        "energy": 10.0
+      },
+      {
+        "residual": 1.0,
+        "normalization": 100.0,
+        "boundary": 100.0,
+        "energy": 10.0
+      },
+      {
+        "residual": 1.0,
+        "normalization": 100.0,
+        "boundary": 100.0,
+        "energy": 10.0
+      },
+      {
+        "residual": 1.0,
+        "normalization": 100.0,
+        "boundary": 100.0,
+        "energy": 10.0
+      },
+      {
+        "residual": 1.0,
+        "normalization": 100.0,
+        "boundary": 100.0,
+        "energy": 10.0
+      }
+    ]
+  }
+}

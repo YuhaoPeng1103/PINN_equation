@@ -1,0 +1,153 @@
+{
+ "method": "scipy.linalg.eigh, subset_by_index=[0,2], driver=evr",
+ "grid": "81x81",
+ "problems": {
+  "harmonic2d": {
+   "dense_eigenvalues": [
+    1.0004352123784594,
+    2.005420762487992,
+    2.0054207624881086
+   ],
+   "dense_rayleigh": [
+    1.0004352123784992,
+    2.0054207624880798,
+    2.0054207624880807
+   ],
+   "arpack": [
+    1.0004352123785027,
+    2.005420762488082,
+    2.0054207624880847
+   ],
+   "runs": [
+    {
+     "path": "runs\\seeds2d\\harmonic2d\\seed0\\wavefunction2d.npz",
+     "state_index": 0,
+     "dense": 1.0004352123784992,
+     "arpack": 1.0004352123785027,
+     "arpack_minus_dense": 3.552713678800501e-15,
+     "temple_lower": 1.0004128197393076,
+     "temple_upper": 1.0004586932153365,
+     "contains_dense": true
+    },
+    {
+     "path": "runs\\seeds2d\\harmonic2d\\seed1\\wavefunction2d.npz",
+     "state_index": 0,
+     "dense": 1.0004352123784992,
+     "arpack": 1.0004352123785027,
+     "arpack_minus_dense": 3.552713678800501e-15,
+     "temple_lower": 1.000384603892667,
+     "temple_upper": 1.0004885481433783,
+     "contains_dense": true
+    },
+    {
+     "path": "runs\\seeds2d\\harmonic2d\\seed2\\wavefunction2d.npz",
+     "state_index": 0,
+     "dense": 1.0004352123784992,
+     "arpack": 1.0004352123785027,
+     "arpack_minus_dense": 3.552713678800501e-15,
+     "temple_lower": 1.0003813051440797,
+     "temple_upper": 1.0004920644155244,
+     "contains_dense": true
+    }
+   ]
+  },
+  "well2d": {
+   "dense_eigenvalues": [
+    9.868336118748056,
+    24.66323216735661,
+    24.66323216735661
+   ],
+   "dense_rayleigh": [
+    9.868336118746408,
+    24.66323216735418,
+    24.663232167354177
+   ],
+   "arpack": [
+    9.868336118746097,
+    24.663232167353726,
+    24.663232167353893
+   ],
+   "runs": [
+    {
+     "path": "runs\\seeds2d\\well2d\\seed0\\wavefunction2d.npz",
+     "state_index": 0,
+     "dense": 9.868336118746408,
+     "arpack": 9.868336118746097,
+     "arpack_minus_dense": -3.1086244689504383e-13,
+     "temple_lower": 9.868336118736565,
+     "temple_upper": 9.8683361187563,
+     "contains_dense": true
+    },
+    {
+     "path": "runs\\seeds2d\\well2d\\seed1\\wavefunction2d.npz",
+     "state_index": 0,
+     "dense": 9.868336118746408,
+     "arpack": 9.868336118746097,
+     "arpack_minus_dense": -3.1086244689504383e-13,
+     "temple_lower": 9.868336118736568,
+     "temple_upper": 9.868336118756304,
+     "contains_dense": true
+    },
+    {
+     "path": "runs\\seeds2d\\well2d\\seed2\\wavefunction2d.npz",
+     "state_index": 0,
+     "dense": 9.868336118746408,
+     "arpack": 9.868336118746097,
+     "arpack_minus_dense": -3.1086244689504383e-13,
+     "temple_lower": 9.868336118736565,
+     "temple_upper": 9.8683361187563,
+     "contains_dense": true
+    }
+   ]
+  },
+  "anharmonic2d": {
+   "dense_eigenvalues": [
+    1.0977405029040317,
+    2.2645704368203683,
+    2.2645704368204873
+   ],
+   "dense_rayleigh": [
+    1.0977405029038965,
+    2.2645704368203323,
+    2.264570436820332
+   ],
+   "arpack": [
+    1.0977405029038994,
+    2.2645704368203323,
+    2.2645704368203323
+   ],
+   "runs": [
+    {
+     "path": "runs\\seeds2d\\anharmonic2d\\seed0\\wavefunction2d.npz",
+     "state_index": 0,
+     "dense": 1.0977405029038965,
+     "arpack": 1.0977405029038994,
+     "arpack_minus_dense": 2.886579864025407e-15,
+     "temple_lower": 1.097354349345693,
+     "temple_upper": 1.0981286306954967,
+     "contains_dense": true
+    },
+    {
+     "path": "runs\\seeds2d\\anharmonic2d\\seed1\\wavefunction2d.npz",
+     "state_index": 0,
+     "dense": 1.0977405029038965,
+     "arpack": 1.0977405029038994,
+     "arpack_minus_dense": 2.886579864025407e-15,
+     "temple_lower": 1.0971016489388594,
+     "temple_upper": 1.0983875907436746,
+     "contains_dense": true
+    },
+    {
+     "path": "runs\\seeds2d\\anharmonic2d\\seed2\\wavefunction2d.npz",
+     "state_index": 0,
+     "dense": 1.0977405029038965,
+     "arpack": 1.0977405029038994,
+     "arpack_minus_dense": 2.886579864025407e-15,
+     "temple_lower": 1.0970426364401356,
+     "temple_upper": 1.0984552574442954,
+     "contains_dense": true
+    }
+   ]
+  }
+ }
+}

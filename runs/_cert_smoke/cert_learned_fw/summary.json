@@ -1,0 +1,45 @@
+[
+  {
+    "path": "runs\\_cert_smoke\\exp5_learned_fw0_10k\\wavefunction.npz",
+    "n_points": 2001,
+    "dx": 0.008000000000000007,
+    "certificate": {
+      "energy": -48.9662280236645,
+      "residual_norm": 2.743013005504,
+      "weinstein_lower": -51.70924102921746,
+      "weinstein_upper": -46.22321501811154,
+      "interval_lower": -49.97376212635664,
+      "interval_upper": -45.90317629337642,
+      "temple_lower": null,
+      "temple_upper": null,
+      "spectral_gap": 1.0075341026431746,
+      "eigenfunction_angle_bound": 1.5707963267948966,
+      "valid": false,
+      "reason": "Temple 二次界不可用（残差相对谱隙太大）: Temple 条件 r² < (upper−η)(η−lower) 不成立: r²=7.52412, 阈值=3.08613",
+      "state_index": 0
+    },
+    "continuous_rayleigh": -48.96722886739115,
+    "discrete_ref": -48.97376212635636,
+    "discrete_ref_method": "scipy_eigh_tridiagonal_rayleigh",
+    "discrete_ref_sturm": -48.97376212635663,
+    "sturm_vs_independent_gap": 2.7000623958883807e-13,
+    "contains_discrete_ref": false,
+    "state_matches_target": true,
+    "meta_file": "exp5_certificate_training.json",
+    "potential": "finite_well",
+    "target_state": 0,
+    "seed": 0,
+    "residual_energy": "learned",
+    "orthogonalize": null,
+    "learned_energy": true,
+    "metrics": {
+      "energy_model": -48.96722664983494,
+      "energy_ref": -48.97920066044197,
+      "energy_abs_err": 0.011974010607026742,
+      "energy_rel_err": 0.00024447133570102434,
+      "overlap": 0.9999581352604301,
+      "inf_norm": 0.004975550234503413,
+      "residual_rms": 0.3191477689473433
+    }
+  }
+]

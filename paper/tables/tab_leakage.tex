@@ -1,0 +1,11 @@
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lccccc}
+\toprule
+Residual energy & raw & filt.\ contains & med.\ $|\Delta E|$ & med.\ width & max width \\
+\midrule
+Rayleigh (no leak) & 7/9 & 9/9 & $4.9\times10^{-6}$ & $3.0\times10^{-5}$ & $0.729$ \\
+Learnable scalar $E_\theta$ & 5/9 & 9/9 & $7.2\times10^{-6}$ & $4.9\times10^{-5}$ & $2.72$ \\
+Reference $E$ (leaky) & 8/9 & 9/9 & $6.4\times10^{-6}$ & $2.6\times10^{-5}$ & $0.628$ \\
+Deflation (leaky) & 0/3 & 3/3 & $0.109$ & $0.218$ & $0.486$ \\
+\bottomrule
+\end{tabular}

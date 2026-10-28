@@ -1,0 +1,21 @@
+{
+  "environment": {
+    "python": "3.11.9",
+    "platform": "Windows-10-10.0.26300-SP0",
+    "numpy": "2.4.6",
+    "torch": "2.12.0+cpu",
+    "cuda": false
+  },
+  "n_obs": 0,
+  "noise": 0.01,
+  "metrics": {
+    "energy_model": 4.906984718649841,
+    "energy_ref": 4.934802200544679,
+    "energy_abs_err": 0.02781748189483757,
+    "energy_rel_err": 0.005637000383068487,
+    "overlap": 0.9999987730257858,
+    "inf_norm": 0.003540516021066637,
+    "residual_rms": 0.24676092712051878
+  },
+  "final_loss": 0.8649861350485029
+}

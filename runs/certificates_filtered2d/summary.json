@@ -1,0 +1,6503 @@
+[
+  {
+    "path": "runs\\seeds2d\\anharmonic2d\\seed0\\wavefunction2d.npz",
+    "filtered_path": "runs\\certificates_filtered2d\\runs__seeds2d__anharmonic2d__seed0.npz",
+    "potential": "anharmonic2d",
+    "seed": 0,
+    "n_grid": 81,
+    "cutoff": [
+      7,
+      7
+    ],
+    "reason": "取证书宽度最小的二维截断阶数",
+    "l2_change": 0.001228872594041468,
+    "rel_l2_change": 0.0012288725940414681,
+    "raw_certificate": {
+      "energy": 1.0977775485612118,
+      "residual_norm": 0.029583995564988575,
+      "weinstein_lower": 1.0681935529951254,
+      "weinstein_upper": 1.1273615441272982,
+      "interval_lower": -0.06908943101253451,
+      "interval_upper": 2.1478874434286865,
+      "temple_lower": 1.0969440997964495,
+      "temple_upper": 1.0985276021750263,
+      "spectral_gap": 1.050109894866377,
+      "eigenfunction_angle_bound": 0.02817601326048204,
+      "valid": true,
+      "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造",
+      "state_index": 0
+    },
+    "raw_width": 0.001583502378576851,
+    "filtered_certificate": {
+      "energy": 1.097761873309167,
+      "residual_norm": 0.020686984635938502,
+      "weinstein_lower": 1.0770748886721306,
+      "weinstein_upper": 1.1184488579462033,
+      "interval_lower": -0.06908943101253451,
+      "interval_upper": 2.1478874434286865,
+      "temple_lower": 1.097354349345693,
+      "temple_upper": 1.0981286306954967,
+      "spectral_gap": 1.0501255701184218,
+      "eigenfunction_angle_bound": 0.019700808611577907,
+      "valid": true,
+      "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造",
+      "state_index": 0
+    },
+    "filtered_width": 0.0007742813498037293,
+    "filtered_angle": 0.019700808611577907,
+    "raw_angle_transported": 0.022159093304396686,
+    "raw_angle_true_discrete": 0.0014111703144689465,
+    "discrete_ref": 1.0977405029038976,
+    "target_state": 0,
+    "state_matches_target": true,
+    "filtered_contains_ref": true,
+    "scan": [
+      {
+        "cutoff": [
+          1,
+          1
+        ],
+        "energy": 2.142083721348961,
+        "residual_norm": 2.3565126916026897,
+        "width": null,
+        "valid": false,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 二次界不可用（残差相对谱隙太大）: Temple 条件 r² < (upper−η)(η−lower) 不成立: r²=5.55315, 阈值=0.012833"
+      },
+      {
+        "cutoff": [
+          2,
+          2
+        ],
+        "energy": 2.142083725174201,
+        "residual_norm": 2.3565126954183486,
+        "width": null,
+        "valid": false,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 二次界不可用（残差相对谱隙太大）: Temple 条件 r² < (upper−η)(η−lower) 不成立: r²=5.55315, 阈值=0.012833"
+      },
+      {
+        "cutoff": [
+          3,
+          3
+        ],
+        "energy": 1.1366190855808256,
+        "residual_norm": 0.5182800813803377,
+        "width": 0.48840651937376633,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          4,
+          4
+        ],
+        "energy": 1.1366191127890968,
+        "residual_norm": 0.518280402795545,
+        "width": 0.48840712727089297,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          5,
+          5
+        ],
+        "energy": 1.0983278252044018,
+        "residual_norm": 0.08517723694501202,
+        "width": 0.013127288728724373,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          6,
+          6
+        ],
+        "energy": 1.098328430315046,
+        "residual_norm": 0.08523090080473397,
+        "width": 0.013143835766461276,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          8,
+          8
+        ],
+        "energy": 1.0977629387932843,
+        "residual_norm": 0.02107104460612596,
+        "width": 0.0008032978261194312,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          10,
+          10
+        ],
+        "energy": 1.097769081051184,
+        "residual_norm": 0.02488212537660216,
+        "width": 0.0011201589692741987,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          12,
+          12
+        ],
+        "energy": 1.0977751818747263,
+        "residual_norm": 0.02733778160323069,
+        "width": 0.0013521706475205786,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          15,
+          15
+        ],
+        "energy": 1.0977764837458373,
+        "residual_norm": 0.028235762428035015,
+        "width": 0.0014424609236498576,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          18,
+          18
+        ],
+        "energy": 1.0977769220715952,
+        "residual_norm": 0.02859438963247432,
+        "width": 0.0014793355641162798,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          20,
+          20
+        ],
+        "energy": 1.097777092302521,
+        "residual_norm": 0.0287700198038609,
+        "width": 0.0014975639102581262,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          25,
+          25
+        ],
+        "energy": 1.09777736095322,
+        "residual_norm": 0.029119637777142306,
+        "width": 0.001534182384134386,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          30,
+          30
+        ],
+        "energy": 1.097777437945087,
+        "residual_norm": 0.029258667657106264,
+        "width": 0.001548867082240779,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          40,
+          40
+        ],
+        "energy": 1.0977775153219673,
+        "residual_norm": 0.029450143603496935,
+        "width": 0.001569205764710313,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          50,
+          50
+        ],
+        "energy": 1.0977775386118185,
+        "residual_norm": 0.02953490456641987,
+        "width": 0.0015782514828059924,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          60,
+          60
+        ],
+        "energy": 1.097777546188705,
+        "residual_norm": 0.02957068358101883,
+        "width": 0.0015820776338439924,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          4,
+          6
+        ],
+        "energy": 1.1174886369248325,
+        "residual_norm": 0.3688093773270783,
+        "width": 0.24663994161430736,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          4,
+          7
+        ],
+        "energy": 1.117189940370792,
+        "residual_norm": 0.3635546976787582,
+        "width": 0.23965278604323126,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          4,
+          9
+        ],
+        "energy": 1.117189764921666,
+        "residual_norm": 0.3635363485298992,
+        "width": 0.23962859003554848,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          4,
+          10
+        ],
+        "energy": 1.117190173722405,
+        "residual_norm": 0.3635454842481159,
+        "width": 0.23964064645103533,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          4,
+          12
+        ],
+        "energy": 1.1171928411259129,
+        "residual_norm": 0.36362078192677555,
+        "width": 0.23974000702732046,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          4,
+          16
+        ],
+        "energy": 1.1171931993349487,
+        "residual_norm": 0.3636413267418015,
+        "width": 0.2397671096601266,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          6,
+          4
+        ],
+        "energy": 1.117490658135081,
+        "residual_norm": 0.3688333843932916,
+        "width": 0.2466721156255237,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          6,
+          7
+        ],
+        "energy": 1.098044413922724,
+        "residual_norm": 0.061919140475732944,
+        "width": 0.006936908549999288,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          6,
+          9
+        ],
+        "energy": 1.0980454882095994,
+        "residual_norm": 0.062367031391758365,
+        "width": 0.007037628225369241,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          6,
+          10
+        ],
+        "energy": 1.0980459117049048,
+        "residual_norm": 0.062422244452540944,
+        "width": 0.007050094744849966,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          6,
+          12
+        ],
+        "energy": 1.0980486238962726,
+        "residual_norm": 0.06286825891098229,
+        "width": 0.00715120408117742,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          6,
+          16
+        ],
+        "energy": 1.0980490019753373,
+        "residual_norm": 0.06300047583469853,
+        "width": 0.007181315066667082,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          7,
+          4
+        ],
+        "energy": 1.1171918280602666,
+        "residual_norm": 0.3635828485614851,
+        "width": 0.2396899587953062,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          7,
+          6
+        ],
+        "energy": 1.0980445423352163,
+        "residual_norm": 0.06190940289481985,
+        "width": 0.006934726970693639,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          7,
+          7
+        ],
+        "energy": 1.097761873309167,
+        "residual_norm": 0.020686984635938502,
+        "width": 0.0007742813498037293,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          7,
+          9
+        ],
+        "energy": 1.0977628697242037,
+        "residual_norm": 0.02182996567752464,
+        "width": 0.0008622050486732924,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          7,
+          10
+        ],
+        "energy": 1.0977632932322943,
+        "residual_norm": 0.021986750583817417,
+        "width": 0.0008746344372561055,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          7,
+          12
+        ],
+        "energy": 1.0977660298896108,
+        "residual_norm": 0.02326012900162942,
+        "width": 0.0009788785780284748,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          7,
+          16
+        ],
+        "energy": 1.0977664275788226,
+        "residual_norm": 0.02364041276247077,
+        "width": 0.0010111479669003831,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          9,
+          4
+        ],
+        "energy": 1.1171939928902619,
+        "residual_norm": 0.36362098501877893,
+        "width": 0.23974030996693074,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          9,
+          6
+        ],
+        "energy": 1.0980482974075532,
+        "residual_norm": 0.06276221589056255,
+        "width": 0.007127099621008659,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          9,
+          7
+        ],
+        "energy": 1.0977657787951074,
+        "residual_norm": 0.023035324106225958,
+        "width": 0.0009600486257912433,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          9,
+          9
+        ],
+        "energy": 1.097766860602521,
+        "residual_norm": 0.02411963407341102,
+        "width": 0.0010525580330382756,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          9,
+          10
+        ],
+        "energy": 1.09776728402099,
+        "residual_norm": 0.024261606750991135,
+        "width": 0.00106498565107227,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          9,
+          12
+        ],
+        "energy": 1.097770029372076,
+        "residual_norm": 0.02543176806850655,
+        "width": 0.0011701939818127283,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          9,
+          16
+        ],
+        "energy": 1.0977704290691652,
+        "residual_norm": 0.02577960140938845,
+        "width": 0.0012024226950171357,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          10,
+          4
+        ],
+        "energy": 1.1171954420531895,
+        "residual_norm": 0.3636601968093441,
+        "width": 0.23979206271915543,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          10,
+          6
+        ],
+        "energy": 1.098049951547756,
+        "residual_norm": 0.06297977469191383,
+        "width": 0.007176597119629591,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          10,
+          7
+        ],
+        "energy": 1.0977675509128064,
+        "residual_norm": 0.02367379690173189,
+        "width": 0.001014005905314308,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          10,
+          9
+        ],
+        "energy": 1.0977686572525593,
+        "residual_norm": 0.024743461513295675,
+        "width": 0.0011077088009348035,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          10,
+          12
+        ],
+        "energy": 1.097771826686958,
+        "residual_norm": 0.026024535589127082,
+        "width": 0.0012253800416190952,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          10,
+          16
+        ],
+        "energy": 1.0977722266728915,
+        "residual_norm": 0.02636483012127402,
+        "width": 0.0012576355270237372,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          12,
+          4
+        ],
+        "energy": 1.1171986019221656,
+        "residual_norm": 0.3637495181472339,
+        "width": 0.2399099679494302,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          12,
+          6
+        ],
+        "energy": 1.0980532515278103,
+        "residual_norm": 0.06351032397291302,
+        "width": 0.007298021772122132,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          12,
+          7
+        ],
+        "energy": 1.0977708966619033,
+        "residual_norm": 0.025098487652122945,
+        "width": 0.0011397245258517597,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          12,
+          9
+        ],
+        "energy": 1.0977720114293983,
+        "residual_norm": 0.026122151257018868,
+        "width": 0.001234589881944137,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          12,
+          10
+        ],
+        "energy": 1.097772435345374,
+        "residual_norm": 0.026253426589482824,
+        "width": 0.001247029829388957,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          12,
+          16
+        ],
+        "energy": 1.0977755823156683,
+        "residual_norm": 0.027662775230813983,
+        "width": 0.0013845112127042203,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          16,
+          4
+        ],
+        "energy": 1.1171994751463281,
+        "residual_norm": 0.36379183073695326,
+        "width": 0.2399658121604854,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          16,
+          6
+        ],
+        "energy": 1.0980541493810505,
+        "residual_norm": 0.06375808266074558,
+        "width": 0.007355073763804176,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          16,
+          7
+        ],
+        "energy": 1.09777181099121,
+        "residual_norm": 0.025741088943176782,
+        "width": 0.0011988329080530047,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          16,
+          9
+        ],
+        "energy": 1.0977729280551878,
+        "residual_norm": 0.02674005012578454,
+        "width": 0.0012936872729250037,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          16,
+          10
+        ],
+        "energy": 1.0977733521213557,
+        "residual_norm": 0.026868459026353264,
+        "width": 0.001306142038807634,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          16,
+          12
+        ],
+        "energy": 1.0977760992360306,
+        "residual_norm": 0.027929895884941956,
+        "width": 0.0014113789513705566,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          16,
+          16
+        ],
+        "energy": 1.0977764997817803,
+        "residual_norm": 0.0282483100491947,
+        "width": 0.0014437432340501655,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      }
+    ]
+  },
+  {
+    "path": "runs\\seeds2d\\anharmonic2d\\seed1\\wavefunction2d.npz",
+    "filtered_path": "runs\\certificates_filtered2d\\runs__seeds2d__anharmonic2d__seed1.npz",
+    "potential": "anharmonic2d",
+    "seed": 1,
+    "n_grid": 81,
+    "cutoff": [
+      7,
+      7
+    ],
+    "reason": "取证书宽度最小的二维截断阶数",
+    "l2_change": 0.0015629858990692505,
+    "rel_l2_change": 0.0015629858990692507,
+    "raw_certificate": {
+      "energy": 1.097804450180918,
+      "residual_norm": 0.0360050985368653,
+      "weinstein_lower": 1.061799351642955,
+      "weinstein_upper": 1.1338095487188813,
+      "interval_lower": -0.06908943101253673,
+      "interval_upper": 2.1478874434286874,
+      "temple_lower": 1.0965699124061536,
+      "temple_upper": 1.098915405635243,
+      "spectral_gap": 1.0500829932466715,
+      "eigenfunction_angle_bound": 0.034294581901148403,
+      "valid": true,
+      "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造",
+      "state_index": 0
+    },
+    "raw_width": 0.0023454932290893904,
+    "filtered_certificate": {
+      "energy": 1.0977784824447852,
+      "residual_norm": 0.026659874878061002,
+      "weinstein_lower": 1.0711186075656263,
+      "weinstein_upper": 1.124438357323944,
+      "interval_lower": -0.06908943101253673,
+      "interval_upper": 2.1478874434286874,
+      "temple_lower": 1.0971016489388594,
+      "temple_upper": 1.0983875907436746,
+      "spectral_gap": 1.0501089609828045,
+      "eigenfunction_angle_bound": 0.025390450492807373,
+      "valid": true,
+      "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造",
+      "state_index": 0
+    },
+    "filtered_width": 0.0012859418048152271,
+    "filtered_angle": 0.025390450492807373,
+    "raw_angle_transported": 0.028517560401877782,
+    "raw_angle_true_discrete": 0.0020122210324931278,
+    "discrete_ref": 1.0977405029038971,
+    "target_state": 0,
+    "state_matches_target": true,
+    "filtered_contains_ref": true,
+    "scan": [
+      {
+        "cutoff": [
+          1,
+          1
+        ],
+        "energy": 2.142083721348962,
+        "residual_norm": 2.35651269160269,
+        "width": null,
+        "valid": false,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 二次界不可用（残差相对谱隙太大）: Temple 条件 r² < (upper−η)(η−lower) 不成立: r²=5.55315, 阈值=0.012833"
+      },
+      {
+        "cutoff": [
+          2,
+          2
+        ],
+        "energy": 2.1420837239744284,
+        "residual_norm": 2.3565126953068156,
+        "width": null,
+        "valid": false,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 二次界不可用（残差相对谱隙太大）: Temple 条件 r² < (upper−η)(η−lower) 不成立: r²=5.55315, 阈值=0.012833"
+      },
+      {
+        "cutoff": [
+          3,
+          3
+        ],
+        "energy": 1.1366116727390667,
+        "residual_norm": 0.5181567610261424,
+        "width": 0.4881735455808083,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          4,
+          4
+        ],
+        "energy": 1.1366117353163052,
+        "residual_norm": 0.5181575556670003,
+        "width": 0.4881750477708544,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          5,
+          5
+        ],
+        "energy": 1.0983238751665207,
+        "residual_norm": 0.08432551998776434,
+        "width": 0.012866067703943385,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          6,
+          6
+        ],
+        "energy": 1.0983264327111277,
+        "residual_norm": 0.08457749576922548,
+        "width": 0.012943076784380558,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          8,
+          8
+        ],
+        "energy": 1.0977821624924828,
+        "residual_norm": 0.027534032385806272,
+        "width": 0.0013716550017155438,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          10,
+          10
+        ],
+        "energy": 1.09780082838618,
+        "residual_norm": 0.03360631984807118,
+        "width": 0.0020433743571630636,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          12,
+          12
+        ],
+        "energy": 1.097802616435139,
+        "residual_norm": 0.03445543516695883,
+        "width": 0.002147937196019134,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          15,
+          15
+        ],
+        "energy": 1.0978038236430079,
+        "residual_norm": 0.03526025861407498,
+        "width": 0.0022494541038935445,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          18,
+          18
+        ],
+        "energy": 1.0978040429117302,
+        "residual_norm": 0.03544487726869416,
+        "width": 0.002273071584441899,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          20,
+          20
+        ],
+        "energy": 1.097804168635096,
+        "residual_norm": 0.03556640929107119,
+        "width": 0.0022886859746271693,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          25,
+          25
+        ],
+        "energy": 1.0978043373710302,
+        "residual_norm": 0.03576724995087596,
+        "width": 0.0023146070449311384,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          30,
+          30
+        ],
+        "energy": 1.0978043860965376,
+        "residual_norm": 0.03584425159450628,
+        "width": 0.0023245838024372745,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          40,
+          40
+        ],
+        "energy": 1.0978044313348436,
+        "residual_norm": 0.035940923012246655,
+        "width": 0.0023371394573392656,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          50,
+          50
+        ],
+        "energy": 1.097804444597836,
+        "residual_norm": 0.035981910904559676,
+        "width": 0.002342473159905989,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          60,
+          60
+        ],
+        "energy": 1.0978044488588525,
+        "residual_norm": 0.03599886865691756,
+        "width": 0.0023446816283450023,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          4,
+          6
+        ],
+        "energy": 1.117484023412983,
+        "residual_norm": 0.36871098689803244,
+        "width": 0.24650821740971496,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          4,
+          7
+        ],
+        "energy": 1.117185971032412,
+        "residual_norm": 0.3634839483729886,
+        "width": 0.23955939920273916,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          4,
+          9
+        ],
+        "energy": 1.117193695389323,
+        "residual_norm": 0.36362700934865666,
+        "width": 0.2397482448033551,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          4,
+          10
+        ],
+        "energy": 1.1171943977565109,
+        "residual_norm": 0.36363873756490117,
+        "width": 0.23976373188600275,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          4,
+          12
+        ],
+        "energy": 1.1171951922052161,
+        "residual_norm": 0.3636626027080154,
+        "width": 0.2397952279323471,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          4,
+          16
+        ],
+        "energy": 1.1171956964492946,
+        "residual_norm": 0.36368939405775,
+        "width": 0.23983057648158357,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          6,
+          4
+        ],
+        "energy": 1.1174818135405933,
+        "residual_norm": 0.3686572577840536,
+        "width": 0.24643630999501598,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          6,
+          7
+        ],
+        "energy": 1.0980498719619087,
+        "residual_norm": 0.062326364297920676,
+        "width": 0.007028456244751791,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          6,
+          9
+        ],
+        "energy": 1.0980604627389325,
+        "residual_norm": 0.06390942348155354,
+        "width": 0.0073900367474448725,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          6,
+          10
+        ],
+        "energy": 1.0980612715688565,
+        "residual_norm": 0.06398278447638027,
+        "width": 0.007407012958692505,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          6,
+          12
+        ],
+        "energy": 1.0980621516364033,
+        "residual_norm": 0.06415744404236887,
+        "width": 0.007447507961486632,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          6,
+          16
+        ],
+        "energy": 1.0980626981691046,
+        "residual_norm": 0.06434095959612401,
+        "width": 0.007490174898734159,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          7,
+          4
+        ],
+        "energy": 1.1171875444110135,
+        "residual_norm": 0.3635529810448243,
+        "width": 0.2396504497996762,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          7,
+          6
+        ],
+        "energy": 1.0980531717742958,
+        "residual_norm": 0.06297925147418723,
+        "width": 0.00717648009037708,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          7,
+          7
+        ],
+        "energy": 1.0977784824447852,
+        "residual_norm": 0.026659874878061002,
+        "width": 0.0012859418048152271,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          7,
+          9
+        ],
+        "energy": 1.0977891853470885,
+        "residual_norm": 0.030195906163664816,
+        "width": 0.0016496874799802885,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          7,
+          10
+        ],
+        "energy": 1.0977900530571212,
+        "residual_norm": 0.030367977402954622,
+        "width": 0.0016685426617855104,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          7,
+          12
+        ],
+        "energy": 1.0977909489094149,
+        "residual_norm": 0.030754788672687213,
+        "width": 0.0017113195492779454,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          7,
+          16
+        ],
+        "energy": 1.097791513045941,
+        "residual_norm": 0.03115767295455936,
+        "width": 0.0017564495064537056,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          9,
+          4
+        ],
+        "energy": 1.117194946879827,
+        "residual_norm": 0.36373623335188965,
+        "width": 0.2398923327904201,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          9,
+          6
+        ],
+        "energy": 1.098062997911865,
+        "residual_norm": 0.06447506705965757,
+        "width": 0.007521431570937986,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          9,
+          7
+        ],
+        "energy": 1.0977883746708859,
+        "residual_norm": 0.030075121256617963,
+        "width": 0.0016365161091582703,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          9,
+          9
+        ],
+        "energy": 1.0977992313898728,
+        "residual_norm": 0.03330833416915019,
+        "width": 0.002007297696335897,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          9,
+          10
+        ],
+        "energy": 1.097800114032105,
+        "residual_norm": 0.03347372075943404,
+        "width": 0.002027281112755519,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          9,
+          12
+        ],
+        "energy": 1.0978010413772377,
+        "residual_norm": 0.03384744976610647,
+        "width": 0.0020728025755425428,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          9,
+          16
+        ],
+        "energy": 1.0978016089328804,
+        "residual_norm": 0.03421384608934389,
+        "width": 0.0021179214708533234,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          10,
+          4
+        ],
+        "energy": 1.117195542032082,
+        "residual_norm": 0.3637434325791139,
+        "width": 0.2399018471621952,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          10,
+          6
+        ],
+        "energy": 1.0980637001021576,
+        "residual_norm": 0.06454234502009734,
+        "width": 0.0075371370815620065,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          10,
+          7
+        ],
+        "energy": 1.0977890803903347,
+        "residual_norm": 0.03022264576018773,
+        "width": 0.001652610476172045,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          10,
+          9
+        ],
+        "energy": 1.0977999427516414,
+        "residual_norm": 0.033440968932026534,
+        "width": 0.002023315898862066,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          10,
+          12
+        ],
+        "energy": 1.0978017588115345,
+        "residual_norm": 0.03398019439530525,
+        "width": 0.002089093042567658,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          10,
+          16
+        ],
+        "energy": 1.0978023282947624,
+        "residual_norm": 0.034346411966680625,
+        "width": 0.00213436572261827,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          12,
+          4
+        ],
+        "energy": 1.117196359020514,
+        "residual_norm": 0.363780087869194,
+        "width": 0.23995022550349054,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          12,
+          6
+        ],
+        "energy": 1.09806452092634,
+        "residual_norm": 0.06477343093775978,
+        "width": 0.007591205879683205,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          12,
+          7
+        ],
+        "energy": 1.0977899322280684,
+        "residual_norm": 0.03075210803426263,
+        "width": 0.0017110210735831188,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          12,
+          9
+        ],
+        "energy": 1.097800798769764,
+        "residual_norm": 0.03392397816923775,
+        "width": 0.00208218625347234,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          12,
+          10
+        ],
+        "energy": 1.0978016854836405,
+        "residual_norm": 0.03408753067398406,
+        "width": 0.002102311882742569,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          12,
+          16
+        ],
+        "energy": 1.097803186946642,
+        "residual_norm": 0.034817867749901886,
+        "width": 0.002193362764318918,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          16,
+          4
+        ],
+        "energy": 1.117196981329246,
+        "residual_norm": 0.3638191283840177,
+        "width": 0.2400017497093866,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          16,
+          6
+        ],
+        "energy": 1.09806517345894,
+        "residual_norm": 0.06501464455621409,
+        "width": 0.0076478503143968535,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          16,
+          7
+        ],
+        "energy": 1.097790590013866,
+        "residual_norm": 0.031265304997535416,
+        "width": 0.001768605379293131,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          16,
+          9
+        ],
+        "energy": 1.0978014568337393,
+        "residual_norm": 0.03439039924937119,
+        "width": 0.0021398359891871,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          16,
+          10
+        ],
+        "energy": 1.097802343599578,
+        "residual_norm": 0.034551764923241954,
+        "width": 0.0021599642411103126,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          16,
+          12
+        ],
+        "energy": 1.0978032750648061,
+        "residual_norm": 0.03491562137518146,
+        "width": 0.002205696113970923,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          16,
+          16
+        ],
+        "energy": 1.0978038458106447,
+        "residual_norm": 0.035273689503177656,
+        "width": 0.0022511681018988483,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      }
+    ]
+  },
+  {
+    "path": "runs\\seeds2d\\anharmonic2d\\seed2\\wavefunction2d.npz",
+    "filtered_path": "runs\\certificates_filtered2d\\runs__seeds2d__anharmonic2d__seed2.npz",
+    "potential": "anharmonic2d",
+    "seed": 2,
+    "n_grid": 81,
+    "cutoff": [
+      7,
+      7
+    ],
+    "reason": "取证书宽度最小的二维截断阶数",
+    "l2_change": 0.0016317675140586272,
+    "rel_l2_change": 0.0016317675140586274,
+    "raw_certificate": {
+      "energy": 1.0978143594578378,
+      "residual_norm": 0.037116225277365675,
+      "weinstein_lower": 1.0606981341793744,
+      "weinstein_upper": 1.1349305847363012,
+      "interval_lower": -0.06908943101253362,
+      "interval_upper": 2.1478874434286883,
+      "temple_lower": 1.0965024372678285,
+      "temple_upper": 1.0989949316621375,
+      "spectral_gap": 1.0500730839697527,
+      "eigenfunction_angle_bound": 0.03535368994529174,
+      "valid": true,
+      "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造",
+      "state_index": 0
+    },
+    "raw_width": 0.002492494394308986,
+    "filtered_certificate": {
+      "energy": 1.0977861502648527,
+      "residual_norm": 0.02794216934434359,
+      "weinstein_lower": 1.0698439809194114,
+      "weinstein_upper": 1.125728319610294,
+      "interval_lower": -0.06908943101253362,
+      "interval_upper": 2.1478874434286883,
+      "temple_lower": 1.0970426364401356,
+      "temple_upper": 1.0984552574442954,
+      "spectral_gap": 1.0501012931627378,
+      "eigenfunction_angle_bound": 0.026612163931294258,
+      "valid": true,
+      "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造",
+      "state_index": 0
+    },
+    "filtered_width": 0.001412621004159842,
+    "filtered_angle": 0.026612163931294258,
+    "raw_angle_transported": 0.029877003682085512,
+    "raw_angle_true_discrete": 0.0022346555780676475,
+    "discrete_ref": 1.097740502903899,
+    "target_state": 0,
+    "state_matches_target": true,
+    "filtered_contains_ref": true,
+    "scan": [
+      {
+        "cutoff": [
+          1,
+          1
+        ],
+        "energy": 2.142083721348962,
+        "residual_norm": 2.3565126916026897,
+        "width": null,
+        "valid": false,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 二次界不可用（残差相对谱隙太大）: Temple 条件 r² < (upper−η)(η−lower) 不成立: r²=5.55315, 阈值=0.012833"
+      },
+      {
+        "cutoff": [
+          2,
+          2
+        ],
+        "energy": 2.142083735659359,
+        "residual_norm": 2.3565127062493962,
+        "width": null,
+        "valid": false,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 二次界不可用（残差相对谱隙太大）: Temple 条件 r² < (upper−η)(η−lower) 不成立: r²=5.55315, 阈值=0.012833"
+      },
+      {
+        "cutoff": [
+          3,
+          3
+        ],
+        "energy": 1.1366075810949248,
+        "residual_norm": 0.5181762064287477,
+        "width": 0.48820986812992784,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          4,
+          4
+        ],
+        "energy": 1.136607675757244,
+        "residual_norm": 0.5181772665236382,
+        "width": 0.4882118730793614,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          5,
+          5
+        ],
+        "energy": 1.0983253905946186,
+        "residual_norm": 0.08431835139788835,
+        "width": 0.01286388215949863,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          6,
+          6
+        ],
+        "energy": 1.0983263051726684,
+        "residual_norm": 0.08441207863659768,
+        "width": 0.012892497853868479,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          8,
+          8
+        ],
+        "energy": 1.0977882529140048,
+        "residual_norm": 0.028398066077588546,
+        "width": 0.001459093210100848,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          10,
+          10
+        ],
+        "energy": 1.0978101552685027,
+        "residual_norm": 0.03457410539011357,
+        "width": 0.00216275993243209,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          12,
+          12
+        ],
+        "energy": 1.097811999217583,
+        "residual_norm": 0.035347102401647366,
+        "width": 0.002260550037586073,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          15,
+          15
+        ],
+        "energy": 1.097813545649863,
+        "residual_norm": 0.03621799796743282,
+        "width": 0.002373315264928122,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          18,
+          18
+        ],
+        "energy": 1.0978138307982632,
+        "residual_norm": 0.03643265988564345,
+        "width": 0.0024015316981165213,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          20,
+          20
+        ],
+        "energy": 1.0978139862904681,
+        "residual_norm": 0.03656920259396062,
+        "width": 0.002419566437918963,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          25,
+          25
+        ],
+        "energy": 1.097814207177435,
+        "residual_norm": 0.03681060258847053,
+        "width": 0.002451615924767614,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          30,
+          30
+        ],
+        "energy": 1.0978142714078507,
+        "residual_norm": 0.036906044888942335,
+        "width": 0.002464345489944675,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          40,
+          40
+        ],
+        "energy": 1.097814333229584,
+        "residual_norm": 0.03703088324349951,
+        "width": 0.002481045487255029,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          50,
+          50
+        ],
+        "energy": 1.0978143516405616,
+        "residual_norm": 0.037085126545788424,
+        "width": 0.002488319348239454,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          60,
+          60
+        ],
+        "energy": 1.0978143575996129,
+        "residual_norm": 0.037107827959218666,
+        "width": 0.0024913666983348293,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          4,
+          6
+        ],
+        "energy": 1.1174833372746658,
+        "residual_norm": 0.36872989256007477,
+        "width": 0.24653347587743513,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          4,
+          7
+        ],
+        "energy": 1.1171867736149221,
+        "residual_norm": 0.363569300479197,
+        "width": 0.23967194198872166,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          4,
+          9
+        ],
+        "energy": 1.1171951356383498,
+        "residual_norm": 0.3637002223657467,
+        "width": 0.23984484077128532,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          4,
+          10
+        ],
+        "energy": 1.1171961637411651,
+        "residual_norm": 0.3637198281399846,
+        "width": 0.23987073120057134,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          4,
+          12
+        ],
+        "energy": 1.117196587082625,
+        "residual_norm": 0.36373846266273135,
+        "width": 0.23989532343377795,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          4,
+          16
+        ],
+        "energy": 1.1171972443783766,
+        "residual_norm": 0.36377226852121924,
+        "width": 0.23993993732610364,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          6,
+          4
+        ],
+        "energy": 1.117480318158851,
+        "residual_norm": 0.36869232666811963,
+        "width": 0.24648315013945943,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          6,
+          7
+        ],
+        "energy": 1.0980601603500042,
+        "residual_norm": 0.06365940768579106,
+        "width": 0.0073323294919596105,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          6,
+          9
+        ],
+        "energy": 1.0980710515991055,
+        "residual_norm": 0.06528246898299256,
+        "width": 0.007710994276295402,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          6,
+          10
+        ],
+        "energy": 1.0980720961071633,
+        "residual_norm": 0.06539766626036529,
+        "width": 0.007738232662328981,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          6,
+          12
+        ],
+        "energy": 1.0980725587173794,
+        "residual_norm": 0.06553320686503254,
+        "width": 0.007770342153312182,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          6,
+          16
+        ],
+        "energy": 1.0980733278624097,
+        "residual_norm": 0.06579482627019262,
+        "width": 0.007832507552351098,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          7,
+          4
+        ],
+        "energy": 1.1171824105845616,
+        "residual_norm": 0.3635027364418738,
+        "width": 0.23958405640929326,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          7,
+          6
+        ],
+        "energy": 1.0980500798807322,
+        "residual_norm": 0.06225970668735125,
+        "width": 0.007013430654049246,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          7,
+          7
+        ],
+        "energy": 1.0977861502648527,
+        "residual_norm": 0.02794216934434359,
+        "width": 0.001412621004159842,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          7,
+          9
+        ],
+        "energy": 1.0977970648586202,
+        "residual_norm": 0.031397417321489936,
+        "width": 0.0017835846305820358,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          7,
+          10
+        ],
+        "energy": 1.0977981096484388,
+        "residual_norm": 0.03163683363499057,
+        "width": 0.001810889435245544,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          7,
+          12
+        ],
+        "energy": 1.0977986425414663,
+        "residual_norm": 0.031985638443686445,
+        "width": 0.0018510407650340621,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          7,
+          16
+        ],
+        "energy": 1.097799409445456,
+        "residual_norm": 0.03250979213071345,
+        "width": 0.0019122045734387694,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          9,
+          4
+        ],
+        "energy": 1.1171910894618187,
+        "residual_norm": 0.36362971686661427,
+        "width": 0.23975173558108898,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          9,
+          6
+        ],
+        "energy": 1.0980610023243185,
+        "residual_norm": 0.06363446638465015,
+        "width": 0.007326585699525268,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          9,
+          7
+        ],
+        "energy": 1.0977972351349239,
+        "residual_norm": 0.030927597657861447,
+        "width": 0.0017306061839028608,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          9,
+          9
+        ],
+        "energy": 1.0978082016149697,
+        "residual_norm": 0.03412925733135495,
+        "width": 0.0021074632356807843,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          9,
+          10
+        ],
+        "energy": 1.097809247711255,
+        "residual_norm": 0.034350598463869515,
+        "width": 0.0021348874798838846,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          9,
+          12
+        ],
+        "energy": 1.097809784865663,
+        "residual_norm": 0.0346697026043349,
+        "width": 0.002174736429351398,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          9,
+          16
+        ],
+        "energy": 1.097810552281596,
+        "residual_norm": 0.03515519533355485,
+        "width": 0.002236070331315565,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          10,
+          4
+        ],
+        "energy": 1.1171919634396164,
+        "residual_norm": 0.36365040672886517,
+        "width": 0.2397790458892759,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          10,
+          6
+        ],
+        "energy": 1.098061889373585,
+        "residual_norm": 0.06375220167435305,
+        "width": 0.007353722425662346,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          10,
+          7
+        ],
+        "energy": 1.0977981365984728,
+        "residual_norm": 0.031173315278113296,
+        "width": 0.00175821466655246,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          10,
+          9
+        ],
+        "energy": 1.0978091087090107,
+        "residual_norm": 0.03435384912628841,
+        "width": 0.002135291527624039,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          10,
+          12
+        ],
+        "energy": 1.0978106924879631,
+        "residual_norm": 0.03489119751766634,
+        "width": 0.002202612933871917,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          10,
+          16
+        ],
+        "energy": 1.0978114599602466,
+        "residual_norm": 0.035373695625742115,
+        "width": 0.0022639526288112943,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          12,
+          4
+        ],
+        "energy": 1.1171932134783817,
+        "residual_norm": 0.3636891324457237,
+        "width": 0.23983015567017552,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          12,
+          6
+        ],
+        "energy": 1.0980631278535007,
+        "residual_norm": 0.06397313705227285,
+        "width": 0.007404780761301133,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          12,
+          7
+        ],
+        "energy": 1.0977994399210087,
+        "residual_norm": 0.03168444469137468,
+        "width": 0.0018163442717953338,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          12,
+          9
+        ],
+        "energy": 1.0978104149036976,
+        "residual_norm": 0.03481582760970654,
+        "width": 0.0021931072444734134,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          12,
+          10
+        ],
+        "energy": 1.0978114615674186,
+        "residual_norm": 0.03503332859451553,
+        "width": 0.0022205945592206344,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          12,
+          16
+        ],
+        "energy": 1.0978127670255837,
+        "residual_norm": 0.03582403686531091,
+        "width": 0.002321964451825087,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          16,
+          4
+        ],
+        "energy": 1.1171939844225063,
+        "residual_norm": 0.36372578873630246,
+        "width": 0.23987852668520226,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          16,
+          6
+        ],
+        "energy": 1.0980639258883023,
+        "residual_norm": 0.06420063414764214,
+        "width": 0.00745753976899266,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          16,
+          7
+        ],
+        "energy": 1.0978002404277096,
+        "residual_norm": 0.03214492905494892,
+        "width": 0.0018695235703050095,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          16,
+          9
+        ],
+        "energy": 1.097811215780103,
+        "residual_norm": 0.03523603342335434,
+        "width": 0.0022463658210865045,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          16,
+          10
+        ],
+        "energy": 1.0978122624812905,
+        "residual_norm": 0.03545101490539184,
+        "width": 0.002273860644813608,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          16,
+          12
+        ],
+        "energy": 1.0978128005284367,
+        "residual_norm": 0.03576179445873547,
+        "width": 0.002313902882916219,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          16,
+          16
+        ],
+        "energy": 1.0978135683894736,
+        "residual_norm": 0.036233396253713,
+        "width": 0.002375333755833875,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      }
+    ]
+  },
+  {
+    "path": "runs\\seeds2d\\harmonic2d\\seed0\\wavefunction2d.npz",
+    "filtered_path": "runs\\certificates_filtered2d\\runs__seeds2d__harmonic2d__seed0.npz",
+    "potential": "harmonic2d",
+    "seed": 0,
+    "n_grid": 81,
+    "cutoff": [
+      7,
+      7
+    ],
+    "reason": "取证书宽度最小的二维截断阶数",
+    "l2_change": 0.0006962101557089773,
+    "rel_l2_change": 0.0006962101557089775,
+    "raw_certificate": {
+      "energy": 1.000442439855778,
+      "residual_norm": 0.012616626602972036,
+      "weinstein_lower": 0.9878258132518056,
+      "weinstein_upper": 1.0130590664597507,
+      "interval_lower": -0.00455033773107294,
+      "interval_upper": 1.9049222074771226,
+      "temple_lower": 1.0002664499957037,
+      "temple_upper": 1.0006008283252221,
+      "spectral_gap": 0.9044797676203441,
+      "eigenfunction_angle_bound": 0.013949494769053135,
+      "valid": true,
+      "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造",
+      "state_index": 0
+    },
+    "raw_width": 0.0003343783295184366,
+    "filtered_certificate": {
+      "energy": 1.0004369637160815,
+      "residual_norm": 0.004673100663660954,
+      "weinstein_lower": 0.9957638630514201,
+      "weinstein_upper": 1.005110064380743,
+      "interval_lower": -0.00455033773107294,
+      "interval_upper": 1.9049222074771226,
+      "temple_lower": 1.0004128197393076,
+      "temple_upper": 1.0004586932153365,
+      "spectral_gap": 0.9044852437600407,
+      "eigenfunction_angle_bound": 0.005166608837977987,
+      "valid": true,
+      "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造",
+      "state_index": 0
+    },
+    "filtered_width": 4.587347602891256e-05,
+    "filtered_angle": 0.005166608837977987,
+    "raw_angle_transported": 0.006559053277281187,
+    "raw_angle_true_discrete": 0.0006940755184802362,
+    "discrete_ref": 1.0004352123785036,
+    "target_state": 0,
+    "state_matches_target": true,
+    "filtered_contains_ref": true,
+    "scan": [
+      {
+        "cutoff": [
+          1,
+          1
+        ],
+        "energy": 1.450338852961515,
+        "residual_norm": 0.9862836969694323,
+        "width": null,
+        "valid": false,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 二次界不可用（残差相对谱隙太大）: Temple 条件 r² < (upper−η)(η−lower) 不成立: r²=0.972756, 阈值=0.661368"
+      },
+      {
+        "cutoff": [
+          2,
+          2
+        ],
+        "energy": 1.4503388529912997,
+        "residual_norm": 0.9862836969890187,
+        "width": null,
+        "valid": false,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 二次界不可用（残差相对谱隙太大）: Temple 条件 r² < (upper−η)(η−lower) 不成立: r²=0.972756, 阈值=0.661368"
+      },
+      {
+        "cutoff": [
+          3,
+          3
+        ],
+        "energy": 1.0110173791617805,
+        "residual_norm": 0.22062541759501023,
+        "width": 0.10238217180025111,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          4,
+          4
+        ],
+        "energy": 1.0110173845726496,
+        "residual_norm": 0.22062547308637728,
+        "width": 0.10238222337651359,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          5,
+          5
+        ],
+        "energy": 1.0004745931597436,
+        "residual_norm": 0.018030796206192284,
+        "width": 0.0006829406704136343,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          6,
+          6
+        ],
+        "energy": 1.0004747566243233,
+        "residual_norm": 0.018073310803815145,
+        "width": 0.00068616507491015,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          8,
+          8
+        ],
+        "energy": 1.00043792612295,
+        "residual_norm": 0.005734068997171736,
+        "width": 6.906805813078343e-05,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          10,
+          10
+        ],
+        "energy": 1.000439510128399,
+        "residual_norm": 0.007298008554685055,
+        "width": 0.00011188200083211974,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          12,
+          12
+        ],
+        "energy": 1.0004408437372452,
+        "residual_norm": 0.008824974994838392,
+        "width": 0.00016359819842426404,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          15,
+          15
+        ],
+        "energy": 1.0004416670596112,
+        "residual_norm": 0.010093565059160066,
+        "width": 0.0002140132988679433,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          18,
+          18
+        ],
+        "energy": 1.0004419034481586,
+        "residual_norm": 0.010576118527856376,
+        "width": 0.00023496556402502478,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          20,
+          20
+        ],
+        "energy": 1.000442044906802,
+        "residual_norm": 0.010916927047485765,
+        "width": 0.000250352782082075,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          25,
+          25
+        ],
+        "energy": 1.0004422685949,
+        "residual_norm": 0.011611963528991237,
+        "width": 0.0002832454500438786,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          30,
+          30
+        ],
+        "energy": 1.0004423373547355,
+        "residual_norm": 0.011906322121816955,
+        "width": 0.00029778778218791935,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          40,
+          40
+        ],
+        "energy": 1.0004424083496615,
+        "residual_norm": 0.012320544031550749,
+        "width": 0.0003188683339720999,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          50,
+          50
+        ],
+        "energy": 1.0004424303339503,
+        "residual_norm": 0.012507411108744928,
+        "width": 0.00032861431137432007,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          60,
+          60
+        ],
+        "energy": 1.0004424375756567,
+        "residual_norm": 0.01258693014329975,
+        "width": 0.0003328060920044784,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          4,
+          6
+        ],
+        "energy": 1.0057462479101322,
+        "residual_norm": 0.1565324275978188,
+        "width": 0.05150252092776797,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          4,
+          7
+        ],
+        "energy": 1.0057269642742972,
+        "residual_norm": 0.15603085202160472,
+        "width": 0.051172870831566075,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          4,
+          9
+        ],
+        "energy": 1.0057279869418745,
+        "residual_norm": 0.15606794937421228,
+        "width": 0.05119721349406359,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          4,
+          10
+        ],
+        "energy": 1.005728371201533,
+        "residual_norm": 0.1560866677843519,
+        "width": 0.051209497575200325,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          4,
+          12
+        ],
+        "energy": 1.0057289964102418,
+        "residual_norm": 0.156122930830831,
+        "width": 0.05123329888789152,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          4,
+          16
+        ],
+        "energy": 1.0057293831335261,
+        "residual_norm": 0.15615888662189373,
+        "width": 0.051256902533062476,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          6,
+          4
+        ],
+        "energy": 1.005746094745039,
+        "residual_norm": 0.15652828883672512,
+        "width": 0.05149979651684122,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          6,
+          7
+        ],
+        "energy": 1.0004557135013659,
+        "residual_norm": 0.013138295809003367,
+        "width": 0.00036260211475358517,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          6,
+          9
+        ],
+        "energy": 1.000456737263227,
+        "residual_norm": 0.01357238340664412,
+        "width": 0.00038695864102988864,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          6,
+          10
+        ],
+        "energy": 1.0004571253117738,
+        "residual_norm": 0.013788405396036544,
+        "width": 0.00039937457752237115,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          6,
+          12
+        ],
+        "energy": 1.0004577511807726,
+        "residual_norm": 0.014192929918679537,
+        "width": 0.0004231520753945617,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          6,
+          16
+        ],
+        "energy": 1.0004581393322383,
+        "residual_norm": 0.014584209475773257,
+        "width": 0.0004468051437831466,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          7,
+          4
+        ],
+        "energy": 1.005727136618877,
+        "residual_norm": 0.15603824360551982,
+        "width": 0.051177720406692884,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          7,
+          6
+        ],
+        "energy": 1.0004559825759685,
+        "residual_norm": 0.013241341546386657,
+        "width": 0.0003683123229702989,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          7,
+          7
+        ],
+        "energy": 1.0004369637160815,
+        "residual_norm": 0.004673100663660954,
+        "width": 4.587347602891256e-05,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          7,
+          9
+        ],
+        "energy": 1.0004380010613398,
+        "residual_norm": 0.005798739320180654,
+        "width": 7.063477915214555e-05,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          7,
+          10
+        ],
+        "energy": 1.000438391295516,
+        "residual_norm": 0.006291671493465594,
+        "width": 8.315407075798475e-05,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          7,
+          12
+        ],
+        "energy": 1.0004390178213136,
+        "residual_norm": 0.007135728140077961,
+        "width": 0.0001069616408071461,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          7,
+          16
+        ],
+        "energy": 1.000439406268623,
+        "residual_norm": 0.007885964302126677,
+        "width": 0.00013063546506586476,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          9,
+          4
+        ],
+        "energy": 1.0057280289163997,
+        "residual_norm": 0.15607132571782342,
+        "width": 0.05119942896189922,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          9,
+          6
+        ],
+        "energy": 1.0004569435566344,
+        "residual_norm": 0.013649482467033174,
+        "width": 0.00039136743864021106,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          9,
+          7
+        ],
+        "energy": 1.0004379421024086,
+        "residual_norm": 0.005748386610431435,
+        "width": 6.94134061431928e-05,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          9,
+          9
+        ],
+        "energy": 1.0004389990375468,
+        "residual_norm": 0.006724805970919509,
+        "width": 9.499723866412957e-05,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          9,
+          10
+        ],
+        "energy": 1.0004393903633055,
+        "residual_norm": 0.007155662441662651,
+        "width": 0.00010756009399526256,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          9,
+          12
+        ],
+        "energy": 1.000440017747579,
+        "residual_norm": 0.007909478573902189,
+        "width": 0.0001314156898861718,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          9,
+          16
+        ],
+        "energy": 1.00044040630588,
+        "residual_norm": 0.008592617148381505,
+        "width": 0.00015509666264068578,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          10,
+          4
+        ],
+        "energy": 1.0057281226856236,
+        "residual_norm": 0.15607646658792615,
+        "width": 0.05120280254461351,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          10,
+          6
+        ],
+        "energy": 1.0004570558347645,
+        "residual_norm": 0.013719387135535204,
+        "width": 0.00039538641905090266,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          10,
+          7
+        ],
+        "energy": 1.0004380599480254,
+        "residual_norm": 0.005921447673635684,
+        "width": 7.365584468721487e-05,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          10,
+          9
+        ],
+        "energy": 1.0004391186811419,
+        "residual_norm": 0.006875839150262718,
+        "width": 9.931226510850877e-05,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          10,
+          12
+        ],
+        "energy": 1.0004401376463887,
+        "residual_norm": 0.0080387124532197,
+        "width": 0.00013574520734649376,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          10,
+          16
+        ],
+        "energy": 1.000440526214489,
+        "residual_norm": 0.008711741474484192,
+        "width": 0.0001594268600846327,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          12,
+          4
+        ],
+        "energy": 1.005728821088892,
+        "residual_norm": 0.15611852521277056,
+        "width": 0.05123040633524589,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          12,
+          6
+        ],
+        "energy": 1.0004577589080246,
+        "residual_norm": 0.014191957622076264,
+        "width": 0.00042309410108387624,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          12,
+          7
+        ],
+        "energy": 1.0004387630365363,
+        "residual_norm": 0.006946447193364689,
+        "width": 0.00010136241057923101,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          12,
+          9
+        ],
+        "energy": 1.0004398242121462,
+        "residual_norm": 0.007779537488053746,
+        "width": 0.0001271332233307998,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          12,
+          10
+        ],
+        "energy": 1.0004402161948207,
+        "residual_norm": 0.008155960485400253,
+        "width": 0.00013973388910337725,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          12,
+          16
+        ],
+        "energy": 1.0004412323211223,
+        "residual_norm": 0.00944216173507853,
+        "width": 0.00018728130986578329,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          16,
+          4
+        ],
+        "energy": 1.005729258725567,
+        "residual_norm": 0.15615987178385174,
+        "width": 0.051257548485730275,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          16,
+          6
+        ],
+        "energy": 1.0004581998549118,
+        "residual_norm": 0.014642292143340042,
+        "width": 0.0004503711010157563,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          16,
+          7
+        ],
+        "energy": 1.0004392042942485,
+        "residual_norm": 0.007826144723495116,
+        "width": 0.00012866108871212312,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          16,
+          9
+        ],
+        "energy": 1.00044026562768,
+        "residual_norm": 0.008574439827805966,
+        "width": 0.00015444115338203446,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          16,
+          10
+        ],
+        "energy": 1.0004406576186629,
+        "residual_norm": 0.00891738268037662,
+        "width": 0.0001670422570383412,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          16,
+          12
+        ],
+        "energy": 1.000441285181868,
+        "residual_norm": 0.009533158605624559,
+        "width": 0.00019090847451375126,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          16,
+          16
+        ],
+        "energy": 1.0004416737669524,
+        "residual_norm": 0.01010719658940408,
+        "width": 0.00021459174651572432,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      }
+    ]
+  },
+  {
+    "path": "runs\\seeds2d\\harmonic2d\\seed1\\wavefunction2d.npz",
+    "filtered_path": "runs\\certificates_filtered2d\\runs__seeds2d__harmonic2d__seed1.npz",
+    "potential": "harmonic2d",
+    "seed": 1,
+    "n_grid": 81,
+    "cutoff": [
+      7,
+      7
+    ],
+    "reason": "取证书宽度最小的二维截断阶数",
+    "l2_change": 0.000739367628839179,
+    "rel_l2_change": 0.0007393676288391791,
+    "raw_certificate": {
+      "energy": 1.0004449098904584,
+      "residual_norm": 0.012773828761217566,
+      "weinstein_lower": 0.9876710811282404,
+      "weinstein_upper": 1.0132187386526765,
+      "interval_lower": -0.004550337731078269,
+      "interval_upper": 1.9049222074771173,
+      "temple_lower": 1.0002645065762334,
+      "temple_upper": 1.0006072695659023,
+      "spectral_gap": 0.9044772975856584,
+      "eigenfunction_angle_bound": 0.014123354416197158,
+      "valid": true,
+      "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造",
+      "state_index": 0
+    },
+    "raw_width": 0.00034276298966884333,
+    "filtered_certificate": {
+      "energy": 1.0004393116161352,
+      "residual_norm": 0.00703435848130876,
+      "weinstein_lower": 0.993404953133826,
+      "weinstein_upper": 1.0074736700984446,
+      "interval_lower": -0.004550337731078269,
+      "interval_upper": 1.9049222074771173,
+      "temple_lower": 1.000384603892667,
+      "temple_upper": 1.0004885481433783,
+      "spectral_gap": 0.9044828958599817,
+      "eigenfunction_angle_bound": 0.007777293996082314,
+      "valid": true,
+      "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造",
+      "state_index": 0
+    },
+    "filtered_width": 0.00010394425071136304,
+    "filtered_angle": 0.007777293996082314,
+    "raw_angle_transported": 0.009256083120454865,
+    "raw_angle_true_discrete": 0.000867766794422908,
+    "discrete_ref": 1.0004352123784983,
+    "target_state": 0,
+    "state_matches_target": true,
+    "filtered_contains_ref": true,
+    "scan": [
+      {
+        "cutoff": [
+          1,
+          1
+        ],
+        "energy": 1.4503388529615149,
+        "residual_norm": 0.9862836969694322,
+        "width": null,
+        "valid": false,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 二次界不可用（残差相对谱隙太大）: Temple 条件 r² < (upper−η)(η−lower) 不成立: r²=0.972756, 阈值=0.661368"
+      },
+      {
+        "cutoff": [
+          2,
+          2
+        ],
+        "energy": 1.4503388532663672,
+        "residual_norm": 0.9862836972044022,
+        "width": null,
+        "valid": false,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 二次界不可用（残差相对谱隙太大）: Temple 条件 r² < (upper−η)(η−lower) 不成立: r²=0.972756, 阈值=0.661368"
+      },
+      {
+        "cutoff": [
+          3,
+          3
+        ],
+        "energy": 1.0110186872392328,
+        "residual_norm": 0.2206459213167948,
+        "width": 0.10240122031619037,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          4,
+          4
+        ],
+        "energy": 1.0110186896939328,
+        "residual_norm": 0.22064595298899747,
+        "width": 0.10240124974786025,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          5,
+          5
+        ],
+        "energy": 1.0004745482094932,
+        "residual_norm": 0.01801651640051769,
+        "width": 0.000681859361661985,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          6,
+          6
+        ],
+        "energy": 1.0004748737608762,
+        "residual_norm": 0.018108689985485094,
+        "width": 0.0006888541007630256,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          8,
+          8
+        ],
+        "energy": 1.0004399361906307,
+        "residual_norm": 0.007569656548343327,
+        "width": 0.00012036600830622746,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          10,
+          10
+        ],
+        "energy": 1.0004433119333465,
+        "residual_norm": 0.009902467553216193,
+        "width": 0.0002059863885204294,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          12,
+          12
+        ],
+        "energy": 1.0004437744998698,
+        "residual_norm": 0.010353697649965445,
+        "width": 0.00022518665308468577,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          15,
+          15
+        ],
+        "energy": 1.0004444051785768,
+        "residual_norm": 0.011183670248137505,
+        "width": 0.0002627365092748857,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          18,
+          18
+        ],
+        "energy": 1.0004445546279672,
+        "residual_norm": 0.011464816294314555,
+        "width": 0.00027611240979341645,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          20,
+          20
+        ],
+        "energy": 1.000444646754918,
+        "residual_norm": 0.01167248789077078,
+        "width": 0.0002862059079011825,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          25,
+          25
+        ],
+        "energy": 1.0004447920331074,
+        "residual_norm": 0.012101531092873546,
+        "width": 0.00030763261622523963,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          30,
+          30
+        ],
+        "energy": 1.0004448403708417,
+        "residual_norm": 0.012300782783419277,
+        "width": 0.000317846356974405,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          40,
+          40
+        ],
+        "energy": 1.0004448883943384,
+        "residual_norm": 0.012574687440448989,
+        "width": 0.000332159087852002,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          50,
+          50
+        ],
+        "energy": 1.0004449033820872,
+        "residual_norm": 0.012700115627614248,
+        "width": 0.00033881848170880247,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          60,
+          60
+        ],
+        "energy": 1.0004449083336058,
+        "residual_norm": 0.012753795400948032,
+        "width": 0.0003416887134497504,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          4,
+          6
+        ],
+        "energy": 1.0057464194755648,
+        "residual_norm": 0.15653361487644238,
+        "width": 0.05150330329177111,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          4,
+          7
+        ],
+        "energy": 1.0057271682677906,
+        "residual_norm": 0.15603364699538866,
+        "width": 0.05117470543925429,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          4,
+          9
+        ],
+        "energy": 1.0057276130135508,
+        "residual_norm": 0.15605159345155706,
+        "width": 0.05118648077894172,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          4,
+          10
+        ],
+        "energy": 1.0057280343428951,
+        "residual_norm": 0.1560714438054093,
+        "width": 0.05119950647351623,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          4,
+          12
+        ],
+        "energy": 1.00572843489682,
+        "residual_norm": 0.1560944688169982,
+        "width": 0.051214616885930764,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          4,
+          16
+        ],
+        "energy": 1.0057288620877012,
+        "residual_norm": 0.15613312602611554,
+        "width": 0.051239989575033285,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          6,
+          4
+        ],
+        "energy": 1.0057470583729582,
+        "residual_norm": 0.15655109779541915,
+        "width": 0.05151481255718693,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          6,
+          7
+        ],
+        "energy": 1.0004569921196815,
+        "residual_norm": 0.013733215160303085,
+        "width": 0.0003961838525388117,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          6,
+          9
+        ],
+        "energy": 1.0004575432474907,
+        "residual_norm": 0.013981791712473723,
+        "width": 0.0004106558414764816,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          6,
+          10
+        ],
+        "energy": 1.000458043798239,
+        "residual_norm": 0.014240637344065369,
+        "width": 0.0004260015959045571,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          6,
+          12
+        ],
+        "energy": 1.0004584652708857,
+        "residual_norm": 0.01450897016004707,
+        "width": 0.00044220695396868237,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          6,
+          16
+        ],
+        "energy": 1.0004588936680152,
+        "residual_norm": 0.014920675363909463,
+        "width": 0.00046765908535872924,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          7,
+          4
+        ],
+        "energy": 1.005727996691072,
+        "residual_norm": 0.15605694100574913,
+        "width": 0.05118999134302338,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          7,
+          6
+        ],
+        "energy": 1.0004569535947092,
+        "residual_norm": 0.013675663357212518,
+        "width": 0.00039287023225509365,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          7,
+          7
+        ],
+        "energy": 1.0004393116161352,
+        "residual_norm": 0.00703435848130876,
+        "width": 0.00010394425071136304,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          7,
+          9
+        ],
+        "energy": 1.0004398856132872,
+        "residual_norm": 0.0075327264985244596,
+        "width": 0.00011919441434971034,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          7,
+          10
+        ],
+        "energy": 1.0004403861473636,
+        "residual_norm": 0.008002540318689978,
+        "width": 0.00013452632268107223,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          7,
+          12
+        ],
+        "energy": 1.0004408077162854,
+        "residual_norm": 0.008470541205417367,
+        "width": 0.00015072103488589228,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          7,
+          16
+        ],
+        "energy": 1.0004412367060436,
+        "residual_norm": 0.009159080141375769,
+        "width": 0.00017622003634043537,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          9,
+          4
+        ],
+        "energy": 1.0057306438846936,
+        "residual_norm": 0.1561559807664372,
+        "width": 0.0512550028425508,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          9,
+          6
+        ],
+        "energy": 1.0004597652091676,
+        "residual_norm": 0.014809466296859764,
+        "width": 0.0004607138525190013,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          9,
+          7
+        ],
+        "energy": 1.0004421521317728,
+        "residual_norm": 0.009066972173206999,
+        "width": 0.00017269357420302,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          9,
+          9
+        ],
+        "energy": 1.0004427339864053,
+        "residual_norm": 0.009464770958278228,
+        "width": 0.0001881793037821211,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          9,
+          10
+        ],
+        "energy": 1.0004432350192274,
+        "residual_norm": 0.009843162826554494,
+        "width": 0.0002035265178159662,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          9,
+          12
+        ],
+        "energy": 1.0004436572890616,
+        "residual_norm": 0.010228273795944874,
+        "width": 0.00021976391003586393,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          9,
+          16
+        ],
+        "energy": 1.000444086436786,
+        "residual_norm": 0.010805610614433357,
+        "width": 0.0002452733318607514,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          10,
+          4
+        ],
+        "energy": 1.005730716636025,
+        "residual_norm": 0.1561594412500406,
+        "width": 0.05125727498948651,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          10,
+          6
+        ],
+        "energy": 1.0004598414957422,
+        "residual_norm": 0.014848430623096834,
+        "width": 0.0004631413605464818,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          10,
+          7
+        ],
+        "energy": 1.0004422287074768,
+        "residual_norm": 0.009130815373896836,
+        "width": 0.00017513410961345066,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          10,
+          9
+        ],
+        "energy": 1.00044281089291,
+        "residual_norm": 0.009526420473320269,
+        "width": 0.00019063872999613984,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          10,
+          12
+        ],
+        "energy": 1.0004437342395216,
+        "residual_norm": 0.010285415831108004,
+        "width": 0.00022222626975199056,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          10,
+          16
+        ],
+        "energy": 1.000444163394777,
+        "residual_norm": 0.010859728017500245,
+        "width": 0.0002477362756567736,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          12,
+          4
+        ],
+        "energy": 1.0057307520663927,
+        "residual_norm": 0.15616360696870343,
+        "width": 0.051260009932365125,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          12,
+          6
+        ],
+        "energy": 1.0004598806257499,
+        "residual_norm": 0.014895070038092236,
+        "width": 0.00046605541681521423,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          12,
+          7
+        ],
+        "energy": 1.0004422681847194,
+        "residual_norm": 0.009206580873443167,
+        "width": 0.0001780526176080599,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          12,
+          9
+        ],
+        "energy": 1.000442850914276,
+        "residual_norm": 0.009599731389993914,
+        "width": 0.0001935841553100115,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          12,
+          10
+        ],
+        "energy": 1.0004433521750118,
+        "residual_norm": 0.009973341841379161,
+        "width": 0.00020894552729533444,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          12,
+          16
+        ],
+        "energy": 1.0004442036714098,
+        "residual_norm": 0.010924458852987033,
+        "width": 0.0002506984078347596,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          16,
+          4
+        ],
+        "energy": 1.0057309730103587,
+        "residual_norm": 0.15618441096437763,
+        "width": 0.05127366986567239,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          16,
+          6
+        ],
+        "energy": 1.0004601019063173,
+        "residual_norm": 0.015111803304771828,
+        "width": 0.0004797169409640478,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          16,
+          7
+        ],
+        "energy": 1.0004424895055866,
+        "residual_norm": 0.00955336300645725,
+        "width": 0.00019171857336686138,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          16,
+          9
+        ],
+        "energy": 1.000443072355258,
+        "residual_norm": 0.009933012945595355,
+        "width": 0.00020725912421171166,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          16,
+          10
+        ],
+        "energy": 1.000443573623226,
+        "residual_norm": 0.010294547721583993,
+        "width": 0.00022262104746695321,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          16,
+          12
+        ],
+        "energy": 1.0004439959610059,
+        "residual_norm": 0.01066348325442647,
+        "width": 0.00023886354975788393,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          16,
+          16
+        ],
+        "energy": 1.0004444251361833,
+        "residual_norm": 0.01121850577946302,
+        "width": 0.0002643758322080636,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      }
+    ]
+  },
+  {
+    "path": "runs\\seeds2d\\harmonic2d\\seed2\\wavefunction2d.npz",
+    "filtered_path": "runs\\certificates_filtered2d\\runs__seeds2d__harmonic2d__seed2.npz",
+    "potential": "harmonic2d",
+    "seed": 2,
+    "n_grid": 81,
+    "cutoff": [
+      7,
+      7
+    ],
+    "reason": "取证书宽度最小的二维截断阶数",
+    "l2_change": 0.0010263801981294774,
+    "rel_l2_change": 0.0010263801981294774,
+    "raw_certificate": {
+      "energy": 1.0004503518494767,
+      "residual_norm": 0.016081442862483492,
+      "weinstein_lower": 0.9843689089859928,
+      "weinstein_upper": 1.0165317947129608,
+      "interval_lower": -0.004550337731077825,
+      "interval_upper": 1.9049222074771228,
+      "temple_lower": 1.000164424980846,
+      "temple_upper": 1.000707677847584,
+      "spectral_gap": 0.9044718556266457,
+      "eigenfunction_angle_bound": 0.017780863136972663,
+      "valid": true,
+      "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造",
+      "state_index": 0
+    },
+    "raw_width": 0.0005432528667381753,
+    "filtered_certificate": {
+      "energy": 1.0004395997519093,
+      "residual_norm": 0.0072612986442596415,
+      "weinstein_lower": 0.9931783011066493,
+      "weinstein_upper": 1.0077008983971696,
+      "interval_lower": -0.004550337731077825,
+      "interval_upper": 1.9049222074771228,
+      "temple_lower": 1.0003813051440797,
+      "temple_upper": 1.0004920644155244,
+      "spectral_gap": 0.9044826077242131,
+      "eigenfunction_angle_bound": 0.008028210364577758,
+      "valid": true,
+      "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造",
+      "state_index": 0
+    },
+    "filtered_width": 0.00011075927144466036,
+    "filtered_angle": 0.008028210364577758,
+    "raw_angle_transported": 0.010081055543689344,
+    "raw_angle_true_discrete": 0.0010835341222480634,
+    "discrete_ref": 1.0004352123785014,
+    "target_state": 0,
+    "state_matches_target": true,
+    "filtered_contains_ref": true,
+    "scan": [
+      {
+        "cutoff": [
+          1,
+          1
+        ],
+        "energy": 1.4503388529615155,
+        "residual_norm": 0.9862836969694325,
+        "width": null,
+        "valid": false,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 二次界不可用（残差相对谱隙太大）: Temple 条件 r² < (upper−η)(η−lower) 不成立: r²=0.972756, 阈值=0.661368"
+      },
+      {
+        "cutoff": [
+          2,
+          2
+        ],
+        "energy": 1.4503388535458628,
+        "residual_norm": 0.9862836976352504,
+        "width": null,
+        "valid": false,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 二次界不可用（残差相对谱隙太大）: Temple 条件 r² < (upper−η)(η−lower) 不成立: r²=0.972756, 阈值=0.661368"
+      },
+      {
+        "cutoff": [
+          3,
+          3
+        ],
+        "energy": 1.011016614468435,
+        "residual_norm": 0.2206133740426645,
+        "width": 0.10237098388997978,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          4,
+          4
+        ],
+        "energy": 1.0110166351883407,
+        "residual_norm": 0.22061366309990751,
+        "width": 0.10237125243625289,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          5,
+          5
+        ],
+        "energy": 1.000475061828466,
+        "residual_norm": 0.018164762487022708,
+        "width": 0.0006931267129026697,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          6,
+          6
+        ],
+        "energy": 1.0004759657850055,
+        "residual_norm": 0.018424158536606408,
+        "width": 0.0007130640752694983,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          8,
+          8
+        ],
+        "energy": 1.000440557175581,
+        "residual_norm": 0.007973254833359637,
+        "width": 0.00013354352230177113,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          10,
+          10
+        ],
+        "energy": 1.0004478822650356,
+        "residual_norm": 0.01229389589183211,
+        "width": 0.00031749065542374666,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          12,
+          12
+        ],
+        "energy": 1.000448509287772,
+        "residual_norm": 0.012886614207559762,
+        "width": 0.00034884264376322527,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          15,
+          15
+        ],
+        "energy": 1.0004494940925333,
+        "residual_norm": 0.013970725809336922,
+        "width": 0.00041000570574989403,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          18,
+          18
+        ],
+        "energy": 1.0004497556291598,
+        "residual_norm": 0.014364138680980307,
+        "width": 0.00043342220114883645,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          20,
+          20
+        ],
+        "energy": 1.0004499179078559,
+        "residual_norm": 0.014654866266316657,
+        "width": 0.00045114453561967416,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          25,
+          25
+        ],
+        "energy": 1.0004501649169864,
+        "residual_norm": 0.015234676724507571,
+        "width": 0.0004875492357860889,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          30,
+          30
+        ],
+        "energy": 1.00045024082087,
+        "residual_norm": 0.015483710494729382,
+        "width": 0.000503618972470754,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          40,
+          40
+        ],
+        "energy": 1.000450317887637,
+        "residual_norm": 0.01583194955397796,
+        "width": 0.0005265271812062711,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          50,
+          50
+        ],
+        "energy": 1.0004503416088153,
+        "residual_norm": 0.015989386315945063,
+        "width": 0.0005370510788176297,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          60,
+          60
+        ],
+        "energy": 1.0004503494009225,
+        "residual_norm": 0.016056424741526305,
+        "width": 0.0005415638895494013,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          4,
+          6
+        ],
+        "energy": 1.0057471591856413,
+        "residual_norm": 0.15655603643944488,
+        "width": 0.051518063470999076,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          4,
+          7
+        ],
+        "energy": 1.0057277724957332,
+        "residual_norm": 0.15604963920829742,
+        "width": 0.05118519976255198,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          4,
+          9
+        ],
+        "energy": 1.0057333618324065,
+        "residual_norm": 0.15626354155189728,
+        "width": 0.051325653470208676,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          4,
+          10
+        ],
+        "energy": 1.0057334784434198,
+        "residual_norm": 0.1562692428362535,
+        "width": 0.051329399509396634,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          4,
+          12
+        ],
+        "energy": 1.005733794237044,
+        "residual_norm": 0.15629372742672054,
+        "width": 0.05134548754688817,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          4,
+          16
+        ],
+        "energy": 1.0057344346151538,
+        "residual_norm": 0.15635403249148702,
+        "width": 0.051385121956334934,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          6,
+          4
+        ],
+        "energy": 1.0057449238675924,
+        "residual_norm": 0.15650462224145711,
+        "width": 0.05148421709923534,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          6,
+          7
+        ],
+        "energy": 1.0004582736320862,
+        "residual_norm": 0.014204588351652146,
+        "width": 0.00042384756111801813,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          6,
+          9
+        ],
+        "energy": 1.0004640425494495,
+        "residual_norm": 0.01643662596718119,
+        "width": 0.000567515862881729,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          6,
+          10
+        ],
+        "energy": 1.00046416460036,
+        "residual_norm": 0.016492604449618236,
+        "width": 0.0005713880490181289,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          6,
+          12
+        ],
+        "energy": 1.0004645217612742,
+        "residual_norm": 0.01675389223289793,
+        "width": 0.0005896361725477028,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          6,
+          16
+        ],
+        "energy": 1.0004651692112392,
+        "residual_norm": 0.01731635261936705,
+        "width": 0.0006298912219713237,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          7,
+          4
+        ],
+        "energy": 1.0057257232122376,
+        "residual_norm": 0.15600495625951444,
+        "width": 0.051155878600286364,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          7,
+          6
+        ],
+        "energy": 1.0004572112546128,
+        "residual_norm": 0.013790768775273661,
+        "width": 0.00039951150135464353,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          7,
+          7
+        ],
+        "energy": 1.0004395997519093,
+        "residual_norm": 0.0072612986442596415,
+        "width": 0.00011075927144466036,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          7,
+          9
+        ],
+        "energy": 1.0004454086268078,
+        "residual_norm": 0.011036982560510033,
+        "width": 0.00025588950828470125,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          7,
+          10
+        ],
+        "energy": 1.000445530835926,
+        "residual_norm": 0.011119410456505259,
+        "width": 0.00025972592200673716,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          7,
+          12
+        ],
+        "energy": 1.0004458894128634,
+        "residual_norm": 0.01150475721146276,
+        "width": 0.00027803963264050324,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          7,
+          16
+        ],
+        "energy": 1.0004465373433546,
+        "residual_norm": 0.012310267475307708,
+        "width": 0.0003183367655057445,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          9,
+          4
+        ],
+        "energy": 1.0057277647122798,
+        "residual_norm": 0.15607916403120484,
+        "width": 0.05120457017734359,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          9,
+          6
+        ],
+        "energy": 1.0004593422764005,
+        "residual_norm": 0.014625890677649842,
+        "width": 0.0004493627625363761,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          9,
+          7
+        ],
+        "energy": 1.0004417714601255,
+        "residual_norm": 0.00877892945932537,
+        "width": 0.00016189547606249022,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          9,
+          9
+        ],
+        "energy": 1.0004475949061127,
+        "residual_norm": 0.0120998274450618,
+        "width": 0.0003075461008996694,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          9,
+          10
+        ],
+        "energy": 1.0004477196948682,
+        "residual_norm": 0.012177378494134443,
+        "width": 0.0003115010301633081,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          9,
+          12
+        ],
+        "energy": 1.0004480783293188,
+        "residual_norm": 0.012530289460245184,
+        "width": 0.00032981780870477984,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          9,
+          16
+        ],
+        "energy": 1.0004487262978699,
+        "residual_norm": 0.013273779937302074,
+        "width": 0.0003701188056126625,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          10,
+          4
+        ],
+        "energy": 1.005727915169209,
+        "residual_norm": 0.1560875530550191,
+        "width": 0.05121007560698765,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          10,
+          6
+        ],
+        "energy": 1.0004595015727078,
+        "residual_norm": 0.01472095790521485,
+        "width": 0.0004552234063495142,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          10,
+          7
+        ],
+        "energy": 1.0004419308855184,
+        "residual_norm": 0.008936331018387686,
+        "width": 0.00016775292323489843,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          10,
+          9
+        ],
+        "energy": 1.0004477569456305,
+        "residual_norm": 0.012216568405103262,
+        "width": 0.0003135092372945625,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          10,
+          12
+        ],
+        "energy": 1.0004482409190814,
+        "residual_norm": 0.012643574264925392,
+        "width": 0.00033580845759861866,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          10,
+          16
+        ],
+        "energy": 1.0004488888960306,
+        "residual_norm": 0.013380782594464633,
+        "width": 0.00037611007068938385,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          12,
+          4
+        ],
+        "energy": 1.0057281671985798,
+        "residual_norm": 0.15610633808197266,
+        "width": 0.05122240412028256,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          12,
+          6
+        ],
+        "energy": 1.000459768330835,
+        "residual_norm": 0.014928672359480926,
+        "width": 0.00046816056503873327,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          12,
+          7
+        ],
+        "energy": 1.0004421987193324,
+        "residual_norm": 0.009276072055194937,
+        "width": 0.0001807506390385516,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          12,
+          9
+        ],
+        "energy": 1.000448025248652,
+        "residual_norm": 0.012467831007383289,
+        "width": 0.00032653798330661843,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          12,
+          10
+        ],
+        "energy": 1.0004481505975882,
+        "residual_norm": 0.012543649158104308,
+        "width": 0.0003305214846691662,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          12,
+          16
+        ],
+        "energy": 1.0004491572762864,
+        "residual_norm": 0.013610689237242608,
+        "width": 0.00038914565198444606,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          16,
+          4
+        ],
+        "energy": 1.0057285124044613,
+        "residual_norm": 0.15613950770212753,
+        "width": 0.05124417616430876,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          16,
+          6
+        ],
+        "energy": 1.0004601214073092,
+        "residual_norm": 0.01527864586486777,
+        "width": 0.0004903680903729501,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          16,
+          7
+        ],
+        "energy": 1.0004425520477778,
+        "residual_norm": 0.009829862876406515,
+        "width": 0.00020297686944648063,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          16,
+          9
+        ],
+        "energy": 1.0004483786870264,
+        "residual_norm": 0.01288536390872373,
+        "width": 0.00034877495044360884,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          16,
+          10
+        ],
+        "energy": 1.0004485040725182,
+        "residual_norm": 0.012958806097751532,
+        "width": 0.00035276208269641174,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          16,
+          12
+        ],
+        "energy": 1.0004488627740273,
+        "residual_norm": 0.01329108712548951,
+        "width": 0.00037108460873347404,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          16,
+          16
+        ],
+        "energy": 1.0004495107689,
+        "residual_norm": 0.013994265557224146,
+        "width": 0.00041138853543842835,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      }
+    ]
+  },
+  {
+    "path": "runs\\seeds2d\\well2d\\seed0\\wavefunction2d.npz",
+    "filtered_path": "runs\\certificates_filtered2d\\runs__seeds2d__well2d__seed0.npz",
+    "potential": "well2d",
+    "seed": 0,
+    "n_grid": 81,
+    "cutoff": [
+      1,
+      1
+    ],
+    "reason": "取证书宽度最小的二维截断阶数",
+    "l2_change": 0.00021429882659931065,
+    "rel_l2_change": 0.00021429882659931067,
+    "raw_certificate": {
+      "energy": 9.868337550411002,
+      "residual_norm": 0.009854903321611421,
+      "weinstein_lower": 9.858482647079523,
+      "weinstein_upper": 9.878192453742482,
+      "interval_lower": -4.926559929861497,
+      "interval_upper": 23.183742562492924,
+      "temple_lower": 9.868330256659833,
+      "temple_upper": 9.8683441147867,
+      "spectral_gap": 13.315405012072054,
+      "eigenfunction_angle_bound": 0.0007401129903578342,
+      "valid": true,
+      "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造",
+      "state_index": 0
+    },
+    "raw_width": 1.3858126866495013e-05,
+    "filtered_certificate": {
+      "energy": 9.868336118746432,
+      "residual_norm": 1.9452071661510176e-12,
+      "weinstein_lower": 9.86833611873462,
+      "weinstein_upper": 9.868336118758245,
+      "interval_lower": -4.926559929861497,
+      "interval_upper": 23.183742562492924,
+      "temple_lower": 9.868336118736565,
+      "temple_upper": 9.8683361187563,
+      "spectral_gap": 13.315406443736624,
+      "eigenfunction_angle_bound": 1.4608695381326606e-13,
+      "valid": true,
+      "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造",
+      "state_index": 0
+    },
+    "filtered_width": 1.9735324485736783e-11,
+    "filtered_angle": 1.4608695381326606e-13,
+    "raw_angle_transported": 0.0004285976689270213,
+    "raw_angle_true_discrete": 0.00021429882782644032,
+    "discrete_ref": 9.868336118746093,
+    "target_state": 0,
+    "state_matches_target": true,
+    "filtered_contains_ref": true,
+    "scan": [
+      {
+        "cutoff": [
+          1,
+          1
+        ],
+        "energy": 9.868336118746432,
+        "residual_norm": 1.9452071661510176e-12,
+        "width": 1.9735324485736783e-11,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          2,
+          2
+        ],
+        "energy": 9.868336598382937,
+        "residual_norm": 0.0026642526503188406,
+        "width": 1.0128810590259718e-06,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          3,
+          3
+        ],
+        "energy": 9.868336758435737,
+        "residual_norm": 0.0038713765756879224,
+        "width": 2.1386219462016243e-06,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          4,
+          4
+        ],
+        "energy": 9.868337492780364,
+        "residual_norm": 0.00837686369515764,
+        "width": 1.0012970381723107e-05,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          5,
+          5
+        ],
+        "energy": 9.86833751415282,
+        "residual_norm": 0.008543850985338814,
+        "width": 1.0416152536052437e-05,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          6,
+          6
+        ],
+        "energy": 9.868337519281157,
+        "residual_norm": 0.008608432044283151,
+        "width": 1.05742140998899e-05,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          8,
+          8
+        ],
+        "energy": 9.868337531695074,
+        "residual_norm": 0.008816847728983076,
+        "width": 1.109242833408075e-05,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          10,
+          10
+        ],
+        "energy": 9.868337538824886,
+        "residual_norm": 0.009003014920277263,
+        "width": 1.1565804816981995e-05,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          12,
+          12
+        ],
+        "energy": 9.868337542955096,
+        "residual_norm": 0.009155916034723056,
+        "width": 1.1961991711828546e-05,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          15,
+          15
+        ],
+        "energy": 9.868337545821246,
+        "residual_norm": 0.009301789915887466,
+        "width": 1.2346189127043772e-05,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          18,
+          18
+        ],
+        "energy": 9.86833754795995,
+        "residual_norm": 0.00945576634121145,
+        "width": 1.2758314799299342e-05,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          20,
+          20
+        ],
+        "energy": 9.868337548626696,
+        "residual_norm": 0.009520276900752186,
+        "width": 1.2932991769076807e-05,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          25,
+          25
+        ],
+        "energy": 9.868337549467018,
+        "residual_norm": 0.00962548475580427,
+        "width": 1.3220413759285066e-05,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          30,
+          30
+        ],
+        "energy": 9.8683375499528,
+        "residual_norm": 0.009711468297729122,
+        "width": 1.34576617547566e-05,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          40,
+          40
+        ],
+        "energy": 9.868337550271121,
+        "residual_norm": 0.009794907792590443,
+        "width": 1.3689907325087347e-05,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          50,
+          50
+        ],
+        "energy": 9.868337550369333,
+        "residual_norm": 0.00983304065153469,
+        "width": 1.3796707865054714e-05,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          60,
+          60
+        ],
+        "energy": 9.868337550401368,
+        "residual_norm": 0.009849170988646678,
+        "width": 1.3842009776610098e-05,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          2,
+          3
+        ],
+        "energy": 9.868336705680719,
+        "residual_norm": 0.0035031998141760406,
+        "width": 1.751192497678744e-06,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          2,
+          5
+        ],
+        "energy": 9.868337265978267,
+        "residual_norm": 0.007383046833006224,
+        "width": 7.77806424068217e-06,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          2,
+          9
+        ],
+        "energy": 9.86833727751526,
+        "residual_norm": 0.007609300750009795,
+        "width": 8.262086046428863e-06,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          3,
+          2
+        ],
+        "energy": 9.868336635229891,
+        "residual_norm": 0.002925568766396645,
+        "width": 1.221312535548691e-06,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          3,
+          5
+        ],
+        "energy": 9.868337319130225,
+        "residual_norm": 0.007567746510620594,
+        "width": 8.172094483782644e-06,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          3,
+          9
+        ],
+        "energy": 9.868337330787913,
+        "residual_norm": 0.0077909309193304405,
+        "width": 8.661216092775703e-06,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          5,
+          2
+        ],
+        "energy": 9.868336817879545,
+        "residual_norm": 0.004740069897884823,
+        "width": 3.2060577499493093e-06,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          5,
+          3
+        ],
+        "energy": 9.868336944677655,
+        "residual_norm": 0.005419563701320918,
+        "width": 4.1911178385589665e-06,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          5,
+          9
+        ],
+        "energy": 9.868337527777998,
+        "residual_norm": 0.008774782099881846,
+        "width": 1.0986835938808781e-05,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          9,
+          2
+        ],
+        "energy": 9.8683368208671,
+        "residual_norm": 0.004811867276369536,
+        "width": 3.3039163991333e-06,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          9,
+          3
+        ],
+        "energy": 9.868336948920263,
+        "residual_norm": 0.005519343868631107,
+        "width": 4.346864002968687e-06,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          9,
+          5
+        ],
+        "energy": 9.868337520140235,
+        "residual_norm": 0.008636941380518525,
+        "width": 1.0644369140777599e-05,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          9,
+          9
+        ],
+        "energy": 9.868337534100831,
+        "residual_norm": 0.008873614450676698,
+        "width": 1.1235723709646095e-05,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      }
+    ]
+  },
+  {
+    "path": "runs\\seeds2d\\well2d\\seed1\\wavefunction2d.npz",
+    "filtered_path": "runs\\certificates_filtered2d\\runs__seeds2d__well2d__seed1.npz",
+    "potential": "well2d",
+    "seed": 1,
+    "n_grid": 81,
+    "cutoff": [
+      1,
+      1
+    ],
+    "reason": "取证书宽度最小的二维截断阶数",
+    "l2_change": 0.00013459522444272617,
+    "rel_l2_change": 0.00013459522444272617,
+    "raw_certificate": {
+      "energy": 9.86833762701218,
+      "residual_norm": 0.014289192794235982,
+      "weinstein_lower": 9.854048434208076,
+      "weinstein_upper": 9.882626819816283,
+      "interval_lower": -4.9265599298615115,
+      "interval_upper": 23.18374256249295,
+      "temple_lower": 9.86832229280619,
+      "temple_upper": 9.868351427795586,
+      "spectral_gap": 13.315404935470902,
+      "eigenfunction_angle_bound": 0.0010731326314212396,
+      "valid": true,
+      "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造",
+      "state_index": 0
+    },
+    "raw_width": 2.9134989395274147e-05,
+    "filtered_certificate": {
+      "energy": 9.868336118746436,
+      "residual_norm": 1.8994815532251138e-12,
+      "weinstein_lower": 9.86833611873467,
+      "weinstein_upper": 9.868336118758203,
+      "interval_lower": -4.9265599298615115,
+      "interval_upper": 23.18374256249295,
+      "temple_lower": 9.868336118736568,
+      "temple_upper": 9.868336118756304,
+      "spectral_gap": 13.315406443736645,
+      "eigenfunction_angle_bound": 1.4265291572219334e-13,
+      "valid": true,
+      "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造",
+      "state_index": 0
+    },
+    "filtered_width": 1.9735324485736783e-11,
+    "filtered_angle": 1.4265291572219334e-13,
+    "raw_angle_transported": 0.0002691904528887618,
+    "raw_angle_true_discrete": 0.0001345952247474646,
+    "discrete_ref": 9.868336118746099,
+    "target_state": 0,
+    "state_matches_target": true,
+    "filtered_contains_ref": true,
+    "scan": [
+      {
+        "cutoff": [
+          1,
+          1
+        ],
+        "energy": 9.868336118746436,
+        "residual_norm": 1.8994815532251138e-12,
+        "width": 1.9735324485736783e-11,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          2,
+          2
+        ],
+        "energy": 9.868336126861667,
+        "residual_norm": 0.0004248256943910383,
+        "width": 2.577231406064584e-08,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          3,
+          3
+        ],
+        "energy": 9.868336373490179,
+        "residual_norm": 0.0037314037341899995,
+        "width": 1.9867717320209977e-06,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          4,
+          4
+        ],
+        "energy": 9.868337398454589,
+        "residual_norm": 0.010145596546965728,
+        "width": 1.468773868396056e-05,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          5,
+          5
+        ],
+        "energy": 9.868337440813349,
+        "residual_norm": 0.010487571621614612,
+        "width": 1.569457657346618e-05,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          6,
+          6
+        ],
+        "energy": 9.868337515983791,
+        "residual_norm": 0.011206769766574089,
+        "width": 1.7920930512005384e-05,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          8,
+          8
+        ],
+        "energy": 9.86833756485919,
+        "residual_norm": 0.011890497666245945,
+        "width": 2.0174355388036247e-05,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          10,
+          10
+        ],
+        "energy": 9.868337590001062,
+        "residual_norm": 0.012393737232882306,
+        "width": 2.1918162255829543e-05,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          12,
+          12
+        ],
+        "energy": 9.868337603730005,
+        "residual_norm": 0.012769399797099795,
+        "width": 2.3267006739047247e-05,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          15,
+          15
+        ],
+        "energy": 9.868337612730729,
+        "residual_norm": 0.013099543572783014,
+        "width": 2.448566232438054e-05,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          18,
+          18
+        ],
+        "energy": 9.868337619590626,
+        "residual_norm": 0.013449790283260796,
+        "width": 2.5812527733037882e-05,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          20,
+          20
+        ],
+        "energy": 9.868337621636192,
+        "residual_norm": 0.013589492123280662,
+        "width": 2.6351537291802174e-05,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          25,
+          25
+        ],
+        "energy": 9.868337624177723,
+        "residual_norm": 0.013812463473322545,
+        "width": 2.7223363259665234e-05,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          30,
+          30
+        ],
+        "energy": 9.868337625648339,
+        "residual_norm": 0.013993741510800491,
+        "width": 2.794262355720889e-05,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          40,
+          40
+        ],
+        "energy": 9.868337626597656,
+        "residual_norm": 0.014166348398177406,
+        "width": 2.8636195214204463e-05,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          50,
+          50
+        ],
+        "energy": 9.868337626888952,
+        "residual_norm": 0.014244557785859854,
+        "width": 2.895325645191349e-05,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          60,
+          60
+        ],
+        "energy": 9.86833762698372,
+        "residual_norm": 0.014277508733844937,
+        "width": 2.9087362412028028e-05,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          2,
+          3
+        ],
+        "energy": 9.868336181510625,
+        "residual_norm": 0.0017574507033208365,
+        "width": 4.407424931685e-07,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          2,
+          5
+        ],
+        "energy": 9.868336480669747,
+        "residual_norm": 0.005041951300380219,
+        "width": 3.627428247554576e-06,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          2,
+          9
+        ],
+        "energy": 9.868336491616406,
+        "residual_norm": 0.005333992503877708,
+        "width": 4.059813541346102e-06,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          3,
+          2
+        ],
+        "energy": 9.868336289892374,
+        "residual_norm": 0.0029550709091560666,
+        "width": 1.246068350724272e-06,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          3,
+          5
+        ],
+        "energy": 9.86833696552548,
+        "residual_norm": 0.008337772032561844,
+        "width": 9.919735074248592e-06,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          3,
+          9
+        ],
+        "energy": 9.868337042049054,
+        "residual_norm": 0.009413210203670213,
+        "width": 1.2643734510930926e-05,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          5,
+          2
+        ],
+        "energy": 9.86833669356368,
+        "residual_norm": 0.006248479633853194,
+        "width": 5.571208744115097e-06,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          5,
+          3
+        ],
+        "energy": 9.868336823361842,
+        "residual_norm": 0.007033955923132403,
+        "width": 7.059918294416434e-06,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          5,
+          9
+        ],
+        "energy": 9.868337522513185,
+        "residual_norm": 0.011436611817411384,
+        "width": 1.8663556174303153e-05,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          9,
+          2
+        ],
+        "energy": 9.86833672205984,
+        "residual_norm": 0.0068036926265228935,
+        "width": 6.60525887319352e-06,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          9,
+          3
+        ],
+        "energy": 9.868336863159838,
+        "residual_norm": 0.007715173444136484,
+        "width": 8.49359546784001e-06,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          9,
+          5
+        ],
+        "energy": 9.868337487346519,
+        "residual_norm": 0.011062059069560008,
+        "width": 1.7461100627613746e-05,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          9,
+          9
+        ],
+        "energy": 9.868337570184256,
+        "residual_norm": 0.01198831891756956,
+        "width": 2.050766297045925e-05,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      }
+    ]
+  },
+  {
+    "path": "runs\\seeds2d\\well2d\\seed2\\wavefunction2d.npz",
+    "filtered_path": "runs\\certificates_filtered2d\\runs__seeds2d__well2d__seed2.npz",
+    "potential": "well2d",
+    "seed": 2,
+    "n_grid": 81,
+    "cutoff": [
+      1,
+      1
+    ],
+    "reason": "取证书宽度最小的二维截断阶数",
+    "l2_change": 9.035442724753808e-05,
+    "rel_l2_change": 9.03544272475381e-05,
+    "raw_certificate": {
+      "energy": 9.86833681222236,
+      "residual_norm": 0.00975953976759938,
+      "weinstein_lower": 9.858577272444892,
+      "weinstein_upper": 9.878096351999828,
+      "interval_lower": -4.926559929861561,
+      "interval_upper": 23.183742562492966,
+      "temple_lower": 9.8683296589482,
+      "temple_upper": 9.868343250169453,
+      "spectral_gap": 13.315405750260739,
+      "eigenfunction_angle_bound": 0.0007329510511717226,
+      "valid": true,
+      "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造",
+      "state_index": 0
+    },
+    "raw_width": 1.3591221252440278e-05,
+    "filtered_certificate": {
+      "energy": 9.868336118746432,
+      "residual_norm": 2.0068680371414285e-12,
+      "weinstein_lower": 9.868336118734558,
+      "weinstein_upper": 9.868336118758307,
+      "interval_lower": -4.926559929861561,
+      "interval_upper": 23.183742562492966,
+      "temple_lower": 9.868336118736565,
+      "temple_upper": 9.8683361187563,
+      "spectral_gap": 13.315406443736666,
+      "eigenfunction_angle_bound": 1.5071774531414502e-13,
+      "valid": true,
+      "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造",
+      "state_index": 0
+    },
+    "filtered_width": 1.9735324485736783e-11,
+    "filtered_angle": 1.5071774531414502e-13,
+    "raw_angle_transported": 0.0001807088558137342,
+    "raw_angle_true_discrete": 9.03544273400619e-05,
+    "discrete_ref": 9.868336118746084,
+    "target_state": 0,
+    "state_matches_target": true,
+    "filtered_contains_ref": true,
+    "scan": [
+      {
+        "cutoff": [
+          1,
+          1
+        ],
+        "energy": 9.868336118746432,
+        "residual_norm": 2.0068680371414285e-12,
+        "width": 1.9735324485736783e-11,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          2,
+          2
+        ],
+        "energy": 9.868336121995705,
+        "residual_norm": 0.00025488755522253985,
+        "width": 9.290092251035276e-09,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          3,
+          3
+        ],
+        "energy": 9.868336279903858,
+        "residual_norm": 0.002926792299561578,
+        "width": 1.2223342853445729e-06,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          4,
+          4
+        ],
+        "energy": 9.868336692771072,
+        "residual_norm": 0.006904305971764217,
+        "width": 6.8020605574758974e-06,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          5,
+          5
+        ],
+        "energy": 9.868336718220993,
+        "residual_norm": 0.007215782703880964,
+        "width": 7.429630608513094e-06,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          6,
+          6
+        ],
+        "energy": 9.868336760413362,
+        "residual_norm": 0.007817147885405615,
+        "width": 8.719605057549984e-06,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          8,
+          8
+        ],
+        "energy": 9.868336785542601,
+        "residual_norm": 0.008322644389156636,
+        "width": 9.883772026597626e-06,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          10,
+          10
+        ],
+        "energy": 9.868336797003208,
+        "residual_norm": 0.00865310531527621,
+        "width": 1.0684247914838352e-05,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          12,
+          12
+        ],
+        "energy": 9.86833680287424,
+        "residual_norm": 0.008884996469528924,
+        "width": 1.1264565786817116e-05,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          15,
+          15
+        ],
+        "energy": 9.868336806682143,
+        "residual_norm": 0.009088075840262898,
+        "width": 1.1785385371609891e-05,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          18,
+          18
+        ],
+        "energy": 9.868336809331598,
+        "residual_norm": 0.009285102274381847,
+        "width": 1.2301930128799654e-05,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          20,
+          20
+        ],
+        "energy": 9.868336810138059,
+        "residual_norm": 0.009365120550381493,
+        "width": 1.2514877552050052e-05,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          25,
+          25
+        ],
+        "energy": 9.868336811141004,
+        "residual_norm": 0.00949343094368668,
+        "width": 1.2860155900185077e-05,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          30,
+          30
+        ],
+        "energy": 9.868336811699375,
+        "residual_norm": 0.009594025234051356,
+        "width": 1.313413697090482e-05,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          40,
+          40
+        ],
+        "energy": 9.868336812063983,
+        "residual_norm": 0.009690854938227016,
+        "width": 1.3400592493439945e-05,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          50,
+          50
+        ],
+        "energy": 9.868336812175338,
+        "residual_norm": 0.009734594003101595,
+        "width": 1.3521830764418041e-05,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          60,
+          60
+        ],
+        "energy": 9.868336812211497,
+        "residual_norm": 0.00975300351770628,
+        "width": 1.3573022496160547e-05,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          2,
+          3
+        ],
+        "energy": 9.868336163965271,
+        "residual_norm": 0.0015123694418899827,
+        "width": 3.2639328928496525e-07,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          2,
+          5
+        ],
+        "energy": 9.868336278595166,
+        "residual_norm": 0.003281560476872044,
+        "width": 1.5366167982477918e-06,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          2,
+          9
+        ],
+        "energy": 9.868336283258927,
+        "residual_norm": 0.00347834606008443,
+        "width": 1.7264329397193023e-06,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          3,
+          2
+        ],
+        "energy": 9.86833623709212,
+        "residual_norm": 0.0025054759548699887,
+        "width": 8.957549582078173e-07,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          3,
+          5
+        ],
+        "energy": 9.86833656108268,
+        "residual_norm": 0.00599299483546435,
+        "width": 5.124938452283345e-06,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          3,
+          9
+        ],
+        "energy": 9.868336604877983,
+        "residual_norm": 0.006837363675482687,
+        "width": 6.670798473606965e-06,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          5,
+          2
+        ],
+        "energy": 9.86833632579414,
+        "residual_norm": 0.0036183003984055885,
+        "width": 1.8681554099231334e-06,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          5,
+          3
+        ],
+        "energy": 9.868336416924958,
+        "residual_norm": 0.004581244931230231,
+        "width": 2.9948085149555936e-06,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          5,
+          9
+        ],
+        "energy": 9.868336766274775,
+        "residual_norm": 0.008017574123161661,
+        "width": 9.172465297524468e-06,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          9,
+          2
+        ],
+        "energy": 9.86833633239541,
+        "residual_norm": 0.003857445347630986,
+        "width": 2.1232580245111876e-06,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          9,
+          3
+        ],
+        "energy": 9.868336433802654,
+        "residual_norm": 0.005042489871673707,
+        "width": 3.628203232963756e-06,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          9,
+          5
+        ],
+        "energy": 9.868336740122427,
+        "residual_norm": 0.007628930357680711,
+        "width": 8.304768069677948e-06,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      },
+      {
+        "cutoff": [
+          9,
+          9
+        ],
+        "energy": 9.868336789031217,
+        "residual_norm": 0.008415123651952863,
+        "width": 1.0104644239561367e-05,
+        "valid": true,
+        "state_index": 0,
+        "same_state": true,
+        "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+      }
+    ]
+  }
+]

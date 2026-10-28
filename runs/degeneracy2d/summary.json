@@ -1,0 +1,55 @@
+{
+  "n_grid": 81,
+  "degenerate_pair": [
+    24.6632321673537,
+    24.66323216735387
+  ],
+  "degenerate_split": 1.6697754290362354e-13,
+  "ground_reference": 9.8683361187461,
+  "cases": [
+    {
+      "case": "ground",
+      "energy": 9.868336118746432,
+      "residual_norm": 3.3357197830473535e-12,
+      "weinstein_width": 2.6407320774524123e-11,
+      "valid": true,
+      "state_index": 0,
+      "temple_width": 1.9735324485736783e-11,
+      "spectral_gap": 13.315406443736627,
+      "reason": "Temple 区间已由二维惯性计数验证为单态区间；区间由 isolating_interval_2d 自动构造"
+    },
+    {
+      "case": "excited_a",
+      "energy": 24.66323216735416,
+      "residual_norm": 4.284989255318383e-12,
+      "weinstein_width": 5.789502210973296e-11,
+      "valid": false,
+      "state_index": null,
+      "temple_width": null,
+      "spectral_gap": null,
+      "reason": "无法构造单态区间: 验证出的谱隙 7.074e-09 低于双精度惯性计数的分辨率 1.280e-05（本征值简并或近简并），拒绝认证"
+    },
+    {
+      "case": "excited_b",
+      "energy": 24.663232167354167,
+      "residual_norm": 4.023013788795026e-12,
+      "weinstein_width": 5.736922048527049e-11,
+      "valid": false,
+      "state_index": null,
+      "temple_width": null,
+      "spectral_gap": null,
+      "reason": "无法构造单态区间: 验证出的谱隙 7.074e-09 低于双精度惯性计数的分辨率 1.280e-05（本征值简并或近简并），拒绝认证"
+    },
+    {
+      "case": "excited_mix",
+      "energy": 24.663232167354174,
+      "residual_norm": 4.780640798248055e-12,
+      "weinstein_width": 5.88897819397971e-11,
+      "valid": false,
+      "state_index": null,
+      "temple_width": null,
+      "spectral_gap": null,
+      "reason": "无法构造单态区间: 验证出的谱隙 7.074e-09 低于双精度惯性计数的分辨率 1.280e-05（本征值简并或近简并），拒绝认证"
+    }
+  ]
+}

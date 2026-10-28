@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nnschrodinger"
+version = "0.1.0"
+description = "Physics-informed / hybrid neural networks for solving and evaluating the Schrodinger equation"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "nnschrodinger contributors" }]
+keywords = ["pinn", "schrodinger", "quantum-mechanics", "physics-informed", "hhl"]
+dependencies = ["numpy>=1.24"]
+
+[project.optional-dependencies]
+# 深度学习后端按需安装；numpy 核心（参考解、校验、数据格式）不需要它
+torch = ["torch>=2.1"]
+dev = ["pytest>=7", "matplotlib>=3.7"]
+# 可选：真的去跑 HHL 量子线路（qiskit 与经典 DNN 不在同一环境时二选一）
+qiskit = ["qiskit>=1.0", "qiskit-aer>=0.14"]
+
+[project.scripts]
+nns-verify = "nnschrodinger.physics.verify:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+markers = [
+    "requires_torch: 需要已安装 PyTorch 的测试（无 torch 时自动跳过）",
+]
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+ignore = ["E501"]
+
+[tool.mypy]
+python_version = "3.10"
+ignore_missing_imports = true

@@ -1,0 +1,61 @@
+\section{Conclusion}
+\label{sec:conclusion}
+
+We have described a protocol that makes classical a posteriori eigenvalue
+bounds computable for neural eigenpairs of the discrete Schr\"odinger
+operator, and an implementation of it that runs on ordinary hardware. The
+essential element is not any of the inequalities---they are textbook---but the
+verification of their hypothesis: by counting the spectrum below two shifts
+with Sturm sequences or Sylvester inertia, the interval that the theorems
+require is constructed and checked rather than assumed. The same machinery
+supplies the spectral gap that turns a residual into a two-sided eigenvalue
+enclosure and an eigenfunction angle bound. At a degenerate level the same
+machinery is applied to the invariant subspace rather than to a state: the
+multiplicity is measured by the count, the cluster receives a two-sided
+enclosure, and the angle between the trial subspace and the true one is
+bounded, so that the structural obstacle of degeneracy becomes a certificate
+rather than a refusal.
+
+The experiments on six potentials in one and two dimensions give a concrete
+picture of what can and cannot be certified. All 39 filtered enclosures we
+report contain the discrete eigenvalue they refer to---18 from the main sweep
+and 21 from the leakage audit, the two-dimensional ones checked against a
+dense LAPACK solve rather than the ARPACK values that propose the
+intervals---and the certified width is
+between $5$ and $40$ times the true error on the harmonic and anharmonic
+potentials, between $50$ and $3\times10^{2}$ times on the infinite well and
+$7$--$8\times10^{2}$ on the box---where width and error are both at
+round-off---and up to $3\times10^{3}$ times on the finite well, where the
+bound is correct but uninformative. A
+degenerate state with a $4\times10^{-12}$ residual is refused as a state while
+the same eigenspace is accepted as a two-dimensional invariant subspace, with a
+measured multiplicity of two and a principal-angle bound of
+$8\times10^{-13}$ on exact inputs and $6\times10^{-3}$ on network inputs. Of
+four independently trained networks on that level, three collapsed onto the
+same representative and one found its partner; the certificate refused the
+pairs that do not span the level and accepted the pairs that do. Splitting the
+level by a controlled anisotropy locates the boundary between the two
+certificates exactly at the counting resolution---a split of $10^{-6}$ is
+refused as a state just as a split of $10^{-13}$ is, while the subspace is
+certified in both cases---so the obstacle is computable rather than
+structural. The network
+error on the $81\times81$ grid is smaller than the discretization gap, so the
+certificate correctly reports the grid as the limiting factor.
+
+The implementation, the drivers that regenerate every table, and the test
+suite that locks the guards are available with this article. The two open
+items of the previous version of this work are closed here in part. The count
+is now computed in directed-rounding interval arithmetic---provably in one
+dimension, and in two dimensions whenever the potential is separable, which
+covers two of our three two-dimensional problems; the general sparse
+factorization still refuses too often in intervals to be useful, and we
+report the measurement rather than hide it. And the continuous operator now
+receives an upper bound from the variational principle---exact in exact
+arithmetic, and limited only by the floating-point evaluation of the
+quotient---at the price of a Rayleigh quotient rather than of an interpolation
+constant; the lower
+side exists only where a comparison principle does, which we demonstrate for
+the infinite well and the box and show to fail for the finite well. Neither addition changes the
+protocol, and neither touches the cluster construction: what limits the
+certificate at a degenerate level is the resolution at which two shifts can
+be separated, not the requirement that the level be simple.
