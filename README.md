@@ -1,4 +1,40 @@
-# nnschrodinger — 用神经网络求解与求值薛定谔方程
+# nnschrodinger — neural eigenpairs of the Schrödinger equation, certified
+
+**Paper.** *Certifying neural eigenpairs and degenerate eigenspaces of the
+Schrödinger equation: a self-verifying a posteriori protocol and its
+implementation* — Chunyang Chen and Yuhao Peng (equal contribution), School
+of Mathematics and Physics, China University of Geosciences (Wuhan).
+Compiled manuscript: [`paper/main.pdf`](paper/main.pdf) (54 pages).
+
+Given an approximate eigenfunction of the finite-difference Schrödinger
+operator, the package returns a two-sided enclosure of the discrete
+eigenvalue, a verified state index, and a bound on the angle to the true
+eigenfunction (Kato–Temple and Davis–Kahan). The hypothesis these classical
+bounds require — that the interval contains exactly one eigenvalue — is
+*checked* by counting the spectrum below a shift: Sturm sequences in one
+dimension, the Sylvester inertia of a no-pivot sparse LU in two. The count is
+re-derived in directed-rounding interval arithmetic in one dimension and for
+separable two-dimensional potentials, so that there it is a theorem about the
+stored matrix rather than a guarded estimate. Degenerate levels, where no
+single eigenfunction exists, are certified as invariant subspaces with the
+multiplicity measured by counting; and a variational bound on the P1/Q1
+interpolant carries the upper side of the guarantee to the continuous
+operator.
+
+```bash
+pip install -r requirements.txt
+python tests/run_tests.py          # 143 tests
+python examples/certify_demo.py    # one certificate in ~4 s (NumPy/SciPy only)
+```
+
+To regenerate every table and figure of the paper, see
+[`paper/README.md`](paper/README.md); the measured artefacts behind each
+number are under [`runs/`](runs/). Licensed under MIT
+([`LICENSE`](LICENSE)).
+
+---
+
+## 中文说明
 
 围绕 **PINN（物理信息神经网络）求解定态薛定谔方程** 组织的完整项目：
 参考解 → 网络/损失/训练 → 评测 → 可复现实验，每一层都有测试与证据。
