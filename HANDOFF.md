@@ -447,7 +447,9 @@ python tests/minipytest.py -k losses  # 只跑匹配的
 > `paper/highlights.docx|txt` 5 条（≤85 字符）；`paper/declaration-of-interests.docx`
 > （Elsevier 声明表，"nothing to declare" 已勾选）；文章类型定为 **CPiP**。
 > 投稿包：`paper/submission/README-SUBMISSION.md` + `nn-schrodinger-certify.zip`
-> （`python scripts/make_submission_archive.py`，863 文件 / 14.6 MB，不入库）。
+> （`python scripts/make_submission_archive.py`，816 文件 / 10.8 MB，不入库）。
+> Cover letter：`paper/cover_letter.md`（源）+ `.docx`/`.pdf`（`python paper/make_cover_letter.py`
+> 用 pandoc + xelatex 生成，2 页）；"Program file(s)" 即上面那个 zip。
 > **投稿前仍需**：(1) 参考文献 18 条 DOI 已于 2026-10-28 全部对 Crossref 解析通过
 > （其中 `mishra2023` 原记 drab096、`rump1999` 原记 …7186-3_5，均已改正；
 > `tancik2020` 无 DOI，按 NeurIPS 33, 7462–7473 著录）；(4) 若改投 MLST，需补连续算子层面

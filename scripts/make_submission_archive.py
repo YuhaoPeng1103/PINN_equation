@@ -41,8 +41,10 @@ def _skip(path: Path, root: Path) -> bool:
         return True
     if path.suffix in SKIP_SUFFIXES or path.name in SKIP_NAMES:
         return True
-    # downloaded web pages kept for reference, not part of the software
-    if path.name.startswith("Guide for authors") or "_files" in path.name:
+    # Downloaded web pages kept for reference, not part of the software.  The
+    # check has to run over every component of the relative path: the files
+    # inside the "…_files" resource directory do not carry the page name.
+    if any(p.startswith("Guide for authors") or p.endswith("_files") for p in rel.parts):
         return True
     return False
 

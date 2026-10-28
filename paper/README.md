@@ -51,6 +51,7 @@ python scripts/directed_count_report.py     # directed-rounding counts (Sec. 6.1
 python scripts/continuous_bound.py          # variational bound + 2D brackets (Sec. 6.4-6.5)
 python scripts/continuous_bound.py --alignment   # finite well, O(h) sign experiment
 python paper/make_tables.py ; python paper/make_figures.py
+python paper/make_cover_letter.py          # cover_letter.docx + .pdf from the .md
 ```
 
 Note: run one sweep at a time and keep `--jobs` at 2–3; concurrent sweeps have
@@ -66,7 +67,8 @@ submission system, not in the files:
 - [x] abstract ≤ 250 words (209), keywords ≤ 7 (7), highlights ≤ 85 chars (5 bullets)
 - [x] numbered references (`[n]`, order of appearance) per the Guide for Authors
 - [x] CRediT, Funding, Data availability and generative-AI declarations
-- [x] `cover_letter.md` — no suggested referees
+- [x] cover letter — `cover_letter.md` source, `cover_letter.pdf` (upload) and
+      `.docx` built by `python paper/make_cover_letter.py`; no suggested referees
 - [x] `declaration-of-interests.docx` — "nothing to declare" statement
 - [ ] completing the declarations tool in the submission system
 - [ ] choosing open access / licence option after acceptance

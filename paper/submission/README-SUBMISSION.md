@@ -11,12 +11,31 @@ Target: *Computer Physics Communications*.
 | `paper/main.pdf` | Compiled manuscript, 55 pages, for the reviewers |
 | `paper/highlights.docx` (and `.txt`) | 5 highlights, each ≤ 85 characters |
 | `paper/declaration-of-interests.docx` | Elsevier "Declaration of interests" document ("nothing to declare" box ticked) |
-| `paper/cover_letter.md` | Cover letter (export to PDF or paste into the system) |
+| `paper/cover_letter.pdf` (upload) / `.docx` (if an editable file is asked for) | Cover letter, 2 pages, addressed to the Editors; `.md` is the editable source |
+| `paper/cover_letter.md` | Markdown source of the cover letter; regenerate the `.docx`/`.pdf` with `python paper/make_cover_letter.py` |
 | `paper/submission/nn-schrodinger-certify.zip` | Program archive: source, 143-test suite, drivers, `runs/` evidence, README, MIT licence |
 
 Rebuild the archive after any change with
 `python scripts/make_submission_archive.py`
 (it is not tracked by git, since it duplicates the tree).
+
+### The "Program file(s)" upload
+
+Editorial Manager asks for the program archive separately from the manuscript
+files, because for a CPiP article the software is part of the submission and
+is archived in the CPC Program Library. Upload
+`nn-schrodinger-certify.zip` there — 816 files, 10.8 MB — built from the
+repository root by `scripts/make_submission_archive.py`. It contains:
+
+- `src/` — the certificate (`certify/`), the directed-rounding counter, the
+  subspace certificate, the networks and the FD operators;
+- `tests/` — the 143-test suite (`python tests/run_tests.py`);
+- `scripts/` — the drivers that regenerate every table and figure;
+- `runs/` — the JSON/CSV/npz evidence for every number quoted in the paper;
+- `examples/certify_demo.py`, `README.md`, `LICENSE` (MIT), `requirements.txt`.
+
+The "CPC Library link to program files" field in the Program Summary is left
+for the Technical Editor to fill in; do not invent that URL.
 
 ## What must be entered in the submission system
 

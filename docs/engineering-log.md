@@ -1005,7 +1005,7 @@ shift 上拒绝，于是每轮只推进一格，宽度卡在 2e-3 不动。改�
 6. **文章类型定为 CPiP**（带 Program Summary、代码归档、MIT 许可），
    cover letter 相应改写。
 7. **投稿包**：`scripts/make_submission_archive.py` 生成
-   `paper/submission/nn-schrodinger-certify.zip`（863 文件 / 14.6 MB），
+   `paper/submission/nn-schrodinger-certify.zip`（816 文件 / 10.8 MB），
    `paper/submission/README-SUBMISSION.md` 列出上传清单与系统内要填的项。
 
 **教训**：
