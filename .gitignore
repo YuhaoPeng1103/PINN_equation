@@ -28,3 +28,8 @@ paper/*.bbl
 paper/*.synctex.gz
 paper/.p*.png
 
+# 本地保存的网页资料（不进入仓库）
+Guide for authors*
+*_files/
+
+
