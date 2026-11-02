@@ -148,7 +148,6 @@ numbers are the recorded values in the linked JSON.
 | Exp. 2 PINN (learned E, weight 1.5) | energy error / overlap | 3.81e+0 ± 0.97 / 0.123 |
 | Exp. 2 PINN (learned E, no Rayleigh term) | energy error / overlap | 3.48e+0 ± 1.26 / 0.110 |
 | Exp. 3 data assimilation k=0 → 64 | energy error | 2.78e-2 → **5.58e-3** |
-| Exp. 2 excited state n=1 (orthogonality constraint) | relative error / overlap | **0.74% / 0.9965** |
 | Exp. 1 trained energy → interpolated energy | waveform error | 1.8e-2 → 0.25–1.78 |
 | Exp. 5 certificate at matched training budget (prototype) | discrete residual / Temple width | 0.361 / 0.260 (valid) |
 | Exp. 5 + certificate-guided spectral filtering | discrete residual / Temple width | **0.0051 / 5.2e-5** |
@@ -164,6 +163,11 @@ numbers are the recorded values in the linked JSON.
 | Continuous-operator one-sided bound (6 problems × 2 grids) | reference lies in [λ_h, R(ψ_h)] | coarse grid **5/5**; fine grid **4/5** (the finite-well counterexample below) |
 | Independent 2D reference (dense LAPACK `eigh` + Rayleigh quotient) | difference from ARPACK / containment | **≤3.1e-13 / 9 / 9** (ARPACK only proposes intervals) |
 | Appendix A failure modes (square well, N=41, 3000 epochs) | soft boundary / unnormalized / hard-mask control | 5.0e-2, 5.72 / ‖ψ‖²=6.0e-5 / 1.2e-6, 1.2e-2 (`runs/appendix_failures/`) |
+
+Experiment 2's single-run orthogonality-constraint sweep of excited states
+predates the loss-weight correction described under finding 1 below and is
+therefore not quoted; excited states are reported instead through the
+deflated, certified runs of experiment 5 ([runs/multistate/summary.md](runs/multistate/summary.md)).
 
 The most valuable findings:
 
