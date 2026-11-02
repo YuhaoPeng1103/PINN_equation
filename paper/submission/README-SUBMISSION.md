@@ -24,7 +24,7 @@ Rebuild the archive after any change with
 Editorial Manager asks for the program archive separately from the manuscript
 files, because for a CPiP article the software is part of the submission and
 is archived in the CPC Program Library. Upload
-`nn-schrodinger-certify.zip` there — 816 files, 10.8 MB — built from the
+`nn-schrodinger-certify.zip` there — 817 files, 10.8 MB — built from the
 repository root by `scripts/make_submission_archive.py`. It contains:
 
 - `src/` — the certificate (`certify/`), the directed-rounding counter, the
@@ -32,10 +32,40 @@ repository root by `scripts/make_submission_archive.py`. It contains:
 - `tests/` — the 143-test suite (`python tests/run_tests.py`);
 - `scripts/` — the drivers that regenerate every table and figure;
 - `runs/` — the JSON/CSV/npz evidence for every number quoted in the paper;
-- `examples/certify_demo.py`, `README.md`, `LICENSE` (MIT), `requirements.txt`.
+- `examples/certify_demo.py`, `README.md` (English, see below),
+  `README.zh.md` (the same document in Chinese), `LICENSE` (MIT),
+  `requirements.txt`.
 
 The "CPC Library link to program files" field in the Program Summary is left
 for the Technical Editor to fill in; do not invent that URL.
+
+### Revision requested by the editor (2026-11-02)
+
+The editor asked for a full English version of the program's main README.
+`README.md` is now entirely in English and covers everything the program does:
+purpose, installation, the three quick-start commands, every driver, the
+verification status and measured results with links to the evidence files,
+implemented problems, repository layout, documentation index, manuscript
+build, design principles and licence. The previous Chinese README is kept as
+`README.zh.md` and is linked from the first paragraph.
+
+To resubmit:
+
+1. Rebuild the archive: `python scripts/make_submission_archive.py`
+   (817 files, 10.8 MB).
+2. In Editorial Manager, send a revision and replace the "Program file(s)"
+   item with the rebuilt `nn-schrodinger-certify.zip`. The manuscript files
+   are unchanged, so no `.tex` or PDF needs to be re-uploaded unless the
+   system asks for them.
+3. In the "Response to the editor" box write:
+
+   > We have added a complete English version of the program's main README
+   > (README.md). It documents the purpose of the package, installation, the
+   > test suite, every driver and the evidence files behind each reported
+   > number, the repository layout and the licence. The Chinese version is
+   > retained as README.zh.md for our own reference. The revised program
+   > archive has been uploaded as the "Program file(s)" item. No change to the
+   > manuscript was required.
 
 ## What must be entered in the submission system
 
@@ -60,7 +90,8 @@ for the Technical Editor to fill in; do not invent that URL.
 - Abstract 209 words ≤ 250; keywords 7 ≤ 7; highlights 5 bullets, longest 78
   characters ≤ 85.
 - References numbered `[n]` in order of appearance (`elsarticle-num`), as the
-  Guide requires; 23 references, all with DOIs resolved on 2026-10-28.
+  Guide requires; 24 references, all with DOIs resolved on 2026-10-28
+  (`tancik2020` has no DOI and is cited by volume and pages).
 - Program Summary uses the CPiP template fields: program title, CPC Library
   link (to be added by the Technical Editor), repository link, licence,
   language, supplementary material, nature of problem / solution method /

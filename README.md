@@ -5,6 +5,7 @@ Schrödinger equation: a self-verifying a posteriori protocol and its
 implementation* — Chunyang Chen and Yuhao Peng (equal contribution), School
 of Mathematics and Physics, China University of Geosciences (Wuhan).
 Compiled manuscript: [`paper/main.pdf`](paper/main.pdf) (55 pages).
+Chinese version of this file: [`README.zh.md`](README.zh.md).
 
 Given an approximate eigenfunction of the finite-difference Schrödinger
 operator, the package returns a two-sided enclosure of the discrete
@@ -34,209 +35,259 @@ number are under [`runs/`](runs/). Licensed under MIT
 
 ---
 
-## 中文说明
+## What this project is about
 
-围绕 **PINN（物理信息神经网络）求解定态薛定谔方程** 组织的完整项目：
-参考解 → 网络/损失/训练 → 评测 → 可复现实验，每一层都有测试与证据。
+A complete pipeline built around **solving the stationary Schrödinger
+equation with PINNs (physics-informed neural networks)**: reference solution →
+network / loss / training → evaluation → reproducible experiment, with tests
+and recorded evidence at every layer.
 
 ```
-  物理真值层            求解器层               实验层
-  ─────────            ────────               ──────
-  解析解 + Numerov  →   PINN / (x,E) 网络  →   实验一 有监督回归
-  交叉校验 10/10        Rayleigh/残差损失      实验二 无监督 PINN
-  纯 numpy，无依赖      经典基线（Numerov）    实验三 数据同化
+  physics layer          solver layer             experiment layer
+  ─────────────          ────────────             ────────────────
+  analytic + Numerov  →  PINN / (x,E) network  →  Exp. 1 supervised regression
+  cross-checked 10/10    Rayleigh / residual loss  Exp. 2 unsupervised PINN
+  pure NumPy, no deps    classical baseline        Exp. 3 data assimilation
 ```
 
-> 详细脉络见 **[docs/project-overview.md](docs/project-overview.md)**。
+> The full narrative is in **[docs/project-overview.md](docs/project-overview.md)**.
 
 ---
 
-## 这个项目解决什么
+## The problem
 
-一维定态薛定谔方程
+The one-dimensional stationary Schrödinger equation
 
 ```
-    Ĥψ = Eψ,      Ĥ = −½ d²/dx² + V(x)     （ħ = m = 1）
+    Ĥψ = Eψ,      Ĥ = −½ d²/dx² + V(x)     (ħ = m = 1)
 ```
 
-三个层次的问题：
+is addressed at three levels:
 
-1. **“真值是什么”** —— 给出可信的参考本征对，并用第二种方法交叉验证；
-2. **“网络怎么解”** —— 无监督 PINN、`(x,E)` 正则化回归、数据同化三种训练范式；
-3. **“解得好不好”** —— 同时报告能量、波形相似度、最坏点偏差和方程残差。
+1. **What is the truth?** — provide trustworthy reference eigenpairs and
+   cross-check them with a second method;
+2. **How does a network solve it?** — three training paradigms: unsupervised
+   PINN, regularized `(x, E)` regression, and data assimilation;
+3. **How good is the solution?** — report energy, waveform similarity,
+   worst-point deviation and equation residual together.
 
-## 快速开始
+## Quick start
 
 ```bash
-pip install -e .          # 只装 numpy 核心（不需要 torch）
+pip install -e .          # NumPy core only (torch is not needed)
 
-# ① 参考解交叉校验（纯 numpy）
+# (1) reference-solution cross-check (pure NumPy)
 python -m nnschrodinger.physics.verify
-# 输出：10/10 passed
+# prints: 10/10 passed
 
-# ② 单元测试（有 pytest 用 pytest；没有则用内置运行器）
+# (2) unit tests (pytest if available, otherwise the bundled runner)
 python tests/run_tests.py
-# 输出：143 passed, 0 failed, 0 skipped
+# prints: 143 passed, 0 failed, 0 skipped
 
-# ③ 证书 API 的最小示例（不需要 torch、不需要训练）
+# (3) smallest example of the certificate API (no torch, no training)
 python examples/certify_demo.py
-# 1D 谐振子：解析试探函数的认证区间与角度界；
-# 2D 方盒简并对：单态证书拒绝（谱隙低于分辨率），簇证书接受
+# 1D harmonic oscillator: certified interval and angle bound for an analytic
+# trial function; 2D square box, degenerate pair: the state certificate
+# refuses (level gap below the resolution) while the cluster certificate
+# accepts
 ```
 
-需要训练网络时：
+To train networks:
 
 ```bash
-pip install -e .[torch]   # 或 pip install torch
-python scripts/exp1_regularized_network.py   # 实验一
-python scripts/exp2_unregularized_pinn.py    # 实验二
-python scripts/exp3_data_assimilation.py     # 实验三
+pip install -e .[torch]   # or pip install torch
+python scripts/exp1_regularized_network.py   # experiment 1
+python scripts/exp2_unregularized_pinn.py    # experiment 2
+python scripts/exp3_data_assimilation.py     # experiment 3
 
-# 多种子复现（种子 0/1/2，并行；每进程 4 线程）
+# multi-seed reproduction (seeds 0/1/2, parallel; 4 threads per process)
 python scripts/run_seed_sweep.py --jobs 6 --threads 4
-python scripts/aggregate_seeds.py            # 输出 runs/seeds/summary.{json,md}
+python scripts/aggregate_seeds.py            # -> runs/seeds/summary.{json,md}
 
-# 经典数值基线（Numerov，与网络指标同口径）
+# classical numerical baseline (Numerov, same metrics as the network)
 python scripts/classical_baseline.py
 
-# 二维（实验六）：多种子扫描 → 滤波 + 认证汇总
+# two dimensions (experiment 6): seed sweep -> filtering + certificate summary
 python scripts/run_seed_sweep_2d.py --jobs 2
 python scripts/filter_certificates2d.py
-# 二维简并：单态拒绝 / 子空间证书 / 离散化 gap
+# 2D degeneracy: state-level refusal / subspace certificate / discretization gap
 python scripts/exp7_degeneracy_2d.py
 python scripts/exp8_subspace_certificate.py
-python scripts/exp9_resolution_boundary.py   # 单态/簇证书的分辨率边界
+python scripts/exp9_resolution_boundary.py   # resolution boundary between the
+                                             # state and the cluster certificate
 python scripts/discretization_study_2d.py --sizes 41 61 81 101 121
-python scripts/bench_count.py                # 计数/证书耗时（runs/_bench/count_timing.json）
-python scripts/dense_reference_2d.py         # 二维独立参考（稠密 LAPACK，非 ARPACK）
-python scripts/appendix_failures.py --variant soft_boundary   # 附录 A 失败模式复现
+python scripts/bench_count.py                # counting/certificate timings
+python scripts/dense_reference_2d.py         # independent 2D reference (dense
+                                             # LAPACK, not ARPACK)
+python scripts/appendix_failures.py --variant soft_boundary   # appendix A
 python scripts/appendix_failures.py --variant unnormalized
-python scripts/residual_vs_error.py runs/appendix_failures/unnormalized   # 残差 vs 真实误差
-python scripts/lapack_reference_widths.py    # 经典 LAPACK 本征向量的证书宽度（§6.9 对照）
+python scripts/residual_vs_error.py runs/appendix_failures/unnormalized
+python scripts/lapack_reference_widths.py    # certificate widths for classical
+                                             # LAPACK eigenvectors (Sec. 6.9)
 ```
 
-## 当前验证状态
+## Current verification status
 
-| 检查项 | 结果 | 证据 |
+| Check | Result | Evidence |
 |---|---|---|
-| 参考解交叉校验（解析 ⟷ Numerov） | **10 / 10 通过** | [runs/physics_verification.txt](runs/physics_verification.txt) |
-| 单元测试（含 torch 相关） | **143 / 143 通过** | [runs/tests_output_torch.txt](runs/tests_output_torch.txt) |
-| 实验一 有监督回归 | 已运行 | [runs/exp1_regularized.json](runs/exp1_regularized.json) |
-| 实验二 无监督 PINN | 已运行 | [runs/exp2_pinn.json](runs/exp2_pinn.json) |
-| 实验三 数据同化 | 已运行 | [runs/exp3_data_assimilation_k*.json](runs/) |
+| Reference cross-check (analytic ⟷ Numerov) | **10 / 10 passed** | [runs/physics_verification.txt](runs/physics_verification.txt) |
+| Unit tests (including torch) | **143 / 143 passed** | [runs/tests_output_torch.txt](runs/tests_output_torch.txt) |
+| Experiment 1, supervised regression | run | [runs/exp1_regularized.json](runs/exp1_regularized.json) |
+| Experiment 2, unsupervised PINN | run | [runs/exp2_pinn.json](runs/exp2_pinn.json) |
+| Experiment 3, data assimilation | run | [runs/exp3_data_assimilation_k*.json](runs/) |
 
-### 关键实测结果
+### Key measured results
 
-> ⚠️ 2026-10-27：发现实验二的 `Trainer` 未应用损失权重、早停只看未归一化残差，
-> 下表中的实验二数字（及基于它们的“25 倍”结论）**已作废**。修复后的 3 种子
-> 结果正在重跑，完成后替换。实验一/三不受影响。
+Multi-seed numbers below are means over seeds 0/1/2 with the sample standard
+deviation ([runs/seeds/summary.md](runs/seeds/summary.md)); single-run
+numbers are the recorded values in the linked JSON.
 
-| 实验 | 指标 | 数值 |
+| Experiment | Metric | Value |
 |---|---|---|
-| 实验二 PINN（仅残差损失） | 能量误差 / overlap | 1.05e-1 / 0.9859 |
-| 实验二 PINN（+ Rayleigh 商） | 能量误差 / overlap | 4.16e-3 / 0.99994 |
-| 实验二 PINN（**+ 分层能量网格**） | 能量误差 / overlap | **8.73e-4 / 0.99990** |
-| 实验三 数据同化 k=0 → 64 | 能量误差 | 2.78e-2 → **5.58e-3** |
-| 实验二 激发态 n=1（正交约束） | 相对误差 / overlap | **0.74% / 0.9965** |
-| 实验一 训练能量 → 插值能量 | 波形误差 | 1.4e-2 → 0.39~1.57 |
-| 实验五 证书同口径训练（原型） | 离散残差 / Temple 宽度 | 0.361 / 0.260（有效） |
-| 实验五 + 证书引导谱滤波 | 离散残差 / Temple 宽度 | **0.0051 / 5.2e-5** |
-| 实验五 多势基态（3 势 × 3 seed，Rayleigh 商残差） | 区间包含参考值 | **12 / 12**（中位宽度 5.0e-4） |
-| 实验五 激发态 n=1 / n=2（可学习 deflation） | 落到目标态且证书确认 | **8 / 9 · 8 / 9**（此前 n=1 为 0/6） |
-| 实验六 二维（3 势 × 3 seed，81×81） | 滤波后证书有效 / 包含 λ_h | **9 / 9 · 9 / 9**（宽度 4.6e-5 ~ 1.4e-3） |
-| 实验六 二维简并拒绝（方阱激发态） | 精确本征向量（r≈4e-12） | **正确拒绝**（谱隙 7e-9 < 分辨率 1.3e-5） |
-| 实验八 二维简并**子空间**证书（81×81） | 精确对：验证重数 / 主子角界 | **2 / 8.2e-13**（真实 2.3e-16）；单成员仍拒绝 |
-| 实验八 神经网络的对（4 seed，deflation） | 接受的张成对 / 塌缩对 | **3 对接受 5.6–6.3e-3**（真实 2.4–3.0e-4）；塌缩对拒绝（ρ_F=16.3 > δ=6.1） |
-| 实验九 单态证书的分辨率边界（λ(x²−y²) 劈裂） | 单态转折点 / 簇证书 | 裂距/floor 从 0.95 → 1.01 时由**拒绝**变**接受**（转折点就在计数分辨率）；簇证书全程 δ=7.397、界 ~8e-13 |
-| 定向舍入计数（3 势 × 121 shift，N=2001） | 认证 / 与浮点及稠密谱一致 | **361 / 363**（拒绝恰在 shift 等于本征值处） |
-| 定向舍入计数（二维，81×81，可分势） | 认证 shift / 分歧 | **25 / 25 · 0**（不可分势明确拒绝） |
-| 连续算子单侧界（6 个问题 × 2 档网格） | 参考值落在 [λ_h, R(ψ_h)] | 粗网格 **5/5**；细网格 **4/5**（有限深阱的反例见下） |
-| 二维独立参考（稠密 LAPACK `eigh` + Rayleigh 商） | 与 ARPACK 之差 / 包含 | **≤3.1e-13 / 9 / 9**（ARPACK 只提议区间） |
-| 附录 A 失败模式复现（方阱，N=41，3000 epoch） | 软边界 / 未归一化 / 硬掩码对照 | 5.0e-2、5.72 / ‖ψ‖²=6.0e-5 / 1.2e-6、1.2e-2（`runs/appendix_failures/`） |
+| Exp. 2 PINN (residual with Rayleigh quotient, grid sampling) | energy error / overlap | **1.63e-3 ± 2.70e-3 / 0.999985** |
+| Exp. 2 PINN (learned E, weight 1.5) | energy error / overlap | 3.81e+0 ± 0.97 / 0.123 |
+| Exp. 2 PINN (learned E, no Rayleigh term) | energy error / overlap | 3.48e+0 ± 1.26 / 0.110 |
+| Exp. 3 data assimilation k=0 → 64 | energy error | 2.78e-2 → **5.58e-3** |
+| Exp. 2 excited state n=1 (orthogonality constraint) | relative error / overlap | **0.74% / 0.9965** |
+| Exp. 1 trained energy → interpolated energy | waveform error | 1.8e-2 → 0.25–1.78 |
+| Exp. 5 certificate at matched training budget (prototype) | discrete residual / Temple width | 0.361 / 0.260 (valid) |
+| Exp. 5 + certificate-guided spectral filtering | discrete residual / Temple width | **0.0051 / 5.2e-5** |
+| Exp. 5 multi-potential ground states (3 potentials × 3 seeds, Rayleigh-quotient residual) | interval contains reference | **12 / 12** (median width 5.0e-4) |
+| Exp. 5 excited states n=1 / n=2 (learnable deflation) | target state reached and certified | **8 / 9 · 8 / 9** (previously 0/6 for n=1) |
+| Exp. 6 two dimensions (3 potentials × 3 seeds, 81×81) | certificate valid after filtering / contains λ_h | **9 / 9 · 9 / 9** (widths 4.6e-5 – 1.4e-3) |
+| Exp. 6 2D degenerate refusal (square-well excited state) | exact eigenvector (r≈4e-12) | **refused correctly** (gap 7e-9 < resolution 1.3e-5) |
+| Exp. 8 2D degenerate **subspace** certificate (81×81) | exact pair: multiplicity / principal-angle bound | **2 / 8.2e-13** (true angle 2.3e-16); single members still refused |
+| Exp. 8 network pairs (4 seeds, deflation) | accepted spanning pairs / collapsed pairs | **3 pairs accepted at 5.6–6.3e-3** (true 2.4–3.0e-4); collapsed pair refused (ρ_F=16.3 > δ=6.1) |
+| Exp. 9 resolution boundary of the state certificate (λ(x²−y²) splitting) | state-level switch / cluster certificate | gap/floor from 0.95 → 1.01 turns **refusal** into **acceptance** (the switch sits at the counting resolution); the cluster certificate holds throughout with δ=7.397, bound ~8e-13 |
+| Directed-rounding counting (3 potentials × 121 shifts, N=2001) | certified / agreement with float and dense spectra | **361 / 363** (the two refusals occur exactly where the shift equals an eigenvalue) |
+| Directed-rounding counting (2D, 81×81, separable potentials) | certified shifts / disagreements | **25 / 25 · 0** (non-separable potentials explicitly refused) |
+| Continuous-operator one-sided bound (6 problems × 2 grids) | reference lies in [λ_h, R(ψ_h)] | coarse grid **5/5**; fine grid **4/5** (the finite-well counterexample below) |
+| Independent 2D reference (dense LAPACK `eigh` + Rayleigh quotient) | difference from ARPACK / containment | **≤3.1e-13 / 9 / 9** (ARPACK only proposes intervals) |
+| Appendix A failure modes (square well, N=41, 3000 epochs) | soft boundary / unnormalized / hard-mask control | 5.0e-2, 5.72 / ‖ψ‖²=6.0e-5 / 1.2e-6, 1.2e-2 (`runs/appendix_failures/`) |
 
-三条最有价值的发现：
+The most valuable findings:
 
-1. **分项损失的权重必须真正进入优化目标**。实验二旧代码把 `normalization=100` 按 1 生效，仅残差配置收敛到 ψ→0（评测时 E=8.6）；修复后旧“21% / 25 倍”结论撤回，新结果见 [docs/results.md](docs/results.md)。
-2. **物理约束 + 少量观测确实互补**。64 个带 1% 噪声的观测点（相对 2000 个配点）就把相对能量误差压到 0.11%。
-3. **`(x, E)` 双输入不能让网络"学会"能量→波函数映射**。训练能量上误差 1.4e-2，插值能量上大 1~2 个数量级；容量消融（width 64→256）**没有改善**，排除了"网络太小"。与 HHL 论文"可插值"的主张不一致。
-4. **Rayleigh 商用随机配点估计会带来 1.9% 噪声**（2500 点），换成等距网格后降到 1e-8。能量项必须用确定性网格——否则能量曲线永远在抖，还会被误判成"训练不稳定"。
-5. **后验证书能给出不依赖真解的误差条，但“紧”只对光滑势成立**：12 个无泄漏基态 run 的滤波后区间包含离散参考本征值 12/12，中位宽度 5.0e-4；谐振子的宽度是真实误差的 5.5–19 倍（可用），有限深阱是 946–2920 倍（不可用）。残差里的 E 用 **Rayleigh 商**而非可学习标量，可以在**不泄漏**的前提下把有限深阱的宽度从 1.87–2.72 降到 0.37–0.73。详见 [docs/certification.md](docs/certification.md)。
+1. **Every term of a composite loss must actually enter the objective.** The
+   `normalization=100` term of the original experiment-2 code was applied as
+   1, so the residual-only configuration converged to ψ→0 (E=8.6 at
+   evaluation). With the weights fixed the same configurations recover the
+   ground state to 1.6e-3; the sweep in
+   [runs/seeds/summary.md](runs/seeds/summary.md) is the evidence, and the
+   earlier "21% / 25×" claim is withdrawn. See [docs/results.md](docs/results.md).
+2. **Physical constraints and a few observations are complementary.** 64
+   observations with 1% noise (against 2000 collocation points) drive the
+   relative energy error down to 0.11%.
+3. **An `(x, E)` two-input network does not "learn" the energy→wavefunction
+   map.** The error on trained energies is 1.8e-2; on interpolated energies it
+   is 0.25–1.78, one to two orders of magnitude larger. A capacity ablation
+   (width 64→256) does **not** improve it, which rules out "the network is too
+   small". This is inconsistent with the interpolability claimed in the HHL
+   paper.
+4. **Rayleigh's quotient on a random collocation set adds 1.9% noise** (2500
+   points); switching to an equidistant grid brings it down to 1e-8. The
+   energy term needs a deterministic grid — otherwise the energy curve keeps
+   jittering and is easily misread as training instability.
+5. **A posteriori certificates give error bars that do not use the reference
+   solution, but "tight" holds only for smooth potentials.** The filtered
+   intervals of 12 leak-free ground-state runs contain the discrete reference
+   eigenvalue 12/12 with median width 5.0e-4; for the harmonic oscillator the
+   width is 5.5–19× the true error (usable), for the finite well 946–2920×
+   (not usable). Using the **Rayleigh quotient** instead of a learnable scalar
+   for E in the residual reduces the finite-well width from 1.87–2.72 to
+   0.37–0.73 without leakage. See [docs/certification.md](docs/certification.md).
+6. **A discrete certificate is not a continuous one.** By min–max, the P1/Q1
+   interpolant of a sampled function gives an upper bound on the continuous
+   ground-state energy that needs no interpolation constant; the other
+   direction is not free. For the finite well at N=4001 a jump lands on a node
+   and pushes the discrete energy 3.67e-3 *above* the continuous value, while
+   moving that single node from outside the well to inside it (0 → −50) on the
+   same grid flips it 3.73e-3 *below* the true value — the whole error is that
+   one grid point, and a finer grid does not remove it. For the box,
+   `sinθ ≤ θ` gives a strict two-sided bound. Evidence:
+   [runs/continuous_bound/alignment.json](runs/continuous_bound/alignment.json).
 
+The full report is in **[docs/results.md](docs/results.md)**.
 
-6. **离散认证不等于连续认证**。由 min–max，P1/Q1 插值后的采样函数给连续基态能量一个**不需要插值常数**的上界；
-   但反方向没有免费的午餐：有限深阱在 N=4001 时跳点落在节点上，离散能量被推到连续值**之上**（高 3.67e-3），
-   而同一张网格上把那个节点从井外改成井内（0 → −50）就把它翻到真值下方 3.73e-3——整个误差就是这一个格点，
-   不是“更细的网格”能消掉的。box 相反，`sinθ ≤ θ` 给出严格的两侧界。证据：
-   [runs/continuous_bound/alignment.json](runs/continuous_bound/alignment.json)。
+## Problems implemented
 
-完整报告见 **[docs/results.md](docs/results.md)**。
-
-## 已实现的问题
-
-| 问题 | 势能 | 能量 | 参考解来源 |
+| Problem | Potential | Energy | Reference solution |
 |---|---|---|---|
-| `harmonic` | ½x² | n + ½ | 解析（Hermite 递推） |
-| `infinite_well` | 0 (0<x<L) | n²π²/(2L²) | 解析（正弦） |
-| `finite_well` | −V₀ (\|x\|<a) | 无闭式解 | Numerov + 打靶 |
-| `hydrogen` | −1/\|x\| | −1/(2n²) | 解析（Laguerre） |
+| `harmonic` | ½x² | n + ½ | analytic (Hermite recursion) |
+| `infinite_well` | 0 (0<x<L) | n²π²/(2L²) | analytic (sine) |
+| `finite_well` | −V₀ (\|x\|<a) | no closed form | Numerov + shooting |
+| `hydrogen` | −1/\|x\| | −1/(2n²) | analytic (Laguerre) |
 
 ```python
 from nnschrodinger.physics import get_reference
 
 ref = get_reference("harmonic", 2)
 print(ref.energy)        # 2.5
-print(ref.psi([0.0, 1.0]))  # 归一化波函数（∫|ψ|²dx = 1）
+print(ref.psi([0.0, 1.0]))  # normalized wavefunction (∫|ψ|²dx = 1)
 ```
 
-## 项目结构
+## Repository layout
 
 ```
 src/nnschrodinger/
-├── physics/    参考解、Numerov、Jacobi、势函数、交叉校验（纯 numpy）
-├── data/       HHL 论文风格的 10 个目标函数与相似度度量
-└── solver/     采样 / 网络 / 损失 / 训练 / 评测
-scripts/        实验入口 + 证书 / 滤波 / 多种子扫描 / 汇总 / 经典基线
-tests/          单元测试（143 项，含子空间证书）
-docs/           项目脉络、结构、文献、实验、工程记录
-runs/           运行证据
+├── physics/    reference solutions, Numerov, Jacobi, potentials, cross-check
+│               (pure NumPy)
+├── data/       the ten target functions and similarity measures of the HHL
+│               paper
+└── solver/     sampling / networks / losses / training / evaluation
+scripts/        experiment entry points + certificates / filtering / seed
+                sweeps / aggregation / classical baseline
+tests/          143 unit tests (including the subspace certificate)
+docs/           project narrative, structure, literature, experiments,
+                engineering log
+runs/           run evidence
+paper/          manuscript sources, generated tables and figures
 ```
 
-完整地图见 **[docs/structure.md](docs/structure.md)**。
+The complete map is in **[docs/structure.md](docs/structure.md)**.
 
-## 文档
+## Documentation
 
-| 文档 | 内容 |
+| Document | Content |
 |---|---|
-| [docs/project-overview.md](docs/project-overview.md) | ★ 研究问题 → 代码 → 证据的完整脉络 |
-| [docs/structure.md](docs/structure.md) | 目录职责与数据流 |
-| [docs/literature.md](docs/literature.md) | 三条技术主线的文献骨架 |
-| [docs/experiments.md](docs/experiments.md) | 三个实验的设定、指标与预期 |
-| [docs/engineering-log.md](docs/engineering-log.md) | 踩过的坑与修复方式 |
-| [HANDOFF.md](HANDOFF.md) | ★★ **交接文档：换设备继续做只需读这一个文件** |
-| [docs/results.md](docs/results.md) | ★ 三个实验的实测结果与解读 |
-| [paper/main.pdf](paper/main.pdf) | ★★ 论文稿（CPC **正刊**稿，55 页、24 refs、143 项测试）：`cd paper && latexmk -pdf main.tex` |
+| [docs/project-overview.md](docs/project-overview.md) | ★ research question → code → evidence |
+| [docs/structure.md](docs/structure.md) | directory responsibilities and data flow |
+| [docs/literature.md](docs/literature.md) | literature skeleton of the three technical threads |
+| [docs/experiments.md](docs/experiments.md) | setup, metrics and expectations of the three experiments |
+| [docs/engineering-log.md](docs/engineering-log.md) | mistakes made and how they were fixed (Chinese) |
+| [docs/results.md](docs/results.md) | ★ measured results and their reading (Chinese) |
+| [HANDOFF.md](HANDOFF.md) | ★★ handover notes, sufficient to continue on another machine (Chinese) |
+| [paper/README.md](paper/README.md) | how the manuscript is built and regenerated |
+| [paper/main.pdf](paper/main.pdf) | ★★ the manuscript (CPC regular article, 55 pages, 24 references, 143 tests) |
 
-## 论文稿
+## The manuscript
 
-`paper/` 下的表格与图**全部由脚本从 `runs/*.json` 重新生成**，不手工转录：
+Every table and figure under `paper/` is **regenerated from `runs/*.json` by
+script**, never transcribed by hand:
 
 ```bash
-python paper/make_tables.py     # → paper/tables/*.tex
-python paper/make_figures.py    # → paper/figures/*.png + figures/data/*.csv
+python paper/make_tables.py     # -> paper/tables/*.tex
+python paper/make_figures.py    # -> paper/figures/*.png + figures/data/*.csv
 cd paper && latexmk -pdf main.tex
 ```
 
-投稿前待补（详见 HANDOFF.md）：作者/单位、CPC 库与仓库链接。`refs.bib`
-中 24 条文献的 DOI（`tancik2020` 无 DOI）已于 2026-10-28 全部对 Crossref 解析通过
-（原先 `mishra2023` 与 `rump1999` 两条 DOI 记错，已改正）。
+`paper/` also holds the journal-side files: `highlights.docx`,
+`declaration-of-interests.docx`, `cover_letter.pdf` and
+`submission/README-SUBMISSION.md` (the upload checklist). All 24 entries of
+`refs.bib` were resolved against Crossref on 2026-10-28 (`tancik2020` has no
+DOI and is cited as NeurIPS 33, 7462–7473).
 
-## 设计原则
+## Design principles
 
-1. **参考解必须能被第二种方法复现**——否则所有精度结论作废；
-2. **指标必须能识别“能量准但波形错”**——否则评测器在说谎；
-3. **没有运行过的实验就写“未运行”**——不编造数字；
-4. **优化与正确性分开**——性能优化必须有独立测试，对不上就退回已验证实现。
+1. **A reference solution must be reproducible by a second method** —
+   otherwise every accuracy claim is void;
+2. **The metrics must expose "energy right, waveform wrong"** — otherwise the
+   evaluator lies;
+3. **An experiment that has not been run is reported as not run** — no
+   invented numbers;
+4. **Optimisation and correctness are kept apart** — every performance
+   optimisation needs its own test, and is reverted if it disagrees with the
+   verified implementation.
 
-## 许可证
+## Licence
 
-MIT（见 `LICENSE`；版权行目前写的是 “The authors”，投稿前替换为实际作者）
+MIT (see [`LICENSE`](LICENSE)); copyright 2026 Chunyang Chen and Yuhao Peng.

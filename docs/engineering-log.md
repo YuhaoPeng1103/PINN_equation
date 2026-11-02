@@ -1005,7 +1005,7 @@ shift 上拒绝，于是每轮只推进一格，宽度卡在 2e-3 不动。改�
 6. **文章类型定为 CPiP**（带 Program Summary、代码归档、MIT 许可），
    cover letter 相应改写。
 7. **投稿包**：`scripts/make_submission_archive.py` 生成
-   `paper/submission/nn-schrodinger-certify.zip`（816 文件 / 10.8 MB），
+   `paper/submission/nn-schrodinger-certify.zip`（817 文件 / 10.8 MB），
    `paper/submission/README-SUBMISSION.md` 列出上传清单与系统内要填的项。
 
 **教训**：
@@ -1016,3 +1016,33 @@ shift 上拒绝，于是每轮只推进一格，宽度卡在 2e-3 不动。改�
   首页与 Program Summary 的跨页问题一起消失了。
 - 每次动 `main.aux`/`main.bbl` 之后都要确认 `.bbl` 非空；0 字节的 `.bbl`
   在 PDF 里只表现为一条 natbib 警告，很容易被当成无害。
+
+## 40. 编辑部退回：CPiP 要求程序 README 有完整英文版（2026-11-02）
+
+投稿后编辑部回信，唯一要求是补一份程序主 README 的完整英文版——CPiP 的硬性
+要求，与论文内容无关。
+
+改动：
+
+1. **`README.md` 全文改为英文**，不是加个英文摘要了事。条款一一对应：用途与
+   证书 API、安装（`pip install -r requirements.txt`）、三条不训练的快速验证
+   （交叉校验 / 143 测试 / `examples/certify_demo.py`）、全部 driver 与参数、
+   验证状态表、实测结果表（每条带 `runs/` 链接）、6 条结论、已实现问题、
+   目录结构、文档索引、论文构建、设计原则、许可。
+2. **中文版移到 `README.zh.md`**，英文版首段给出链接；两版都保留，不在原文里
+   混排。
+3. **顺手把过期内容改对**：实验二的旧表（已作废）换成
+   `runs/seeds/summary.md` 的 3 种子结果（残差含 Rayleigh 商时能量误差
+   1.63e-3 ± 2.70e-3、overlap 0.999985）；"投稿前待补作者/单位" 和
+   "版权行还是 The authors" 这两句都已过时，删掉；参考文献数按 `main.bbl`
+   的 `\bibitem` 实数改为 24。
+4. zip 重打（817 文件 / 10.8 MB，含 `README.md` 与 `README.zh.md`），重交步骤
+   与回复原文写进 `paper/submission/README-SUBMISSION.md`。
+
+**教训**：
+
+- 给期刊的 README 是**审稿材料**，不是开发者备忘。里面写"这张表已作废、正在
+  重跑"，编辑读到只会觉得项目没收尾——要么把重跑做完换成新数字，要么把作废的
+  表删掉。这次两件事都做了。
+- 双语仓库的做法：主 README 一种语言写完整，另一种语言单独成文件并互相链接。
+  "英文开头 + 中文正文"的混排，在投稿语境下不算英文版。
