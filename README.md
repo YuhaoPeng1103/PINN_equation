@@ -153,14 +153,14 @@ numbers are the recorded values in the linked JSON.
 | Exp. 5 + certificate-guided spectral filtering | discrete residual / Temple width | **0.0051 / 5.2e-5** |
 | Exp. 5 multi-potential ground states (3 potentials × 3 seeds, Rayleigh-quotient residual) | interval contains reference | **12 / 12** (median width 5.0e-4) |
 | Exp. 5 excited states n=1 / n=2 (learnable deflation) | target state reached and certified | **8 / 9 · 8 / 9** (previously 0/6 for n=1) |
-| Exp. 6 two dimensions (3 potentials × 3 seeds, 81×81) | certificate valid after filtering / contains λ_h | **9 / 9 · 9 / 9** (widths 4.6e-5 – 1.4e-3) |
+| Exp. 6 two dimensions (3 potentials × 3 seeds, 81×81) | certificate valid after filtering / contains λ_h | **9 / 9 · 9 / 9** (widths 2.0e-11 – 1.4e-3) |
 | Exp. 6 2D degenerate refusal (square-well excited state) | exact eigenvector (r≈4e-12) | **refused correctly** (gap 7e-9 < resolution 1.3e-5) |
 | Exp. 8 2D degenerate **subspace** certificate (81×81) | exact pair: multiplicity / principal-angle bound | **2 / 8.2e-13** (true angle 2.3e-16); single members still refused |
-| Exp. 8 network pairs (4 seeds, deflation) | accepted spanning pairs / collapsed pairs | **3 pairs accepted at 5.6–6.3e-3** (true 2.4–3.0e-4); collapsed pair refused (ρ_F=16.3 > δ=6.1) |
+| Exp. 8 network pairs (4 seeds, deflation) | accepted spanning pairs / collapsed pairs | **3 pairs accepted at 5.6–6.3e-3** (true 2.4–3.0e-4); a fourth accepted but priced at 0.68, the ambiguous case; collapsed pair refused (ρ_F=16.3 > δ=6.1) |
 | Exp. 9 resolution boundary of the state certificate (λ(x²−y²) splitting) | state-level switch / cluster certificate | gap/floor from 0.95 → 1.01 turns **refusal** into **acceptance** (the switch sits at the counting resolution); the cluster certificate holds throughout with δ=7.397, bound ~8e-13 |
 | Directed-rounding counting (3 potentials × 121 shifts, N=2001) | certified / agreement with float and dense spectra | **361 / 363** (the two refusals occur exactly where the shift equals an eigenvalue) |
 | Directed-rounding counting (2D, 81×81, separable potentials) | certified shifts / disagreements | **25 / 25 · 0** (non-separable potentials explicitly refused) |
-| Continuous-operator one-sided bound (6 problems × 2 grids) | reference lies in [λ_h, R(ψ_h)] | coarse grid **5/5**; fine grid **4/5** (the finite-well counterexample below) |
+| Continuous-operator one-sided bound (six problems × 2 grids; five have a reference) | reference lies in [λ_h, R(ψ_h)] | coarse grid **5/5**; fine grid **4/5** (the finite-well counterexample below); for the 2D anharmonic potential no reference exists, so the bound is one-sided |
 | Independent 2D reference (dense LAPACK `eigh` + Rayleigh quotient) | difference from ARPACK / containment | **≤3.1e-13 / 9 / 9** (ARPACK only proposes intervals) |
 | Appendix A failure modes (square well, N=41, 3000 epochs) | soft boundary / unnormalized / hard-mask control | 5.0e-2, 5.72 / ‖ψ‖²=6.0e-5 / 1.2e-6, 1.2e-2 (`runs/appendix_failures/`) |
 

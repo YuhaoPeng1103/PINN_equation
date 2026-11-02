@@ -1046,3 +1046,29 @@ shift 上拒绝，于是每轮只推进一格，宽度卡在 2e-3 不动。改�
   表删掉。这次两件事都做了。
 - 双语仓库的做法：主 README 一种语言写完整，另一种语言单独成文件并互相链接。
   "英文开头 + 中文正文"的混排，在投稿语境下不算英文版。
+
+### 40.1 README 数字逐行溯源（2026-11-02）
+
+按上一条的教训，把英文 README 结果表 17 行逐个对回 `runs/`：
+
+| 行 | 证据 | 结论 |
+|---|---|---|
+| 实验二 3 行 | `runs/seeds/summary.md` | 1.63e-3±2.70e-3、3.81、3.48 ✔ |
+| 实验三 | `exp3_data_assimilation_k0/k64.json` | 2.78e-2 → 5.58e-3 ✔ |
+| 实验一 | `runs/seeds/summary.md` | 1.83e-2；插值 0.25–1.78 ✔ |
+| 实验五 原型 / 滤波 | `docs/certification.md`、`runs/certificates*` | 0.361→0.0051、0.260→5.2e-5 ✔ |
+| 实验五 多种子 | `runs/certificates_filtered/summary.md` | 12/12、中位宽 5.0e-4（实算中位数一致）✔ |
+| 实验五 deflation | `runs/multistate/summary.md` | 8/9 · 8/9 ✔ |
+| 实验六 二维 | `runs/certificates_filtered2d/summary.json` | 9/9·9/9 ✔；宽度改 **2.0e-11–1.4e-3**（原来写 4.6e-5–1.4e-3，漏了 well2d 的 1.97e-11）|
+| 实验六 简并拒绝 | `runs/resolution2d/boundary.json` | 谱隙 7.07e-9 < 分辨率 1.28e-5 ✔ |
+| 实验八 子空间 | `runs/degeneracy2d/subspace.md` | 8.224e-13（真实 2.32e-16）✔；接受的紧凑对 5.6–6.3e-3；另有一对接受但界 0.68，已在表里注明 |
+| 实验八 塌缩对 | 同上 | ρ=1.6e+01 > δ=6.084 ✔ |
+| 实验九 分辨率边界 | `boundary.json` | 比值 0.95 拒绝、1.0079 接受（markdown 汇总取整成 0.9/1.0，JSON 为准）✔ |
+| 定向舍入计数 | `runs/directed_count/stats.txt` | 361/363、2D 25/25 且不可分势全拒 ✔ |
+| 连续算子界 | `runs/continuous_bound/bound.json` | 已知参考的 5 个问题：粗 5/5、细 4/5（有限深阱）；原写"6 个问题"已改 ✔ |
+| 有限深阱反例 | `alignment.json` | N=4001 高 3.6725e-3；换节点约定后低 3.7307e-3 ✔ |
+| 稠密 LAPACK 参考 | `runs/reference2d/*.json` | 最大 |ARPACK−稠密| 3.11e-13、包含 9/9 ✔ |
+| 附录失败模式 | `runs/appendix_failures/*` | 5.0e-2 / 5.72 / ‖ψ‖²=5.97e-5 / 1.16e-6 与 1.20e-2 ✔ |
+
+结论：除已删的激发态那行，表里没有第二个陈旧数字；改的是两处表述不精确
+（二维证书宽度下限、连续算子界的"六个问题"）。
